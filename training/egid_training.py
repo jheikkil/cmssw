@@ -133,8 +133,8 @@ def train_egid():
     print " --> Training for %s eta region: %2.1f < |eta| < %2.1f"%(reg,eta_regions[reg][0],eta_regions[reg][1])
 
     #Impose eta cuts
-    train_reg = trainTotal[ trainTotal['cl3d_eta']>eta_regions[reg][0] ]
-    train_reg = train_reg[ train_reg['cl3d_eta']<=eta_regions[reg][1] ]
+    train_reg = trainTotal[ abs(trainTotal['cl3d_eta'])>eta_regions[reg][0] ]
+    train_reg = train_reg[ abs(train_reg['cl3d_eta'])<=eta_regions[reg][1] ]
 
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # REWEIGHTING: 
