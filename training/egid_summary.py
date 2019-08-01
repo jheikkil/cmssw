@@ -243,6 +243,8 @@ def summary_egid():
   # PLOT ROC CURVES
   if opt.outputROC:
 
+    if not os.path.isdir("%s/plotting/plots"%os.environ['HGCAL_L1T_BASE']): os.system("mkdir %s/plotting/plots"%os.environ['HGCAL_L1T_BASE'])
+
     print " --> Plotting ROC curves"
     # Plot high and low eta regions separately
     plt_itr = 1
@@ -259,9 +261,10 @@ def summary_egid():
       axes.set_xlim([0.5,1.1])
       axes.set_ylim([0.5,1.1])
       plt.legend(bbox_to_anchor=(0.05,0.1), loc='lower left')
-      plt.savefig( "./ROC_%seta.png"%reg )
-      plt.savefig( "./ROC_%seta.pdf"%reg )
+      plt.savefig( "%s/plotting/plots/ROC_%seta.png"%(os.environ['HGCAL_L1T_BASE'],reg) )
+      plt.savefig( "%s/plotting/plots/ROC_%seta.pdf"%(os.environ['HGCAL_L1T_BASE'],reg) )
       plt_itr += 1
+      print " --> Saved plot: %s/plotting/plots/ROC_%seta.(png/pdf)"%(os.environ['HGCAL_L1T_BASE'],reg)
   leave()
 # END OF SUMMARY FUNCTION
 
