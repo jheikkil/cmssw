@@ -38,7 +38,7 @@ The `egid_summary.py` script outputs the performance of a BDT to the screen, in 
 python egid_summary.py --inputMap electron_200PU,neutrino_200PU,Histomaxvardr,test --bdts electron_200PU_vs_neutrino_200PU:tpg:black,electron_200PU_vs_neutrino_200PU:baseline:blue,electron_200PU_vs_neutrino_200PU:full:red --outputROC 1
 ```
 
-This takes as input the `_eval.root` files in the `results` directory, so make sure that you have evaluated all the BDTs that you want to summarise. The `--inputMap` option has the following format <signalType>,<backgroundType>,<cl3dAlgo>,<sample>, where sample can be train, test or all.
+This takes as input the `_eval.root` files in the `results` directory, so make sure that you have evaluated all the BDTs that you want to summarise. The `--inputMap` option has the following format (signalType),(backgroundType),(cl3dAlgo),(sample), where sample can be train, test or all.
 
 The script will output the BDT score working points for all bdts in the `wp` directory. These working points can then be added to the [egammaIdentification.py](https://github.com/PFCal-dev/cmssw/blob/v3.13.4_1061p2/L1Trigger/L1THGCal/python/egammaIdentification.py) script in the TPG software.
 
