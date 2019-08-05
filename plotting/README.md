@@ -24,3 +24,6 @@ The `--legendMap` option details the entries in the legend. Separate each entry 
 
 To suppress output to screen use the option: `--batch 1`.
 
+### Examples
+Example cluster p_T distribution and efficiency vs gen eta plots are stored in the `plots` directory.
+
