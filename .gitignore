@@ -11,3 +11,7 @@
 *.pyc
 *.png
 *.swp
+*.model
+*.xml
+*/crab_submit_*
+*/crab_area/*

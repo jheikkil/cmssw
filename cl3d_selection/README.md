@@ -7,7 +7,7 @@ python hgcal_l1t_cl3d_selection.py --sampleType electron_200PU --fileNumber <num
 
 If the ntuples are not stored in the default location, then specify the path to the files using the `--inputPath` option. Also, if using a different clustering algorithm then add the long TDirectory name to the `clusteringAlgoDirDict`. 
 
-The script matches 3D clusters to gen particles e.g. for electron required a gen particle with pdgID=11, with the requirement dR between the cluster and the gen particle is less than 0.2. There is no gen matching for background (neutrino). Additionally clusters are required to have a pT > 20 (10) GeV for signal (background).
+The script matches 3D clusters to gen particles e.g. for electrons requires a gen particle with pdgID=11, with the requirement dR between the cluster and the gen particle is less than 0.2. There is no gen matching for background (neutrino). Additionally clusters are required to have a pT > 20 (10) GeV for signal (background).
 
 The output of this script is a flat ntuple with clusters corresponding to the input sampleType i.e. for signal you obtain an ntuple of gen-matched electron clusters, and for background you obtain an ntuple of pile-up initiated clusters. 
 
