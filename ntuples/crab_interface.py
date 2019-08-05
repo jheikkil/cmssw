@@ -5,7 +5,7 @@ from optparse import OptionParser
 
 def get_options():
   parser = OptionParser()
-  parser.add_option('--mode', dest='mode', default='submission', help="Option: [sub,status,resub,extract,kill]")
+  parser.add_option('--mode', dest='mode', default='sub', help="Option: [sub,status,resub,extract,kill]")
   parser.add_option('--numberOfSamples', dest='numberOfSamples', default=1, type='int', help="Number of samples to process (used for submission and extraction only)")
   parser.add_option('--sampleType', dest='sampleType', default='electron_200PU', help="Sample to process, default signal is electron_200PU, default bkg is neutrino_200PU")
   parser.add_option('--storageSite', dest='storageSite', default='T2_UK_London_IC', help="User storage site")

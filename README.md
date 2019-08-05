@@ -1,5 +1,5 @@
 # HGCal L1-Trigger e/gamma ID
-This repository contains a series of scripts which are used to train the e/gamma ID BDT for the HGCal L1T. The workflow has been separated into subfoleder (see below), which must be ran in the correct order. The output is two .xml files, which contain the info of the trained BDT in the low eta (1.5 < |eta| < 2.7) and high eta (2.7 < |eta| < 3.0) regions. These .xml files can then be placed directly in the HGCAL L1T TPG software.
+This repository contains a series of scripts which are used to train the e/gamma ID BDT for the HGCal L1T. The workflow has been separated into subfolder (see below), which must be ran in the correct order. The output is two .xml files, which contain the info of the trained BDT in the low eta (1.5 < |eta| < 2.7) and high eta (2.7 < |eta| < 3.0) regions. These .xml files can then be placed directly in the HGCAL L1T TPG software.
 
 
 ## Installation
