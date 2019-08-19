@@ -56,7 +56,7 @@ variable_plotting_options = {
   'bdteg':[50,-1,1.,1], 
   'quality':[6,-1,5,0]
 }
-if "bdt" in opt.variable: variable_plotting_options[opt.variable] = [50,-1,1.,1]
+if "bdt_" in opt.variable: variable_plotting_options[opt.variable] = [50,-1,1.,1]
 if opt.variable not in variable_plotting_options: 
   print " --> [ERROR] Variables (%s) not supported. Leaving..."%opt.variable
   leave()
@@ -93,7 +93,9 @@ setLogY = variable_plotting_options[opt.variable][-1]
 # CONFIGURE OUTPUT
 ROOT.gStyle.SetOptStat(0)
 canv = ROOT.TCanvas("c","c")
-if setLogY: canv.SetLogy()
+if setLogY: 
+  print " --> [DEBUG] HERE: setLogY = %s"%setLogY
+  canv.SetLogy()
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # LOOP OVER INPUTS: create histogram from var in tree
@@ -206,8 +208,8 @@ canv.Update()
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 # Save canvas
 if not os.path.isdir("./plots"): os.system("mkdir plots")
-canv.SaveAs( "%s/plotting/plots/cl3d_%s.png"%(os.environ['HGCAL_L1T_BASE'],opt.variable) )
-canv.SaveAs( "%s/plotting/plots/cl3d_%s.pdf"%(os.environ['HGCAL_L1T_BASE'],opt.variable) )
+#canv.SaveAs( "%s/plotting/plots/cl3d_%s.png"%(os.environ['HGCAL_L1T_BASE'],opt.variable) )
+#canv.SaveAs( "%s/plotting/plots/cl3d_%s.pdf"%(os.environ['HGCAL_L1T_BASE'],opt.variable) )
 
 if not opt.batch: raw_input("Press any key to continue...")
 leave()

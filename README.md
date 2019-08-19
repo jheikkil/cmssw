@@ -10,6 +10,7 @@ The next step is to clone this repository:
 ```
 cd L1Trigger
 git clone git@github.com:jonathon-langford/hgcal_l1t_egid
+cd hgcal_l1t_egid
 ```
 In each new terminal, must set environment: `source setup.sh`
 

@@ -203,6 +203,11 @@ def train_egid():
     egid.save_model( './models/egid_%s_%s_%seta.model'%(bdt_name,opt.clusteringAlgo,reg) )
     print " --> Model saved: ./models/egid_%s_%s_%seta.model"%(bdt_name,opt.clusteringAlgo,reg)
 
+    # Save in raw format
+    if not os.path.isdir("./models/raw"): os.system("mkdir models/raw")
+    egid.dump_model("./models/raw/egid_%s_%s_%seta.raw.txt"%(bdt_name,opt.clusteringAlgo,reg))
+    print " --> Model saved (RAW): ./models/raw/egid_%s_%s_%seta.raw.txt"%(bdt_name,opt.clusteringAlgo,reg)
+
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # CHECKING PERFORMANCE OF MODEL: using trainig and validation sets
     egid_train_predy = egid.predict( training_egid )
