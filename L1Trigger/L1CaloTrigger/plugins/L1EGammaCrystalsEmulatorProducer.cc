@@ -126,169 +126,480 @@ Implementation:
 #include "DataFormats/Phase2L1CaloTrig/interface/L1CaloTower.h"
 
 bool do_brem=true;
+int counter = 0;
+//float get_calibration(float pt, float eta){
+//   if (pt<15){
+//        if (fabs(eta)<0.05) return 1.284;
+//        else if (fabs(eta)<0.15) return 1.261;
+//        else if (fabs(eta)<0.25) return 1.241;
+//        else if (fabs(eta)<0.35) return 1.260;
+//        else if (fabs(eta)<0.45) return 1.264;
+//        else if (fabs(eta)<0.55) return 1.284;
+//        else if (fabs(eta)<0.65) return 1.270;
+//        else if (fabs(eta)<0.75) return 1.295;
+//        else if (fabs(eta)<0.85) return 1.306;
+//        else if (fabs(eta)<0.95) return 1.292;
+//        else if (fabs(eta)<1.05) return 1.300;
+//        else if (fabs(eta)<1.15) return 1.317;
+//        else if (fabs(eta)<1.25) return 1.331;
+//        else if (fabs(eta)<1.35) return 1.345;
+//        else if (fabs(eta)<1.45) return 1.358;
+//        else return 1.389;
+//   }
+//   else if (pt<25){
+//        if (fabs(eta)<0.05) return 1.204;
+//        else if (fabs(eta)<0.15) return 1.154;
+//        else if (fabs(eta)<0.25) return 1.164;
+//        else if (fabs(eta)<0.35) return 1.150;
+//        else if (fabs(eta)<0.45) return 1.160;
+//        else if (fabs(eta)<0.55) return 1.170;
+//        else if (fabs(eta)<0.65) return 1.167;
+//        else if (fabs(eta)<0.75) return 1.166;
+//        else if (fabs(eta)<0.85) return 1.207;
+//        else if (fabs(eta)<0.95) return 1.166;
+//        else if (fabs(eta)<1.05) return 1.174;
+//        else if (fabs(eta)<1.15) return 1.198;
+//        else if (fabs(eta)<1.25) return 1.210;
+//        else if (fabs(eta)<1.35) return 1.205;
+//        else if (fabs(eta)<1.45) return 1.211;
+//        else return 1.265;
+//   }
+//   else if (pt<35){
+//        if (fabs(eta)<0.05) return 1.154;
+//        else if (fabs(eta)<0.15) return 1.117;
+//        else if (fabs(eta)<0.25) return 1.115;
+//        else if (fabs(eta)<0.35) return 1.124;
+//        else if (fabs(eta)<0.45) return 1.133;
+//        else if (fabs(eta)<0.55) return 1.138;
+//        else if (fabs(eta)<0.65) return 1.121;
+//        else if (fabs(eta)<0.75) return 1.133;
+//        else if (fabs(eta)<0.85) return 1.151;
+//        else if (fabs(eta)<0.95) return 1.134;
+//        else if (fabs(eta)<1.05) return 1.136;
+//        else if (fabs(eta)<1.15) return 1.167;
+//        else if (fabs(eta)<1.25) return 1.165;
+//        else if (fabs(eta)<1.35) return 1.161;
+//        else if (fabs(eta)<1.45) return 1.154;
+//        else return 1.195;
+//   }
+//   else if (pt<45){
+//        if (fabs(eta)<0.05) return 1.135;
+//        else if (fabs(eta)<0.15) return 1.097;
+//        else if (fabs(eta)<0.25) return 1.101;
+//        else if (fabs(eta)<0.35) return 1.095;
+//        else if (fabs(eta)<0.45) return 1.117;
+//        else if (fabs(eta)<0.55) return 1.114;
+//        else if (fabs(eta)<0.65) return 1.106;
+//        else if (fabs(eta)<0.75) return 1.107;
+//        else if (fabs(eta)<0.85) return 1.144;
+//        else if (fabs(eta)<0.95) return 1.113;
+//        else if (fabs(eta)<1.05) return 1.117;
+//        else if (fabs(eta)<1.15) return 1.142;
+//        else if (fabs(eta)<1.25) return 1.137;
+//        else if (fabs(eta)<1.35) return 1.129;
+//        else if (fabs(eta)<1.45) return 1.144;
+//        else return 1.169;
+//   }
+//   else if (pt<55){
+//        if (fabs(eta)<0.05) return 1.105;
+//        else if (fabs(eta)<0.15) return 1.086;
+//        else if (fabs(eta)<0.25) return 1.090;
+//        else if (fabs(eta)<0.35) return 1.081;
+//        else if (fabs(eta)<0.45) return 1.105;
+//        else if (fabs(eta)<0.55) return 1.101;
+//        else if (fabs(eta)<0.65) return 1.093;
+//        else if (fabs(eta)<0.75) return 1.096;
+//        else if (fabs(eta)<0.85) return 1.122;
+//        else if (fabs(eta)<0.95) return 1.098;
+//        else if (fabs(eta)<1.05) return 1.095;
+//        else if (fabs(eta)<1.15) return 1.124;
+//        else if (fabs(eta)<1.25) return 1.120;
+//        else if (fabs(eta)<1.35) return 1.110;
+//        else if (fabs(eta)<1.45) return 1.116;
+//        else return 1.164;
+//   }
+//   else if (pt<65){
+//        if (fabs(eta)<0.05) return 1.106;
+//        else if (fabs(eta)<0.15) return 1.082;
+//        else if (fabs(eta)<0.25) return 1.078;
+//        else if (fabs(eta)<0.35) return 1.077;
+//        else if (fabs(eta)<0.45) return 1.085;
+//        else if (fabs(eta)<0.55) return 1.084;
+//        else if (fabs(eta)<0.65) return 1.082;
+//        else if (fabs(eta)<0.75) return 1.087;
+//        else if (fabs(eta)<0.85) return 1.104;
+//        else if (fabs(eta)<0.95) return 1.086;
+//        else if (fabs(eta)<1.05) return 1.089;
+//        else if (fabs(eta)<1.15) return 1.107;
+//        else if (fabs(eta)<1.25) return 1.107;
+//        else if (fabs(eta)<1.35) return 1.099;
+//        else if (fabs(eta)<1.45) return 1.099;
+//        else return 1.136;
+//   }
+//   else if (pt<75){
+//        if (fabs(eta)<0.05) return 1.086;
+//        else if (fabs(eta)<0.15) return 1.071;
+//        else if (fabs(eta)<0.25) return 1.069;
+//        else if (fabs(eta)<0.35) return 1.068;
+//        else if (fabs(eta)<0.45) return 1.074;
+//        else if (fabs(eta)<0.55) return 1.078;
+//        else if (fabs(eta)<0.65) return 1.073;
+//        else if (fabs(eta)<0.75) return 1.075;
+//        else if (fabs(eta)<0.85) return 1.085;
+//        else if (fabs(eta)<0.95) return 1.077;
+//        else if (fabs(eta)<1.05) return 1.078;
+//        else if (fabs(eta)<1.15) return 1.089;
+//        else if (fabs(eta)<1.25) return 1.090;
+//        else if (fabs(eta)<1.35) return 1.088;
+//        else if (fabs(eta)<1.45) return 1.091;
+//        else return 1.128;
+//   }
+//   else if (pt<85){
+//        if (fabs(eta)<0.05) return 1.075;
+//        else if (fabs(eta)<0.15) return 1.063;
+//        else if (fabs(eta)<0.25) return 1.062;
+//        else if (fabs(eta)<0.35) return 1.064;
+//        else if (fabs(eta)<0.45) return 1.068;
+//        else if (fabs(eta)<0.55) return 1.068;
+//        else if (fabs(eta)<0.65) return 1.067;
+//        else if (fabs(eta)<0.75) return 1.067;
+//        else if (fabs(eta)<0.85) return 1.079;
+//        else if (fabs(eta)<0.95) return 1.066;
+//        else if (fabs(eta)<1.05) return 1.073;
+//        else if (fabs(eta)<1.15) return 1.078;
+//        else if (fabs(eta)<1.25) return 1.080;
+//        else if (fabs(eta)<1.35) return 1.081;
+//        else if (fabs(eta)<1.45) return 1.079;
+//        else return 1.102;
+//   }
+//   else{
+//        if (fabs(eta)<0.05) return 1.053;
+//        else if (fabs(eta)<0.15) return 1.053;
+//        else if (fabs(eta)<0.25) return 1.053;
+//        else if (fabs(eta)<0.35) return 1.051;
+//        else if (fabs(eta)<0.45) return 1.057;
+//        else if (fabs(eta)<0.55) return 1.054;
+//        else if (fabs(eta)<0.65) return 1.053;
+//        else if (fabs(eta)<0.75) return 1.056;
+//        else if (fabs(eta)<0.85) return 1.056;
+//        else if (fabs(eta)<0.95) return 1.058;
+//        else if (fabs(eta)<1.05) return 1.055;
+//        else if (fabs(eta)<1.15) return 1.061;
+//        else if (fabs(eta)<1.25) return 1.060;
+//        else if (fabs(eta)<1.35) return 1.065;
+//        else if (fabs(eta)<1.45) return 1.064;
+//        else return 1.070;
+//   }
+//}
+
+//float get_calibration(float pt, float eta){
+//   if (pt<15){
+//        if (fabs(eta)<0.05) return 1.0;
+//        else if (fabs(eta)<0.15) return 1.0;
+//        else if (fabs(eta)<0.25) return 1.0;
+//        else if (fabs(eta)<0.35) return 1.0;
+//        else if (fabs(eta)<0.45) return 1.0;
+//        else if (fabs(eta)<0.55) return 1.0;
+//        else if (fabs(eta)<0.65) return 1.0;
+//        else if (fabs(eta)<0.75) return 1.0;
+//        else if (fabs(eta)<0.85) return 1.0;
+//        else if (fabs(eta)<0.95) return 1.0;
+//        else if (fabs(eta)<1.05) return 1.0;
+//        else if (fabs(eta)<1.15) return 1.0;
+//        else if (fabs(eta)<1.25) return 1.0;
+//        else if (fabs(eta)<1.35) return 1.0;
+//        else if (fabs(eta)<1.45) return 1.0;
+//        else return 1.0;
+//   }
+//   else if (pt<25){
+//        if (fabs(eta)<0.05) return 1.0;
+//        else if (fabs(eta)<0.15) return 1.0;
+//        else if (fabs(eta)<0.25) return 1.0;
+//        else if (fabs(eta)<0.35) return 1.0;
+//        else if (fabs(eta)<0.45) return 1.0;
+//        else if (fabs(eta)<0.55) return 1.0;
+//        else if (fabs(eta)<0.65) return 1.0;
+//        else if (fabs(eta)<0.75) return 1.0;
+//        else if (fabs(eta)<0.85) return 1.0;
+//        else if (fabs(eta)<0.95) return 1.0;
+//        else if (fabs(eta)<1.05) return 1.0;
+//        else if (fabs(eta)<1.15) return 1.0;
+//        else if (fabs(eta)<1.25) return 1.0;
+//        else if (fabs(eta)<1.35) return 1.0;
+//        else if (fabs(eta)<1.45) return 1.0;
+//        else return 1.0;
+//   }
+//   else if (pt<35){
+//        if (fabs(eta)<0.05) return 1.0;
+//        else if (fabs(eta)<0.15) return 1.0;
+//        else if (fabs(eta)<0.25) return 1.0;
+//        else if (fabs(eta)<0.35) return 1.0;
+//        else if (fabs(eta)<0.45) return 1.0;
+//        else if (fabs(eta)<0.55) return 1.0;
+//        else if (fabs(eta)<0.65) return 1.0;
+//        else if (fabs(eta)<0.75) return 1.0;
+//        else if (fabs(eta)<0.85) return 1.0;
+//        else if (fabs(eta)<0.95) return 1.0;
+//        else if (fabs(eta)<1.05) return 1.0;
+//        else if (fabs(eta)<1.15) return 1.0;
+//        else if (fabs(eta)<1.25) return 1.0;
+//        else if (fabs(eta)<1.35) return 1.0;
+//        else if (fabs(eta)<1.45) return 1.0;
+//        else return 1.0;
+//   }
+//   else if (pt<45){
+//        if (fabs(eta)<0.05) return 1.0;
+//        else if (fabs(eta)<0.15) return 1.0;
+//        else if (fabs(eta)<0.25) return 1.0;
+//        else if (fabs(eta)<0.35) return 1.0;
+//        else if (fabs(eta)<0.45) return 1.0;
+//        else if (fabs(eta)<0.55) return 1.0;
+//        else if (fabs(eta)<0.65) return 1.0;
+//        else if (fabs(eta)<0.75) return 1.0;
+//        else if (fabs(eta)<0.85) return 1.0;
+//        else if (fabs(eta)<0.95) return 1.0;
+//        else if (fabs(eta)<1.05) return 1.0;
+//        else if (fabs(eta)<1.15) return 1.0;
+//        else if (fabs(eta)<1.25) return 1.0;
+//        else if (fabs(eta)<1.35) return 1.0;
+//        else if (fabs(eta)<1.45) return 1.0;
+//        else return 1.0;
+//   }
+//   else if (pt<55){
+//        if (fabs(eta)<0.05) return 1.0;
+//        else if (fabs(eta)<0.15) return 1.0;
+//        else if (fabs(eta)<0.25) return 1.0;
+//        else if (fabs(eta)<0.35) return 1.0;
+//        else if (fabs(eta)<0.45) return 1.0;
+//        else if (fabs(eta)<0.55) return 1.0;
+//        else if (fabs(eta)<0.65) return 1.0;
+//        else if (fabs(eta)<0.75) return 1.0;
+//        else if (fabs(eta)<0.85) return 1.0;
+//        else if (fabs(eta)<0.95) return 1.0;
+//        else if (fabs(eta)<1.05) return 1.0;
+//        else if (fabs(eta)<1.15) return 1.0;
+//        else if (fabs(eta)<1.25) return 1.0;
+//        else if (fabs(eta)<1.35) return 1.0;
+//        else if (fabs(eta)<1.45) return 1.0;
+//        else return 1.0;
+//   }
+//   else if (pt<65){
+//        if (fabs(eta)<0.05) return 1.0;
+//        else if (fabs(eta)<0.15) return 1.0;
+//        else if (fabs(eta)<0.25) return 1.0;
+//        else if (fabs(eta)<0.35) return 1.0;
+//        else if (fabs(eta)<0.45) return 1.0;
+//        else if (fabs(eta)<0.55) return 1.0;
+//        else if (fabs(eta)<0.65) return 1.0;
+//        else if (fabs(eta)<0.75) return 1.0;
+//        else if (fabs(eta)<0.85) return 1.0;
+//        else if (fabs(eta)<0.95) return 1.0;
+//        else if (fabs(eta)<1.05) return 1.0;
+//        else if (fabs(eta)<1.15) return 1.0;
+//        else if (fabs(eta)<1.25) return 1.0;
+//        else if (fabs(eta)<1.35) return 1.0;
+//        else if (fabs(eta)<1.45) return 1.0;
+//        else return 1.0;
+//   }
+//   else if (pt<75){
+//        if (fabs(eta)<0.05) return 1.0;
+//        else if (fabs(eta)<0.15) return 1.0;
+//        else if (fabs(eta)<0.25) return 1.0;
+//        else if (fabs(eta)<0.35) return 1.0;
+//        else if (fabs(eta)<0.45) return 1.0;
+//        else if (fabs(eta)<0.55) return 1.0;
+//        else if (fabs(eta)<0.65) return 1.0;
+//        else if (fabs(eta)<0.75) return 1.0;
+//        else if (fabs(eta)<0.85) return 1.0;
+//        else if (fabs(eta)<0.95) return 1.0;
+//        else if (fabs(eta)<1.05) return 1.0;
+//        else if (fabs(eta)<1.15) return 1.0;
+//        else if (fabs(eta)<1.25) return 1.0;
+//        else if (fabs(eta)<1.35) return 1.0;
+//        else if (fabs(eta)<1.45) return 1.0;
+//        else return 1.0;
+//   }
+//   else if (pt<85){
+//        if (fabs(eta)<0.05) return 1.0;
+//        else if (fabs(eta)<0.15) return 1.0;
+//        else if (fabs(eta)<0.25) return 1.0;
+//        else if (fabs(eta)<0.35) return 1.0;
+//        else if (fabs(eta)<0.45) return 1.0;
+//        else if (fabs(eta)<0.55) return 1.0;
+//        else if (fabs(eta)<0.65) return 1.0;
+//        else if (fabs(eta)<0.75) return 1.0;
+//        else if (fabs(eta)<0.85) return 1.0;
+//        else if (fabs(eta)<0.95) return 1.0;
+//        else if (fabs(eta)<1.05) return 1.0;
+//        else if (fabs(eta)<1.15) return 1.0;
+//        else if (fabs(eta)<1.25) return 1.0;
+//        else if (fabs(eta)<1.35) return 1.0;
+//        else if (fabs(eta)<1.45) return 1.0;
+//        else return 1.0;
+//   }
+//   else{
+//        if (fabs(eta)<0.05) return 1.0;
+//        else if (fabs(eta)<0.15) return 1.0;
+//        else if (fabs(eta)<0.25) return 1.0;
+//        else if (fabs(eta)<0.35) return 1.0;
+//        else if (fabs(eta)<0.45) return 1.0;
+//        else if (fabs(eta)<0.55) return 1.0;
+//        else if (fabs(eta)<0.65) return 1.0;
+//        else if (fabs(eta)<0.75) return 1.0;
+//        else if (fabs(eta)<0.85) return 1.0;
+//        else if (fabs(eta)<0.95) return 1.0;
+//        else if (fabs(eta)<1.05) return 1.0;
+//        else if (fabs(eta)<1.15) return 1.0;
+//        else if (fabs(eta)<1.25) return 1.0;
+//        else if (fabs(eta)<1.35) return 1.0;
+//        else if (fabs(eta)<1.45) return 1.0;
+//        else return 1.0;
+//   }
+//}
 
 float get_calibration(float pt, float eta){
-   if (pt<15){
-        if (fabs(eta)<0.05) return 1.284;
-        else if (fabs(eta)<0.15) return 1.261;
-        else if (fabs(eta)<0.25) return 1.241;
-        else if (fabs(eta)<0.35) return 1.260;
-        else if (fabs(eta)<0.45) return 1.264;
-        else if (fabs(eta)<0.55) return 1.284;
-        else if (fabs(eta)<0.65) return 1.270;
-        else if (fabs(eta)<0.75) return 1.295;
-        else if (fabs(eta)<0.85) return 1.306;
-        else if (fabs(eta)<0.95) return 1.292;
-        else if (fabs(eta)<1.05) return 1.300;
-        else if (fabs(eta)<1.15) return 1.317;
-        else if (fabs(eta)<1.25) return 1.331;
-        else if (fabs(eta)<1.35) return 1.345;
-        else if (fabs(eta)<1.45) return 1.358;
-        else return 1.389;
+   if (pt<12){
+        if (fabs(eta)<0.087) return 1.250464;
+        else if (fabs(eta)<0.174) return 1.256128;
+        else if (fabs(eta)<0.261) return 1.274382;
+        else if (fabs(eta)<0.348) return 1.261401;
+        else if (fabs(eta)<0.435) return 1.253163;
+        else if (fabs(eta)<0.522) return 1.258171;
+        else if (fabs(eta)<0.609) return 1.239289;
+        else if (fabs(eta)<0.696) return 1.249688;
+        else if (fabs(eta)<0.783) return 1.255397;
+        else if (fabs(eta)<0.87) return 1.246403;
+        else if (fabs(eta)<0.957) return 1.251205;
+        else if (fabs(eta)<1.044) return 1.232973;
+        else if (fabs(eta)<1.131) return 1.249799;
+        else if (fabs(eta)<1.218) return 1.238465;
+        else if (fabs(eta)<1.305) return 1.241043;
+        else if (fabs(eta)<1.392) return 1.241098;
+        else if (fabs(eta)<1.479) return 1.255232;           
+        else return 1.0;
    }
-   else if (pt<25){
-        if (fabs(eta)<0.05) return 1.204;
-        else if (fabs(eta)<0.15) return 1.154;
-        else if (fabs(eta)<0.25) return 1.164;
-        else if (fabs(eta)<0.35) return 1.150;
-        else if (fabs(eta)<0.45) return 1.160;
-        else if (fabs(eta)<0.55) return 1.170;
-        else if (fabs(eta)<0.65) return 1.167;
-        else if (fabs(eta)<0.75) return 1.166;
-        else if (fabs(eta)<0.85) return 1.207;
-        else if (fabs(eta)<0.95) return 1.166;
-        else if (fabs(eta)<1.05) return 1.174;
-        else if (fabs(eta)<1.15) return 1.198;
-        else if (fabs(eta)<1.25) return 1.210;
-        else if (fabs(eta)<1.35) return 1.205;
-        else if (fabs(eta)<1.45) return 1.211;
-        else return 1.265;
+   else if (pt<20){
+        if (fabs(eta)<0.087) return 1.173618;
+        else if (fabs(eta)<0.174) return 1.176633;
+        else if (fabs(eta)<0.261) return 1.178503;
+        else if (fabs(eta)<0.348) return 1.171885;
+        else if (fabs(eta)<0.435) return 1.179905;
+        else if (fabs(eta)<0.522) return 1.187610;
+        else if (fabs(eta)<0.609) return 1.178918;
+        else if (fabs(eta)<0.696) return 1.178706;
+        else if (fabs(eta)<0.783) return 1.182155;
+        else if (fabs(eta)<0.87) return 1.175864;
+        else if (fabs(eta)<0.957) return 1.182744;
+        else if (fabs(eta)<1.044) return 1.174310;
+        else if (fabs(eta)<1.131) return 1.181641;
+        else if (fabs(eta)<1.218) return 1.176485;
+        else if (fabs(eta)<1.305) return 1.175441;
+        else if (fabs(eta)<1.392) return 1.168136;
+        else if (fabs(eta)<1.479) return 1.178168;           
+        else return 1.0;
    }
-   else if (pt<35){
-        if (fabs(eta)<0.05) return 1.154;
-        else if (fabs(eta)<0.15) return 1.117;
-        else if (fabs(eta)<0.25) return 1.115;
-        else if (fabs(eta)<0.35) return 1.124;
-        else if (fabs(eta)<0.45) return 1.133;
-        else if (fabs(eta)<0.55) return 1.138;
-        else if (fabs(eta)<0.65) return 1.121;
-        else if (fabs(eta)<0.75) return 1.133;
-        else if (fabs(eta)<0.85) return 1.151;
-        else if (fabs(eta)<0.95) return 1.134;
-        else if (fabs(eta)<1.05) return 1.136;
-        else if (fabs(eta)<1.15) return 1.167;
-        else if (fabs(eta)<1.25) return 1.165;
-        else if (fabs(eta)<1.35) return 1.161;
-        else if (fabs(eta)<1.45) return 1.154;
-        else return 1.195;
+   else if (pt<30){
+        if (fabs(eta)<0.087) return 1.129479;
+        else if (fabs(eta)<0.174) return 1.134294;
+        else if (fabs(eta)<0.261) return 1.136410;
+        else if (fabs(eta)<0.348) return 1.122360;
+        else if (fabs(eta)<0.435) return 1.131183;
+        else if (fabs(eta)<0.522) return 1.131752;
+        else if (fabs(eta)<0.609) return 1.136073;
+        else if (fabs(eta)<0.696) return 1.140756;
+        else if (fabs(eta)<0.783) return 1.131025;
+        else if (fabs(eta)<0.87) return 1.137767;
+        else if (fabs(eta)<0.957) return 1.132306;
+        else if (fabs(eta)<1.044) return 1.132082;
+        else if (fabs(eta)<1.131) return 1.131105;
+        else if (fabs(eta)<1.218) return 1.119198;
+        else if (fabs(eta)<1.305) return 1.131230;
+        else if (fabs(eta)<1.392) return 1.130354;
+        else if (fabs(eta)<1.479) return 1.132926;           
+        else return 1.0;
    }
-   else if (pt<45){
-        if (fabs(eta)<0.05) return 1.135;
-        else if (fabs(eta)<0.15) return 1.097;
-        else if (fabs(eta)<0.25) return 1.101;
-        else if (fabs(eta)<0.35) return 1.095;
-        else if (fabs(eta)<0.45) return 1.117;
-        else if (fabs(eta)<0.55) return 1.114;
-        else if (fabs(eta)<0.65) return 1.106;
-        else if (fabs(eta)<0.75) return 1.107;
-        else if (fabs(eta)<0.85) return 1.144;
-        else if (fabs(eta)<0.95) return 1.113;
-        else if (fabs(eta)<1.05) return 1.117;
-        else if (fabs(eta)<1.15) return 1.142;
-        else if (fabs(eta)<1.25) return 1.137;
-        else if (fabs(eta)<1.35) return 1.129;
-        else if (fabs(eta)<1.45) return 1.144;
-        else return 1.169;
+   else if (pt<40){
+        if (fabs(eta)<0.087) return 1.112048;
+        else if (fabs(eta)<0.174) return 1.111362;
+        else if (fabs(eta)<0.261) return 1.109127;
+        else if (fabs(eta)<0.348) return 1.104945;
+        else if (fabs(eta)<0.435) return 1.115461;
+        else if (fabs(eta)<0.522) return 1.100572;
+        else if (fabs(eta)<0.609) return 1.107156;
+        else if (fabs(eta)<0.696) return 1.102036;
+        else if (fabs(eta)<0.783) return 1.106258;
+        else if (fabs(eta)<0.87) return 1.108237;
+        else if (fabs(eta)<0.957) return 1.104610;
+        else if (fabs(eta)<1.044) return 1.105150;
+        else if (fabs(eta)<1.131) return 1.103391;
+        else if (fabs(eta)<1.218) return 1.108802;
+        else if (fabs(eta)<1.305) return 1.109842;
+        else if (fabs(eta)<1.392) return 1.101925;
+        else if (fabs(eta)<1.479) return 1.113882;           
+        else return 1.0;
    }
+
    else if (pt<55){
-        if (fabs(eta)<0.05) return 1.105;
-        else if (fabs(eta)<0.15) return 1.086;
-        else if (fabs(eta)<0.25) return 1.090;
-        else if (fabs(eta)<0.35) return 1.081;
-        else if (fabs(eta)<0.45) return 1.105;
-        else if (fabs(eta)<0.55) return 1.101;
-        else if (fabs(eta)<0.65) return 1.093;
-        else if (fabs(eta)<0.75) return 1.096;
-        else if (fabs(eta)<0.85) return 1.122;
-        else if (fabs(eta)<0.95) return 1.098;
-        else if (fabs(eta)<1.05) return 1.095;
-        else if (fabs(eta)<1.15) return 1.124;
-        else if (fabs(eta)<1.25) return 1.120;
-        else if (fabs(eta)<1.35) return 1.110;
-        else if (fabs(eta)<1.45) return 1.116;
-        else return 1.164;
+        if (fabs(eta)<0.087) return 1.090685;
+        else if (fabs(eta)<0.174) return 1.092029;
+        else if (fabs(eta)<0.261) return 1.090550;
+        else if (fabs(eta)<0.348) return 1.089530;
+        else if (fabs(eta)<0.435) return 1.093356;
+        else if (fabs(eta)<0.522) return 1.092143;
+        else if (fabs(eta)<0.609) return 1.089471;
+        else if (fabs(eta)<0.696) return 1.088166;
+        else if (fabs(eta)<0.783) return 1.091226;
+        else if (fabs(eta)<0.87) return 1.091571;
+        else if (fabs(eta)<0.957) return 1.088397;
+        else if (fabs(eta)<1.044) return 1.088885;
+        else if (fabs(eta)<1.131) return 1.086934;
+        else if (fabs(eta)<1.218) return 1.088839;
+        else if (fabs(eta)<1.305) return 1.087223;
+        else if (fabs(eta)<1.392) return 1.089833;
+        else if (fabs(eta)<1.479) return 1.086816;           
+        else return 1.0;
    }
-   else if (pt<65){
-        if (fabs(eta)<0.05) return 1.106;
-        else if (fabs(eta)<0.15) return 1.082;
-        else if (fabs(eta)<0.25) return 1.078;
-        else if (fabs(eta)<0.35) return 1.077;
-        else if (fabs(eta)<0.45) return 1.085;
-        else if (fabs(eta)<0.55) return 1.084;
-        else if (fabs(eta)<0.65) return 1.082;
-        else if (fabs(eta)<0.75) return 1.087;
-        else if (fabs(eta)<0.85) return 1.104;
-        else if (fabs(eta)<0.95) return 1.086;
-        else if (fabs(eta)<1.05) return 1.089;
-        else if (fabs(eta)<1.15) return 1.107;
-        else if (fabs(eta)<1.25) return 1.107;
-        else if (fabs(eta)<1.35) return 1.099;
-        else if (fabs(eta)<1.45) return 1.099;
-        else return 1.136;
+
+   else if (pt<90){
+        if (fabs(eta)<0.087) return 1.069244;
+        else if (fabs(eta)<0.174) return 1.072449;
+        else if (fabs(eta)<0.261) return 1.074049;
+        else if (fabs(eta)<0.348) return 1.068083;
+        else if (fabs(eta)<0.435) return 1.075923;
+        else if (fabs(eta)<0.522) return 1.069823;
+        else if (fabs(eta)<0.609) return 1.072561;
+        else if (fabs(eta)<0.696) return 1.063389;
+        else if (fabs(eta)<0.783) return 1.069319;
+        else if (fabs(eta)<0.87) return 1.072745;
+        else if (fabs(eta)<0.957) return 1.071508;
+        else if (fabs(eta)<1.044) return 1.073611;
+        else if (fabs(eta)<1.131) return 1.068889;
+        else if (fabs(eta)<1.218) return 1.065512;
+        else if (fabs(eta)<1.305) return 1.065242;
+        else if (fabs(eta)<1.392) return 1.073345;
+        else if (fabs(eta)<1.479) return 1.073887;           
+        else return 1.0;
    }
-   else if (pt<75){
-        if (fabs(eta)<0.05) return 1.086;
-        else if (fabs(eta)<0.15) return 1.071;
-        else if (fabs(eta)<0.25) return 1.069;
-        else if (fabs(eta)<0.35) return 1.068;
-        else if (fabs(eta)<0.45) return 1.074;
-        else if (fabs(eta)<0.55) return 1.078;
-        else if (fabs(eta)<0.65) return 1.073;
-        else if (fabs(eta)<0.75) return 1.075;
-        else if (fabs(eta)<0.85) return 1.085;
-        else if (fabs(eta)<0.95) return 1.077;
-        else if (fabs(eta)<1.05) return 1.078;
-        else if (fabs(eta)<1.15) return 1.089;
-        else if (fabs(eta)<1.25) return 1.090;
-        else if (fabs(eta)<1.35) return 1.088;
-        else if (fabs(eta)<1.45) return 1.091;
-        else return 1.128;
-   }
-   else if (pt<85){
-        if (fabs(eta)<0.05) return 1.075;
-        else if (fabs(eta)<0.15) return 1.063;
-        else if (fabs(eta)<0.25) return 1.062;
-        else if (fabs(eta)<0.35) return 1.064;
-        else if (fabs(eta)<0.45) return 1.068;
-        else if (fabs(eta)<0.55) return 1.068;
-        else if (fabs(eta)<0.65) return 1.067;
-        else if (fabs(eta)<0.75) return 1.067;
-        else if (fabs(eta)<0.85) return 1.079;
-        else if (fabs(eta)<0.95) return 1.066;
-        else if (fabs(eta)<1.05) return 1.073;
-        else if (fabs(eta)<1.15) return 1.078;
-        else if (fabs(eta)<1.25) return 1.080;
-        else if (fabs(eta)<1.35) return 1.081;
-        else if (fabs(eta)<1.45) return 1.079;
-        else return 1.102;
-   }
-   else{
-        if (fabs(eta)<0.05) return 1.053;
-        else if (fabs(eta)<0.15) return 1.053;
-        else if (fabs(eta)<0.25) return 1.053;
-        else if (fabs(eta)<0.35) return 1.051;
-        else if (fabs(eta)<0.45) return 1.057;
-        else if (fabs(eta)<0.55) return 1.054;
-        else if (fabs(eta)<0.65) return 1.053;
-        else if (fabs(eta)<0.75) return 1.056;
-        else if (fabs(eta)<0.85) return 1.056;
-        else if (fabs(eta)<0.95) return 1.058;
-        else if (fabs(eta)<1.05) return 1.055;
-        else if (fabs(eta)<1.15) return 1.061;
-        else if (fabs(eta)<1.25) return 1.060;
-        else if (fabs(eta)<1.35) return 1.065;
-        else if (fabs(eta)<1.45) return 1.064;
-        else return 1.070;
+   
+   else{                                         // for Energy > 90 GeV
+       if (fabs(eta)<0.087) return 1.069244;
+        else if (fabs(eta)<0.174) return 1.072449;
+        else if (fabs(eta)<0.261) return 1.074049;
+        else if (fabs(eta)<0.348) return 1.068083;
+        else if (fabs(eta)<0.435) return 1.075923;
+        else if (fabs(eta)<0.522) return 1.069823;
+        else if (fabs(eta)<0.609) return 1.072561;
+        else if (fabs(eta)<0.696) return 1.063389;
+        else if (fabs(eta)<0.783) return 1.069319;
+        else if (fabs(eta)<0.87) return 1.072745;
+        else if (fabs(eta)<0.957) return 1.071508;
+        else if (fabs(eta)<1.044) return 1.073611;
+        else if (fabs(eta)<1.131) return 1.068889;
+        else if (fabs(eta)<1.218) return 1.065512;
+        else if (fabs(eta)<1.305) return 1.065242;
+        else if (fabs(eta)<1.392) return 1.073345;
+        else if (fabs(eta)<1.479) return 1.073887;           
+        else return 1.0;
    }
 }
 
@@ -609,7 +920,8 @@ L1EGCrystalClusterEmulatorProducer::~L1EGCrystalClusterEmulatorProducer()
 void L1EGCrystalClusterEmulatorProducer::produce(edm::Event& iEvent, const edm::EventSetup& iSetup)
 {
    using namespace edm;
-
+   counter = 0 ; // initializing
+//   cout << "New evet here!" << endl;
    edm::Handle<EcalEBTrigPrimDigiCollection> pcalohits;
    iEvent.getByToken(ecalTPEBToken_,pcalohits);
 
@@ -885,8 +1197,11 @@ void L1EGCrystalClusterEmulatorProducer::produce(edm::Event& iEvent, const edm::
 		 }
 	     }
 	     if (cluster_list[cc][jj].cpt>0){
-		 cluster_list[cc][jj].cpt=cluster_list[cc][jj].cpt*0.963*get_calibration(cluster_list[cc][jj].cpt,cluster_list[cc][jj].ceta); //Mark's calibration as a function of eta and pt
-	         cluster_list_merged[cc].push_back(cluster_list[cc][jj]);
+//                 cout << "Cluster Pt before scaling = " <<  cluster_list[cc][jj].cpt << " Cluster eta ="<< cluster_list[cc][jj].ceta << "Cluster Raw eta="<< cluster_list[cc][jj].craweta << " Cluster raw phi ="<< cluster_list[cc][jj].crawphi << " Scaled by =" << get_calibration(cluster_list[cc][jj].cpt,cluster_list[cc][jj].craweta) << endl;
+		 counter += 1 ;
+                 cluster_list[cc][jj].cpt=cluster_list[cc][jj].cpt*get_calibration(cluster_list[cc][jj].cpt,cluster_list[cc][jj].craweta); //Mark's calibration as a function of eta and pt
+//                 cout << "Cluster Pt after scaling = " <<  cluster_list[cc][jj].cpt << "counter= " << counter << endl ;
+                 cluster_list_merged[cc].push_back(cluster_list[cc][jj]);
 	      }
 	  }
           std::sort(begin(cluster_list_merged[cc]), end(cluster_list_merged[cc]), [](mycluster a, mycluster b){return a.cpt > b.cpt;});
@@ -918,7 +1233,9 @@ void L1EGCrystalClusterEmulatorProducer::produce(edm::Event& iEvent, const edm::
              	      for (int ii=0; ii<17; ++ii){
 			 //Apply Mark's calibration at the same time (row of the lowest pT, as a function of eta)
             	         if ((getCrystal_etaID(hit.position.eta())/5)%17==ii){ 
-			     ECAL_tower_L1Card[jj][ii][cc]+=hit.pt()*0.963*get_calibration(0,hit.position.eta());
+			     ECAL_tower_L1Card[jj][ii][cc]+=hit.pt()*get_calibration(0,hit.position.eta());     
+                              
+//                             cout << "ECAL_tower_L1Card"<<"[" << jj << "]" << "[" << ii << "]" << "[" << cc <<"]" << ECAL_tower_L1Card[jj][ii][cc] << "hit eta =" << hit.position.eta() << "hit phi=" << hit.position.phi() << " hit.pt()=" << hit.pt() << "hit.used=" << hit.used << "ECAL Tower SF=" << get_calibration(0,hit.position.eta()) << endl ;
                              iEta_tower_L1Card[jj][ii][cc]=getTower_absoluteEtaID(hit.position.eta());//hit.id.ieta();
                              iPhi_tower_L1Card[jj][ii][cc]=getTower_absolutePhiID(hit.position.phi());//hit.id.iphi();
 			 }
