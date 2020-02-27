@@ -33,7 +33,8 @@ process.source = cms.Source("PoolSource",
 #'/store/mc/PhaseIIMTDTDRAutumn18DR/BsToPhiPhi_SoftQCDnonD_TuneCP5_14TeV_Pythia8/FEVT/PU200_103X_upgrade2023_realistic_v2-v2/40000/7540BEC9-B7C7-044D-92DF-94669EC61E68.root'
 #
 #'/store/mc/PhaseIIMTDTDRAutumn18DR/GluGluHToTauTau_M125_14TeV_powheg_pythia8/FEVT/PU200_103X_upgrade2023_realistic_v2-v1/80000/0A733B44-72DF-3A4A-A6DA-BB16EC3FDDDB.root'
-
+#/store/mc/PhaseIIMTDTDRAutumn18DR/SingleE_FlatPt-2to100/FEVT/PU200_103X_upgrade2023_realistic_v2-v1/70000/FF17CBE6-81E5-8D43-B58B-6DF17222820E.root
+#/store/mc/PhaseIIMTDTDRAutumn18DR/SinglePhoton_FlatPt-8to150/FEVT/PU200_103X_upgrade2023_realistic_v2-v1/70000/B42A17AB-3783-D044-A5FD-6734B441096C.root
 '/store/mc/PhaseIIMTDTDRAutumn18DR/DYToLL_M-50_14TeV_TuneCP5_pythia8/FEVT/PU200_103X_upgrade2023_realistic_v2-v2/90000/AA56B328-0E46-E64D-93E8-4ADDF46ACEFB.root',
 #'/store/mc/PhaseIIMTDTDRAutumn18DR/DYToLL_M-50_14TeV_TuneCP5_pythia8/FEVT/PU200_103X_upgrade2023_realistic_v2-v2/90000/AFD1170A-6DAA-F646-B953-9F3013BCF086.root',
 #'/store/mc/PhaseIIMTDTDRAutumn18DR/DYToLL_M-50_14TeV_TuneCP5_pythia8/FEVT/PU200_103X_upgrade2023_realistic_v2-v2/90001/6F79D86E-AB09-0744-8E8E-75DE6E1022B5.root',

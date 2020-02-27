@@ -1,13 +1,8 @@
-# Auto generated configuration file
-# using: 
-# Revision: 1.19 
-# Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: repr --processName=REPR --python_filename=reprocess_test_10_5_0_pre1.py --no_exec -s L1 --datatier GEN-SIM-DIGI-RAW -n 2 --era Phase2 --eventcontent FEVTDEBUGHLT --filein root://cms-xrd-global.cern.ch//store/mc/PhaseIIMTDTDRAutumn18DR/DYToLL_M-50_14TeV_pythia8/FEVT/PU200_pilot_103X_upgrade2023_realistic_v2_ext4-v1/280000/FF5C31D5-D96E-5E48-B97F-61A0E00DF5C4.root --conditions 103X_upgrade2023_realistic_v2 --beamspot HLLHC14TeV --geometry Extended2023D28 --fileout file:step2_2ev_reprocess_slim.root
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.StandardSequences.Eras import eras
 
-process = cms.Process('REPR',eras.Phase2C8_trigger)
+process = cms.Process('REPR',eras.Phase2C4_trigger)
 #process = cms.Process('REPR',eras.Phase2C4_timing_layer_bar)
 
 # import of standard configurations
@@ -16,8 +11,8 @@ process.load('SimGeneral.HepPDTESSource.pythiapdt_cfi')
 process.load('FWCore.MessageService.MessageLogger_cfi')
 process.load('Configuration.EventContent.EventContent_cff')
 process.load('SimGeneral.MixingModule.mixNoPU_cfi')
-process.load('Configuration.Geometry.GeometryExtended2023D41Reco_cff')
-process.load('Configuration.Geometry.GeometryExtended2023D41_cff')
+process.load('Configuration.Geometry.GeometryExtended2023D35Reco_cff')
+process.load('Configuration.Geometry.GeometryExtended2023D35_cff')
 process.load('Configuration.StandardSequences.MagneticField_cff')
 process.load('Configuration.StandardSequences.SimL1Emulator_cff')
 process.load('Configuration.StandardSequences.EndOfProcess_cff')
@@ -26,23 +21,11 @@ process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(100)
 )
-#process.Timing = cms.Service("Timing",
-          #summaryOnly = cms.untracked.bool(False),
-          #useJobReport = cms.untracked.bool(True)
-#)
 
 # Input source
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
-#'/store/mc/PhaseIITDRSpring19DR/BsToPhiPhi_4K_TuneCP5_14TeV-pythia8/GEN-SIM-DIGI-RAW/PU200_106X_upgrade2023_realistic_v3-v1/100000/FDA1645D-3E0C-D741-8BF9-37BB51695A3A.root',
-#'/store/mc/PhaseIITDRSpring19DR/Mu_FlatPt2to100-pythia8-gun/GEN-SIM-DIGI-RAW/PU200_106X_upgrade2023_realistic_v3-v2/70000/00251490-BA54-A943-8D8D-BECB717666B9.root'
-#'/store/mc/PhaseIITDRSpring19DR/QCD_Pt_0_1000_14TeV_TuneCUETP8M1/GEN-SIM-DIGI-RAW/PU200_106X_upgrade2023_realistic_v3-v2/40001/BC1962BA-32ED-5041-A661-F6B2C00197CA.root'
-#'/store/mc/PhaseIITDRSpring19DR/QCD_Pt_0_1000_14TeV_TuneCUETP8M1/GEN-SIM-DIGI-RAW/PU200_106X_upgrade2023_realistic_v3-v2/40001/06EDBCA3-D981-824A-A848-AC58EC99DF60.root'
-#'/store/mc/PhaseIITDRSpring19DR/VBF_HToInvisible_M125_TuneCP5_14TeV_powheg_pythia8/GEN-SIM-DIGI-RAW/PU200_106X_upgrade2023_realistic_v3-v1/270000/F98E8635-C98A-4641-9834-44F48B9D51AA.root'
-'/store/mc/PhaseIIMTDTDRAutumn18DR/SingleE_FlatPt-2to100/FEVT/PU200_103X_upgrade2023_realistic_v2-v1/70000/FF17CBE6-81E5-8D43-B58B-6DF17222820E.root'
-#/store/mc/PhaseIIMTDTDRAutumn18DR/SinglePhoton_FlatPt-8to150/FEVT/PU200_103X_upgrade2023_realistic_v2-v1/70000/B42A17AB-3783-D044-A5FD-6734B441096C.root
-#'/store/mc/PhaseIITDRSpring19DR/DarkSUSY_mH_125_mGammaD_20_cT_1000_TuneCP5_14TeV_pythia8/GEN-SIM-DIGI-RAW/PU200_106X_upgrade2023_realistic_v3-v2/30000/E826893E-2E54-524E-A467-137536257D90.root'
-
+'/store/mc/PhaseIIMTDTDRAutumn18DR/SingleE_FlatPt-2to100/FEVT/PU200_103X_upgrade2023_realistic_v2-v1/70000/FF17CBE6-81E5-8D43-B58B-6DF17222820E.root',
 ),
     secondaryFileNames = cms.untracked.vstring()
 )
@@ -61,12 +44,13 @@ process.configurationMetadata = cms.untracked.PSet(
 # Output definition
 
 process.FEVTDEBUGHLToutput = cms.OutputModule("PoolOutputModule",
-    dataset = cms.untracked.PSet(
-        dataTier = cms.untracked.string('GEN-SIM-DIGI-RAW'),
-        filterName = cms.untracked.string('')
-    ),
+#    dataset = cms.untracked.PSet(
+#        dataTier = cms.untracked.string('GEN-SIM-DIGI-RAW'),
+#        filterName = cms.untracked.string('')
+#    ),
     fileName = cms.untracked.string('file:step2_2ev_reprocess_slim.root'),
-    outputCommands = process.FEVTDEBUGHLTEventContent.outputCommands,
+#    outputCommands = process.FEVTDEBUGHLTEventContent.outputCommands,
+ outputCommands = cms.untracked.vstring('drop *', 'keep *_*_*_REPR'),
     splitLevel = cms.untracked.int32(0)
 )
 
@@ -92,7 +76,7 @@ process.load("L1Trigger.L1TNtuples.l1PhaseIITreeProducer_cfi")
 
 
 process.TFileService = cms.Service("TFileService",
-    fileName = cms.string('L1NtuplePhaseII_160.root')
+    fileName = cms.string('L1NtuplePhaseII_MTD.root')
 )
 
 
@@ -100,15 +84,16 @@ process.TFileService = cms.Service("TFileService",
 process.schedule = cms.Schedule(process.L1simulation_step,#process.extraCollectionsMenuTree,
             process.runmenutree,process.endjob_step)#,process.FEVTDEBUGHLToutput_step)
 
+# Schedule definition
+#process.schedule = cms.Schedule(process.L1simulation_step,process.endjob_step,process.FEVTDEBUGHLToutput_step)
 from PhysicsTools.PatAlgos.tools.helpers import associatePatAlgosToolsTask
 associatePatAlgosToolsTask(process)
 
 
 # Customisation from command line
 
-from L1Trigger.Configuration.customiseUtils import L1TrackTriggerTracklet,L1TTurnOffHGCalTPs_v9
+from L1Trigger.Configuration.customiseUtils import L1TrackTriggerTracklet
 process = L1TrackTriggerTracklet(process)
-#process = L1TTurnOffHGCalTPs_v9(process)
 
 process.MessageLogger.cout = cms.untracked.PSet(
     threshold = cms.untracked.string('ERROR'),
@@ -117,15 +102,12 @@ process.MessageLogger.cout = cms.untracked.PSet(
     )
 )
 
-
 from L1Trigger.L1TMuonEndCap.customise_Phase2 import customise as customise_Phase2
 process = customise_Phase2(process)
-
 
 
 # Add early deletion of temporary data products to reduce peak memory need
 from Configuration.StandardSequences.earlyDeleteSettings_cff import customiseEarlyDelete
 process = customiseEarlyDelete(process)
 # End adding early deletion
-
 
