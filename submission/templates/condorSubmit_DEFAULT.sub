@@ -1,0 +1,18 @@
+executable            = TEMPL_TASKDIR/conf/run.sh
+input                 = TEMPL_TASKDIR/conf/params.sh
+arguments             = $(ClusterID) $(ProcId)
+output                = TEMPL_TASKDIR/logs/job.$(ClusterId).$(ProcId).out
+error                 = TEMPL_TASKDIR/logs/job.$(ClusterId).$(ProcId).err
+log                   = TEMPL_TASKDIR/logs/condor.$(ClusterId).log
++JobFlavour           = "TEMPL_JOBFLAVOR"
+
+RequestCpus = TEMPL_NCPU
+
+transfer_input_files  = TEMPL_TASKDIR/copy_files.sh
++PostCmd              = "copy_files.sh"
+
++AccountingGroup = "group_u_CMST3.all"
+
+transfer_output_files   = ""
+
+queue TEMPL_NJOBS

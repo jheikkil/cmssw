@@ -1,0 +1,1338 @@
+DEBUG 2020-02-26 11:59:44.333 UTC: 	 Running on: Linux lxplus702.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-26 11:59:44.429 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-26 11:59:44.429 UTC: 	 Executing command: 'submit'
+DEBUG 2020-02-26 11:59:44.429 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+DEBUG 2020-02-26 11:59:44.458 UTC: 	 Checking credentials
+DEBUG 2020-02-26 11:59:44.458 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 11:59:44.458 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 11:59:45.929 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 594157
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 11:59:47.480 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 594155
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 11:59:47.480 UTC: 	 Proxy lifetime 594157 secs is different from voms extension lifetime 594155 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 11:59:47.480 UTC: 	 Proxy valid for 165:02:35 hours
+INFO 2020-02-26 11:59:47.481 UTC: 	 Will use CRAB configuration file ntuples3/v47/SingleE_FlatPt-2to100_PU200/conf/crab.py
+DEBUG 2020-02-26 11:59:47.481 UTC: 	 Loading CRAB configuration file.
+DEBUG 2020-02-26 11:59:47.501 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-02-26 11:59:47.682 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 11:59:47.682 UTC: 	 Checking credentials
+DEBUG 2020-02-26 11:59:47.682 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 11:59:47.682 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 11:59:48.721 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 594154
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 11:59:49.883 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 594153
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 11:59:49.883 UTC: 	 Proxy lifetime 594154 secs is different from voms extension lifetime 594153 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 11:59:49.883 UTC: 	 Proxy valid for 165:02:33 hours
+DEBUG 2020-02-26 11:59:51.047 UTC: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u49345 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 11:59:51.181 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2020-02-26 11:59:51.310 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 11:59:51.310 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-02-26 11:59:51.310 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae_cmsweb.cern.ch for credential name
+DEBUG 2020-02-26 11:59:51.755 UTC: 	 Executing : 
+ command : myproxy-info -l 489b9f568bf05948a8c377a83fcf27dff27a04cc -s myproxy.cern.ch
+ output : username: 489b9f568bf05948a8c377a83fcf27dff27a04cc
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 676:14:51  (28.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 11:59:51.756 UTC: 	 Myproxy is valid: 2434491
+DEBUG 2020-02-26 11:59:51.756 UTC: 	 Command use: submit
+DEBUG 2020-02-26 11:59:51.756 UTC: 	 Options use: ['ntuples3/v47/SingleE_FlatPt-2to100_PU200/conf/crab.py']
+DEBUG 2020-02-26 11:59:51.861 UTC: 	 CRABClient version: 3.3.2001
+DEBUG 2020-02-26 11:59:51.861 UTC: 	 Instance is prod
+DEBUG 2020-02-26 11:59:51.862 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-02-26 11:59:51.862 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2020-02-26 11:59:51.862 UTC: 	 Started submission
+DEBUG 2020-02-26 11:59:51.862 UTC: 	 Working on /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-26 11:59:52.087 UTC: 	 Loading required information from the environment
+DEBUG 2020-02-26 11:59:52.087 UTC: 	 Found CMSSW_10_6_1_patch2 for slc7_amd64_gcc820 with base /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2
+DEBUG 2020-02-26 11:59:52.087 UTC: 	 Loading required information from the environment
+DEBUG 2020-02-26 11:59:52.087 UTC: 	 Found CMSSW_10_6_1_patch2 for slc7_amd64_gcc820 with base /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2
+DEBUG 2020-02-26 11:59:52.117 UTC: 	 UNIQUE NAME: tarUUID e0a537ed-bd92-462d-a127-5f4a8f314332 
+DEBUG 2020-02-26 11:59:52.118 UTC: 	 self.config: from WMCore.Configuration import Configuration
+config = Configuration()
+config.section_('General')
+config.General.transferLogs = False
+config.General.transferOutputs = True
+config.General.workArea = 'ntuples3/v47/SingleE_FlatPt-2to100_PU200'
+config.General.requestName = 'SingleE_FlatPt-2to100_PU200'
+config.section_('JobType')
+config.JobType.psetName = 'ntuples3/v47/SingleE_FlatPt-2to100_PU200/conf/input_cfg.py'
+config.JobType.pluginName = 'Analysis'
+config.JobType.allowUndistributedCMSSW = True
+config.section_('Data')
+config.Data.inputDataset = '/SingleE_FlatPt-2to100/PhaseIIMTDTDRAutumn18DR-PU200_103X_upgrade2023_realistic_v2-v1/FEVT'
+config.Data.outputDatasetTag = 'SingleE_FlatPt-2to100_PU200_v47'
+config.Data.totalUnits = -1
+config.Data.unitsPerJob = 200
+config.Data.ignoreLocality = False
+config.Data.inputDBS = 'global'
+config.Data.splitting = 'Automatic'
+config.Data.outLFNDirBase = '/store/user/jheikkil/TRG3/'
+config.Data.publication = False
+config.section_('Site')
+config.Site.storageSite = 'T2_CH_CERN'
+config.section_('User')
+config.section_('Debug')
+
+DEBUG 2020-02-26 11:59:52.118 UTC: 	 self.config.JobType.psetName: ntuples3/v47/SingleE_FlatPt-2to100_PU200/conf/input_cfg.py
+INFO 2020-02-26 11:59:52.118 UTC: 	 Importing CMSSW configuration ntuples3/v47/SingleE_FlatPt-2to100_PU200/conf/input_cfg.py
+INFO 2020-02-26 12:00:15.260 UTC: 	 Finished importing CMSSW configuration ntuples3/v47/SingleE_FlatPt-2to100_PU200/conf/input_cfg.py
+DEBUG 2020-02-26 12:00:15.260 UTC: 	 Writing CMSSW configuration to /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200/inputs/PSet.py
+DEBUG 2020-02-26 12:00:16.044 UTC: 	 The following EDM output files will be collected: []
+DEBUG 2020-02-26 12:00:16.044 UTC: 	 The following TFile output files will be collected: ['L1NtuplePhaseII_MTD.root']
+DEBUG 2020-02-26 12:00:16.044 UTC: 	 The following user output files (not listed as PoolOuputModule or TFileService in the CMSSW PSet) will be collected: 
+DEBUG 2020-02-26 12:00:16.044 UTC: 	 Loading required information from the environment
+DEBUG 2020-02-26 12:00:16.044 UTC: 	 Found CMSSW_10_6_1_patch2 for slc7_amd64_gcc820 with base /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2
+DEBUG 2020-02-26 12:00:16.044 UTC: 	 Making tarball in /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200/inputs/e0a537ed-bd92-462d-a127-5f4a8f314332default.tgz
+DEBUG 2020-02-26 12:00:16.045 UTC: 	 Checking directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/lib
+DEBUG 2020-02-26 12:00:16.045 UTC: 	 Adding directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/lib to tarball
+DEBUG 2020-02-26 12:00:41.211 UTC: 	 Checking directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/biglib
+DEBUG 2020-02-26 12:00:41.212 UTC: 	 Adding directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/biglib to tarball
+DEBUG 2020-02-26 12:00:41.232 UTC: 	 Checking directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/module
+DEBUG 2020-02-26 12:00:49.369 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/CommonTools/BaseParticlePropagator/interface to tarball
+DEBUG 2020-02-26 12:00:49.565 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/DataFormats/L1THGCal/interface to tarball
+DEBUG 2020-02-26 12:00:49.673 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/DataFormats/L1TMuon/interface to tarball
+DEBUG 2020-02-26 12:00:49.859 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/DataFormats/L1TrackTrigger/interface to tarball
+DEBUG 2020-02-26 12:00:49.968 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/DataFormats/L1Trigger/interface to tarball
+DEBUG 2020-02-26 12:00:50.067 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/DataFormats/L1TVertex/interface to tarball
+DEBUG 2020-02-26 12:00:50.081 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/DataFormats/Phase2L1CaloTrig/interface to tarball
+DEBUG 2020-02-26 12:00:50.096 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/DataFormats/Phase2L1ParticleFlow/interface to tarball
+DEBUG 2020-02-26 12:00:50.131 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/DataFormats/Phase2L1Taus/interface to tarball
+DEBUG 2020-02-26 12:00:50.216 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/EventFilter/L1TRawToDigi/interface to tarball
+DEBUG 2020-02-26 12:00:50.736 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/CSCTriggerPrimitives/interface to tarball
+DEBUG 2020-02-26 12:00:50.967 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/L1TCommon/interface to tarball
+DEBUG 2020-02-26 12:00:51.189 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/L1THGCal/interface to tarball
+DEBUG 2020-02-26 12:00:51.812 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/L1THGCal/data to tarball
+DEBUG 2020-02-26 12:00:52.677 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/L1THGCalUtilities/interface to tarball
+DEBUG 2020-02-26 12:00:52.909 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/L1TMuon/interface to tarball
+DEBUG 2020-02-26 12:00:53.229 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/L1TMuon/data to tarball
+DEBUG 2020-02-26 12:01:02.741 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/L1TMuonBarrel/interface to tarball
+DEBUG 2020-02-26 12:01:02.990 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/L1TMuonEndCap/interface to tarball
+DEBUG 2020-02-26 12:01:03.359 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/L1TMuonEndCap/data to tarball
+DEBUG 2020-02-26 12:01:03.827 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/L1TMuonOverlap/interface to tarball
+DEBUG 2020-02-26 12:01:04.064 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/L1TNtuples/interface to tarball
+DEBUG 2020-02-26 12:01:05.212 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/L1TTwinMux/interface to tarball
+DEBUG 2020-02-26 12:01:05.416 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/ME0Trigger/interface to tarball
+DEBUG 2020-02-26 12:01:05.457 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/DTPhase2Trigger/data to tarball
+DEBUG 2020-02-26 12:01:11.215 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/DTPhase2Trigger/interface to tarball
+DEBUG 2020-02-26 12:01:11.463 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/L1CaloTrigger/data to tarball
+DEBUG 2020-02-26 12:01:11.960 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/L1CaloTrigger/interface to tarball
+DEBUG 2020-02-26 12:01:12.057 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/L1TMuonBayes/interface to tarball
+DEBUG 2020-02-26 12:01:12.407 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/L1TMuonTPS/interface to tarball
+DEBUG 2020-02-26 12:01:12.532 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/L1TTrackMatch/interface to tarball
+DEBUG 2020-02-26 12:01:12.654 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/Phase2L1ParticleFlow/data to tarball
+DEBUG 2020-02-26 12:01:13.176 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/Phase2L1ParticleFlow/interface to tarball
+DEBUG 2020-02-26 12:01:13.291 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/Phase2L1Taus/data to tarball
+DEBUG 2020-02-26 12:01:13.503 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/Phase2L1Taus/interface to tarball
+DEBUG 2020-02-26 12:01:13.589 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/TrackFindingTMTT/interface to tarball
+DEBUG 2020-02-26 12:01:13.840 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/TrackFindingTracklet/data to tarball
+DEBUG 2020-02-26 12:01:20.452 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/TrackFindingTracklet/interface to tarball
+DEBUG 2020-02-26 12:01:22.086 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/TwoLayerJets/interface to tarball
+DEBUG 2020-02-26 12:01:22.130 UTC: 	 Adding data directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/L1Trigger/VertexFinder/interface to tarball
+DEBUG 2020-02-26 12:01:23.543 UTC: 	 Uploading archive /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200/inputs/e0a537ed-bd92-462d-a127-5f4a8f314332default.tgz (39 MB) to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2020-02-26 12:02:06.491 UTC: 	 Loading required information from the environment
+DEBUG 2020-02-26 12:02:06.492 UTC: 	 Found CMSSW_10_6_1_patch2 for slc7_amd64_gcc820 with base /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2
+DEBUG 2020-02-26 12:02:06.492 UTC: 	 Making tarball in /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200/inputs/debugFiles.tgz
+DEBUG 2020-02-26 12:02:06.502 UTC: 	 Uploading archive /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200/inputs/debugFiles.tgz (2 KB) to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2020-02-26 12:02:06.585 UTC: 	 Result uploading input files: 8dd71dee1f30aa1882224c05fa7e8b0003423317bbfdb6aa49b85b217591c615.tar.gz 
+INFO 2020-02-26 12:02:06.588 UTC: 	 Sending the request to the server at cmsweb.cern.ch
+DEBUG 2020-02-26 12:02:06.588 UTC: 	 Submitting {'maxjobruntime': 1250, 'extrajdl': [], 'ignorelocality': 0, 'savelogsflag': 0, 'useparent': 0, 'asyncdest': 'T2_CH_CERN', 'algoargs': 200, 'cachefilename': '8dd71dee1f30aa1882224c05fa7e8b0003423317bbfdb6aa49b85b217591c615.tar.gz', 'numcores': 1, 'addoutputfiles': [], 'generator': 'pythia', 'maxmemory': 2000, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'priority': 10, 'jobsw': 'CMSSW_10_6_1_patch2', 'edmoutfiles': [], 'userfiles': [], 'primarydataset': '', 'inputdata': '/SingleE_FlatPt-2to100/PhaseIIMTDTDRAutumn18DR-PU200_103X_upgrade2023_realistic_v2-v1/FEVT', 'lfn': '/store/user/jheikkil/TRG3/', 'dryrun': 0, 'workflow': 'crab_SingleE_FlatPt-2to100_PU200', 'cacheurl': u'https://cmsweb.cern.ch/crabcache', 'nonprodsw': 1, 'tfileoutfiles': ['L1NtuplePhaseII_MTD.root'], 'oneEventMode': 0, 'debugfilename': '80fa0d826e5fc4d835f5049991f89c24fdd0faf8618a21063a1cde3ef7f0a0b9.tar.gz', 'saveoutput': 1, 'publication': 0, 'jobarch': 'slc7_amd64_gcc820', 'totalunits': -1, 'splitalgo': 'Automatic', 'ignoreglobalblacklist': 0, 'nonvaliddata': 0, 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'publishgroupname': 0, 'jobtype': 'Analysis', 'publishname2': 'SingleE_FlatPt-2to100_PU200_v47'} 
+DEBUG 2020-02-26 12:02:06.588 UTC: 	 Encoded submit request: maxjobruntime=1250&ignorelocality=0&savelogsflag=0&useparent=0&asyncdest=T2_CH_CERN&algoargs=200&cachefilename=8dd71dee1f30aa1882224c05fa7e8b0003423317bbfdb6aa49b85b217591c615.tar.gz&numcores=1&generator=pythia&maxmemory=2000&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_10_6_1_patch2&primarydataset=&inputdata=%2FSingleE_FlatPt-2to100%2FPhaseIIMTDTDRAutumn18DR-PU200_103X_upgrade2023_realistic_v2-v1%2FFEVT&lfn=%2Fstore%2Fuser%2Fjheikkil%2FTRG3%2F&dryrun=0&workflow=crab_SingleE_FlatPt-2to100_PU200&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2Fcrabcache&nonprodsw=1&oneEventMode=0&debugfilename=80fa0d826e5fc4d835f5049991f89c24fdd0faf8618a21063a1cde3ef7f0a0b9.tar.gz&saveoutput=1&publication=0&jobarch=slc7_amd64_gcc820&totalunits=-1&splitalgo=Automatic&ignoreglobalblacklist=0&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&publishgroupname=0&jobtype=Analysis&publishname2=SingleE_FlatPt-2to100_PU200_v47&tfileoutfiles=L1NtuplePhaseII_MTD.root
+DEBUG 2020-02-26 12:02:06.715 UTC: 	 Result: {u'result': [{u'RequestName': u'200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200'}]}
+INFO 2020-02-26 12:02:06.719 UTC: 	 Success: Your task has been delivered to the prod CRAB3 server.
+INFO 2020-02-26 12:02:06.719 UTC: 	 Task name: 200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:02:06.720 UTC: 	 Project dir: ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:02:06.721 UTC: 	 Please use 'crab status -d ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200' to check how the submission process proceeds.
+DEBUG 2020-02-26 12:02:06.721 UTC: 	 About to return
+INFO 2020-02-26 12:02:06.726 UTC: 	 Log file is /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200/crab.log
+DEBUG 2020-02-26 12:02:36.733 UTC: 	 Running on: Linux lxplus702.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-26 12:02:36.750 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-26 12:02:36.750 UTC: 	 Executing command: 'status'
+DEBUG 2020-02-26 12:02:36.933 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+DEBUG 2020-02-26 12:02:36.950 UTC: 	 Checking credentials
+DEBUG 2020-02-26 12:02:36.950 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 12:02:36.950 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 12:02:37.982 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 593985
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:02:38.791 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 593984
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:02:38.791 UTC: 	 Proxy lifetime 593985 secs is different from voms extension lifetime 593984 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 12:02:38.791 UTC: 	 Proxy valid for 164:59:44 hours
+DEBUG 2020-02-26 12:02:38.912 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:02:38.912 UTC: 	 Checking credentials
+DEBUG 2020-02-26 12:02:38.912 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 12:02:38.912 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 12:02:39.824 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 593983
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:02:40.741 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 593982
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:02:40.741 UTC: 	 Proxy lifetime 593983 secs is different from voms extension lifetime 593982 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 12:02:40.741 UTC: 	 Proxy valid for 164:59:42 hours
+DEBUG 2020-02-26 12:02:40.850 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2020-02-26 12:02:40.969 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:02:40.969 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-02-26 12:02:40.969 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae_cmsweb.cern.ch for credential name
+DEBUG 2020-02-26 12:02:41.479 UTC: 	 Executing : 
+ command : myproxy-info -l 489b9f568bf05948a8c377a83fcf27dff27a04cc -s myproxy.cern.ch
+ output : username: 489b9f568bf05948a8c377a83fcf27dff27a04cc
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 676:12:01  (28.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:02:41.481 UTC: 	 Myproxy is valid: 2434321
+DEBUG 2020-02-26 12:02:41.482 UTC: 	 Command use: status
+DEBUG 2020-02-26 12:02:41.482 UTC: 	 Options use: ['-d', 'ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200']
+DEBUG 2020-02-26 12:02:41.613 UTC: 	 CRABClient version: 3.3.2001
+DEBUG 2020-02-26 12:02:41.613 UTC: 	 Instance is prod
+DEBUG 2020-02-26 12:02:41.613 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-02-26 12:02:41.613 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2020-02-26 12:02:41.742 UTC: 	 Got information from server oracle database: {u'result': [u'200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200', u'None', u'None', u'QUEUED', u'SUBMIT', u'2020-02-26 12:02:06.705950', u'None', u'None', u'None', u'CMSSW_10_6_1_patch2', u'slc7_amd64_gcc820', u'/SingleE_FlatPt-2to100/PhaseIIMTDTDRAutumn18DR-PU200_103X_upgrade2023_realistic_v2-v1/FEVT', u'F', u'0', u'[]', u'[]', u'Automatic', u"{'splitOnRun': False, 'minutes_per_job': 200, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'8dd71dee1f30aa1882224c05fa7e8b0003423317bbfdb6aa49b85b217591c615.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'jheikkil', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae', u'cms', u'None', u'None', u'SingleE_FlatPt-2to100_PU200_v47-00000000000000000000000000000000', u'F', u'T2_CH_CERN', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u"['L1NtuplePhaseII_MTD.root']", u'[]', u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'None', u'None', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv623.fnal.gov:9620', u'None', u'F', u'[]', u'T', u'/store/user/jheikkil/TRG3/', u'F', u'None', u'F', u'None', u'SingleE_FlatPt-2to100', u'None', u'80fa0d826e5fc4d835f5049991f89c24fdd0faf8618a21063a1cde3ef7f0a0b9.tar.gz', u'None', u'filetransfers', u'F', u'2001:1458:d00:16::4f5', u'-1.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2020-02-26 12:02:41.742 UTC: 	 CRAB project directory:		/afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:02:41.743 UTC: 	 Task name:			200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:02:41.743 UTC: 	 Grid scheduler - Task Worker:	N/A yet - crab-prod-tw01
+INFO 2020-02-26 12:02:41.743 UTC: 	 Status on the CRAB server:	QUEUED on command SUBMIT
+INFO 2020-02-26 12:02:41.743 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200226_120206%3Ajheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:02:41.743 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jheikkil&var-task=200226_120206%3Ajheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:02:41.743 UTC: 	 In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+DEBUG 2020-02-26 12:02:41.743 UTC: 	 The task has not been submitted to the Grid scheduler yet. Not printing job information.
+INFO 2020-02-26 12:02:41.780 UTC: 	 Log file is /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200/crab.log
+DEBUG 2020-02-26 12:06:10.000 UTC: 	 Running on: Linux lxplus702.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-26 12:06:10.031 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-26 12:06:10.032 UTC: 	 Executing command: 'status'
+DEBUG 2020-02-26 12:06:10.032 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+DEBUG 2020-02-26 12:06:10.067 UTC: 	 Checking credentials
+DEBUG 2020-02-26 12:06:10.068 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 12:06:10.068 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 12:06:11.503 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 593771
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:06:12.424 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 593770
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:06:12.424 UTC: 	 Proxy lifetime 593771 secs is different from voms extension lifetime 593770 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 12:06:12.424 UTC: 	 Proxy valid for 164:56:10 hours
+DEBUG 2020-02-26 12:06:12.552 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:06:12.553 UTC: 	 Checking credentials
+DEBUG 2020-02-26 12:06:12.553 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 12:06:12.553 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 12:06:13.572 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 593769
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:06:14.625 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 593768
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:06:14.625 UTC: 	 Proxy lifetime 593769 secs is different from voms extension lifetime 593768 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 12:06:14.625 UTC: 	 Proxy valid for 164:56:08 hours
+DEBUG 2020-02-26 12:06:14.813 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2020-02-26 12:06:14.934 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:06:14.934 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-02-26 12:06:14.934 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae_cmsweb.cern.ch for credential name
+DEBUG 2020-02-26 12:06:15.545 UTC: 	 Executing : 
+ command : myproxy-info -l 489b9f568bf05948a8c377a83fcf27dff27a04cc -s myproxy.cern.ch
+ output : username: 489b9f568bf05948a8c377a83fcf27dff27a04cc
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 676:08:27  (28.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:06:15.546 UTC: 	 Myproxy is valid: 2434107
+DEBUG 2020-02-26 12:06:15.548 UTC: 	 Command use: status
+DEBUG 2020-02-26 12:06:15.548 UTC: 	 Options use: ['-d', 'ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200']
+DEBUG 2020-02-26 12:06:15.725 UTC: 	 CRABClient version: 3.3.2001
+DEBUG 2020-02-26 12:06:15.725 UTC: 	 Instance is prod
+DEBUG 2020-02-26 12:06:15.725 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-02-26 12:06:15.725 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2020-02-26 12:06:15.849 UTC: 	 Got information from server oracle database: {u'result': [u'200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2020-02-26 12:02:06.705950', u'None', u'2020-02-26 12:03:04.501052', u'None', u'CMSSW_10_6_1_patch2', u'slc7_amd64_gcc820', u'/SingleE_FlatPt-2to100/PhaseIIMTDTDRAutumn18DR-PU200_103X_upgrade2023_realistic_v2-v1/FEVT', u'F', u'0', u'[]', u'[]', u'Automatic', u"{'splitOnRun': False, 'minutes_per_job': 200, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'8dd71dee1f30aa1882224c05fa7e8b0003423317bbfdb6aa49b85b217591c615.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'jheikkil', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae', u'cms', u'None', u'None', u'SingleE_FlatPt-2to100_PU200_v47-00000000000000000000000000000000', u'F', u'T2_CH_CERN', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u"['L1NtuplePhaseII_MTD.root']", u'[]', u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'http://vocms0195.cern.ch/mon/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200', u'None', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv623.fnal.gov:9620', u'crab3@vocms0195.cern.ch', u'F', u'[]', u'T', u'/store/user/jheikkil/TRG3/', u'F', u'None', u'F', u'None', u'SingleE_FlatPt-2to100', u'None', u'80fa0d826e5fc4d835f5049991f89c24fdd0faf8618a21063a1cde3ef7f0a0b9.tar.gz', u'48536169', u'filetransfers', u'F', u'2001:1458:d00:16::4f5', u'-1.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2020-02-26 12:06:15.849 UTC: 	 CRAB project directory:		/afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:06:15.850 UTC: 	 Task name:			200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:06:15.850 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0195.cern.ch - crab-prod-tw01
+INFO 2020-02-26 12:06:15.850 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2020-02-26 12:06:15.850 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200226_120206%3Ajheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:06:15.850 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jheikkil&var-task=200226_120206%3Ajheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:06:15.850 UTC: 	 In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+DEBUG 2020-02-26 12:06:15.850 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 48536169)
+DEBUG 2020-02-26 12:06:15.850 UTC: 	 Webdir is located at http://vocms0195.cern.ch/mon/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-26 12:06:15.942 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-26 12:06:15.943 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200/status_cache
+DEBUG 2020-02-26 12:06:15.997 UTC: 	 Got information from status cache file: {'0-4': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536171.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '0-5': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536172.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '0-1': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1582718597.0], 'JobIds': ['48536175.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '0-2': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536173.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '0-3': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1582718597.0], 'JobIds': ['48536174.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}}
+INFO 2020-02-26 12:06:15.997 UTC: 	 Status on the scheduler:	SUBMITTED
+INFO 2020-02-26 12:06:15.997 UTC: 	 
+The job splitting of this task is 'Automatic', please refer to this FAQ for a description of the jobs status summary:
+https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ#What_is_the_Automatic_splitting
+INFO 2020-02-26 12:06:15.997 UTC: 	 Probe stage log:		https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200/AutomaticSplitting_Log0.txt
+INFO 2020-02-26 12:06:15.997 UTC: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2020-02-26 12:06:16.023 UTC: 	 Log file is /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200/crab.log
+DEBUG 2020-02-26 12:08:56.562 UTC: 	 Running on: Linux lxplus702.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-26 12:08:56.599 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-26 12:08:56.600 UTC: 	 Executing command: 'status'
+DEBUG 2020-02-26 12:08:56.600 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+DEBUG 2020-02-26 12:08:56.674 UTC: 	 Checking credentials
+DEBUG 2020-02-26 12:08:56.674 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 12:08:56.674 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 12:08:58.110 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 593604
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:08:59.355 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 593603
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:08:59.355 UTC: 	 Proxy lifetime 593604 secs is different from voms extension lifetime 593603 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 12:08:59.355 UTC: 	 Proxy valid for 164:53:23 hours
+DEBUG 2020-02-26 12:08:59.477 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:08:59.477 UTC: 	 Checking credentials
+DEBUG 2020-02-26 12:08:59.478 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 12:08:59.478 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 12:09:00.920 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 593602
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:09:02.606 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 593600
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:09:02.607 UTC: 	 Proxy lifetime 593602 secs is different from voms extension lifetime 593600 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 12:09:02.607 UTC: 	 Proxy valid for 164:53:20 hours
+DEBUG 2020-02-26 12:09:02.839 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2020-02-26 12:09:03.102 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:09:03.102 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-02-26 12:09:03.102 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae_cmsweb.cern.ch for credential name
+DEBUG 2020-02-26 12:09:04.046 UTC: 	 Executing : 
+ command : myproxy-info -l 489b9f568bf05948a8c377a83fcf27dff27a04cc -s myproxy.cern.ch
+ output : username: 489b9f568bf05948a8c377a83fcf27dff27a04cc
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 676:05:39  (28.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:09:04.060 UTC: 	 Myproxy is valid: 2433939
+DEBUG 2020-02-26 12:09:04.061 UTC: 	 Command use: status
+DEBUG 2020-02-26 12:09:04.061 UTC: 	 Options use: ['-d', 'ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200', '--long']
+DEBUG 2020-02-26 12:09:04.174 UTC: 	 CRABClient version: 3.3.2001
+DEBUG 2020-02-26 12:09:04.174 UTC: 	 Instance is prod
+DEBUG 2020-02-26 12:09:04.174 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-02-26 12:09:04.174 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2020-02-26 12:09:04.258 UTC: 	 Got information from server oracle database: {u'result': [u'200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2020-02-26 12:02:06.705950', u'None', u'2020-02-26 12:03:04.501052', u'None', u'CMSSW_10_6_1_patch2', u'slc7_amd64_gcc820', u'/SingleE_FlatPt-2to100/PhaseIIMTDTDRAutumn18DR-PU200_103X_upgrade2023_realistic_v2-v1/FEVT', u'F', u'0', u'[]', u'[]', u'Automatic', u"{'splitOnRun': False, 'minutes_per_job': 200, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'8dd71dee1f30aa1882224c05fa7e8b0003423317bbfdb6aa49b85b217591c615.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'jheikkil', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae', u'cms', u'None', u'None', u'SingleE_FlatPt-2to100_PU200_v47-00000000000000000000000000000000', u'F', u'T2_CH_CERN', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u"['L1NtuplePhaseII_MTD.root']", u'[]', u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'http://vocms0195.cern.ch/mon/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200', u'None', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv623.fnal.gov:9620', u'crab3@vocms0195.cern.ch', u'F', u'[]', u'T', u'/store/user/jheikkil/TRG3/', u'F', u'None', u'F', u'None', u'SingleE_FlatPt-2to100', u'None', u'80fa0d826e5fc4d835f5049991f89c24fdd0faf8618a21063a1cde3ef7f0a0b9.tar.gz', u'48536169', u'filetransfers', u'F', u'2001:1458:d00:16::4f5', u'-1.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2020-02-26 12:09:04.259 UTC: 	 CRAB project directory:		/afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:09:04.260 UTC: 	 Task name:			200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:09:04.260 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0195.cern.ch - crab-prod-tw01
+INFO 2020-02-26 12:09:04.260 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2020-02-26 12:09:04.260 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200226_120206%3Ajheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:09:04.260 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jheikkil&var-task=200226_120206%3Ajheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:09:04.260 UTC: 	 In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+DEBUG 2020-02-26 12:09:04.260 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 48536169)
+DEBUG 2020-02-26 12:09:04.261 UTC: 	 Webdir is located at http://vocms0195.cern.ch/mon/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-26 12:09:04.371 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-26 12:09:04.372 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200/status_cache
+DEBUG 2020-02-26 12:09:04.477 UTC: 	 Got information from status cache file: {'0-4': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536171.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '0-5': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536172.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '0-1': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1582718597.0], 'JobIds': ['48536175.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '0-2': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536173.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '0-3': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1582718597.0], 'JobIds': ['48536174.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}}
+INFO 2020-02-26 12:09:04.477 UTC: 	 Status on the scheduler:	SUBMITTED
+INFO 2020-02-26 12:09:04.477 UTC: 	 
+The job splitting of this task is 'Automatic', please refer to this FAQ for a description of the jobs status summary:
+https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ#What_is_the_Automatic_splitting
+INFO 2020-02-26 12:09:04.478 UTC: 	 Probe stage log:		https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200/AutomaticSplitting_Log0.txt
+INFO 2020-02-26 12:09:04.478 UTC: 	 
+Probe jobs status:              idle         		100.0% (5/5)
+INFO 2020-02-26 12:09:04.478 UTC: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2020-02-26 12:09:04.478 UTC: 	 
+Extended Job Status Table:
+
+ Job State        Most Recent Site        Runtime   Mem (MB)      CPU %    Retries   Restarts      Waste       Exit Code
+ 0-1 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+ 0-2 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+ 0-3 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+ 0-4 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+ 0-5 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+DEBUG 2020-02-26 12:09:04.478 UTC: 	 
+ Job Cluster Id
+ 0-4 ['48536171.0']
+ 0-5 ['48536172.0']
+ 0-1 ['48536175.0']
+ 0-2 ['48536173.0']
+ 0-3 ['48536174.0']
+INFO 2020-02-26 12:09:04.544 UTC: 	 Log file is /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200/crab.log
+DEBUG 2020-02-26 12:12:41.129 UTC: 	 Running on: Linux lxplus702.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-26 12:12:41.192 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-26 12:12:41.193 UTC: 	 Executing command: 'status'
+DEBUG 2020-02-26 12:12:41.193 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+DEBUG 2020-02-26 12:12:41.219 UTC: 	 Checking credentials
+DEBUG 2020-02-26 12:12:41.219 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 12:12:41.219 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 12:12:42.661 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 593380
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:12:44.113 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 593378
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:12:44.113 UTC: 	 Proxy lifetime 593380 secs is different from voms extension lifetime 593378 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 12:12:44.114 UTC: 	 Proxy valid for 164:49:38 hours
+DEBUG 2020-02-26 12:12:44.239 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:12:44.239 UTC: 	 Checking credentials
+DEBUG 2020-02-26 12:12:44.239 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 12:12:44.239 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 12:12:45.577 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 593377
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:12:47.125 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 593375
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:12:47.125 UTC: 	 Proxy lifetime 593377 secs is different from voms extension lifetime 593375 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 12:12:47.125 UTC: 	 Proxy valid for 164:49:35 hours
+DEBUG 2020-02-26 12:12:47.287 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2020-02-26 12:12:47.402 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:12:47.403 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-02-26 12:12:47.403 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae_cmsweb.cern.ch for credential name
+DEBUG 2020-02-26 12:12:48.133 UTC: 	 Executing : 
+ command : myproxy-info -l 489b9f568bf05948a8c377a83fcf27dff27a04cc -s myproxy.cern.ch
+ output : username: 489b9f568bf05948a8c377a83fcf27dff27a04cc
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 676:01:54  (28.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:12:48.134 UTC: 	 Myproxy is valid: 2433714
+DEBUG 2020-02-26 12:12:48.135 UTC: 	 Command use: status
+DEBUG 2020-02-26 12:12:48.135 UTC: 	 Options use: ['-d', 'ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200', '--long']
+DEBUG 2020-02-26 12:12:48.254 UTC: 	 CRABClient version: 3.3.2001
+DEBUG 2020-02-26 12:12:48.254 UTC: 	 Instance is prod
+DEBUG 2020-02-26 12:12:48.254 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-02-26 12:12:48.254 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2020-02-26 12:12:48.438 UTC: 	 Got information from server oracle database: {u'result': [u'200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2020-02-26 12:02:06.705950', u'None', u'2020-02-26 12:03:04.501052', u'None', u'CMSSW_10_6_1_patch2', u'slc7_amd64_gcc820', u'/SingleE_FlatPt-2to100/PhaseIIMTDTDRAutumn18DR-PU200_103X_upgrade2023_realistic_v2-v1/FEVT', u'F', u'0', u'[]', u'[]', u'Automatic', u"{'splitOnRun': False, 'minutes_per_job': 200, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'8dd71dee1f30aa1882224c05fa7e8b0003423317bbfdb6aa49b85b217591c615.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'jheikkil', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae', u'cms', u'None', u'None', u'SingleE_FlatPt-2to100_PU200_v47-00000000000000000000000000000000', u'F', u'T2_CH_CERN', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u"['L1NtuplePhaseII_MTD.root']", u'[]', u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'http://vocms0195.cern.ch/mon/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200', u'None', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv623.fnal.gov:9620', u'crab3@vocms0195.cern.ch', u'F', u'[]', u'T', u'/store/user/jheikkil/TRG3/', u'F', u'None', u'F', u'None', u'SingleE_FlatPt-2to100', u'None', u'80fa0d826e5fc4d835f5049991f89c24fdd0faf8618a21063a1cde3ef7f0a0b9.tar.gz', u'48536169', u'filetransfers', u'F', u'2001:1458:d00:16::4f5', u'-1.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2020-02-26 12:12:48.439 UTC: 	 CRAB project directory:		/afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:12:48.439 UTC: 	 Task name:			200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:12:48.439 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0195.cern.ch - crab-prod-tw01
+INFO 2020-02-26 12:12:48.439 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2020-02-26 12:12:48.439 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200226_120206%3Ajheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:12:48.439 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jheikkil&var-task=200226_120206%3Ajheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:12:48.439 UTC: 	 In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+DEBUG 2020-02-26 12:12:48.439 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 48536169)
+DEBUG 2020-02-26 12:12:48.439 UTC: 	 Webdir is located at http://vocms0195.cern.ch/mon/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-26 12:12:48.530 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-26 12:12:48.530 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200/status_cache
+DEBUG 2020-02-26 12:12:48.589 UTC: 	 Got information from status cache file: {'0-4': {'Retries': 0, 'WallDurations': [9.0, 163.937096118927], 'StartTimes': [1582718793.0], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536171.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [2784], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [0.0]}, '0-5': {'Retries': 0, 'WallDurations': [8.0, 162.937096118927], 'StartTimes': [1582718794.0], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536172.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [15704], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [0.0]}, '0-1': {'Retries': 0, 'WallDurations': [9.0, 18.937096118927002], 'StartTimes': [1582718938.0], 'SubmitTimes': [1582718597.0], 'JobIds': ['48536175.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [14612], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown', 'T2_IT_Pisa'], 'TotalSysCpuTimeHistory': [0.0]}, '0-2': {'Retries': 0, 'WallDurations': [8.0, 162.937096118927], 'StartTimes': [1582718794.0], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536173.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [22208], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [0.0]}, '0-3': {'Retries': 0, 'WallDurations': [8.0, 158.937096118927], 'StartTimes': [1582718798.0], 'SubmitTimes': [1582718597.0], 'JobIds': ['48536174.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [2776], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [0.0]}}
+INFO 2020-02-26 12:12:48.589 UTC: 	 Status on the scheduler:	SUBMITTED
+INFO 2020-02-26 12:12:48.589 UTC: 	 
+The job splitting of this task is 'Automatic', please refer to this FAQ for a description of the jobs status summary:
+https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ#What_is_the_Automatic_splitting
+INFO 2020-02-26 12:12:48.589 UTC: 	 Probe stage log:		https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200/AutomaticSplitting_Log0.txt
+INFO 2020-02-26 12:12:48.589 UTC: 	 
+Probe jobs status:              running      		100.0% (5/5)
+INFO 2020-02-26 12:12:48.589 UTC: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2020-02-26 12:12:48.590 UTC: 	 
+Extended Job Status Table:
+
+ Job State        Most Recent Site        Runtime   Mem (MB)      CPU %    Retries   Restarts      Waste       Exit Code
+ 0-1 running      T2_IT_Pisa              0:00:18         14          0          0          0    0:00:09         Unknown
+ 0-2 running      T1_IT_CNAF              0:02:42         21          0          0          0    0:00:08         Unknown
+ 0-3 running      T1_IT_CNAF              0:02:38          2          0          0          0    0:00:08         Unknown
+ 0-4 running      T1_IT_CNAF              0:02:43          2          0          0          0    0:00:09         Unknown
+ 0-5 running      T1_IT_CNAF              0:02:42         15          0          0          0    0:00:08         Unknown
+DEBUG 2020-02-26 12:12:48.590 UTC: 	 
+ Job Cluster Id
+ 0-4 ['48536171.0']
+ 0-5 ['48536172.0']
+ 0-1 ['48536175.0']
+ 0-2 ['48536173.0']
+ 0-3 ['48536174.0']
+INFO 2020-02-26 12:12:48.624 UTC: 	 Log file is /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200/crab.log
+DEBUG 2020-02-26 12:18:50.141 UTC: 	 Running on: Linux lxplus702.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-26 12:18:50.205 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-26 12:18:50.205 UTC: 	 Executing command: 'status'
+DEBUG 2020-02-26 12:18:50.205 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+DEBUG 2020-02-26 12:18:50.334 UTC: 	 Checking credentials
+DEBUG 2020-02-26 12:18:50.334 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 12:18:50.334 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 12:18:52.002 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 593011
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:18:53.469 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 593009
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:18:53.469 UTC: 	 Proxy lifetime 593011 secs is different from voms extension lifetime 593009 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 12:18:53.469 UTC: 	 Proxy valid for 164:43:29 hours
+DEBUG 2020-02-26 12:18:53.614 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:18:53.614 UTC: 	 Checking credentials
+DEBUG 2020-02-26 12:18:53.614 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 12:18:53.614 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 12:18:55.059 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 593008
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:18:56.388 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 593006
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:18:56.388 UTC: 	 Proxy lifetime 593008 secs is different from voms extension lifetime 593006 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 12:18:56.388 UTC: 	 Proxy valid for 164:43:26 hours
+DEBUG 2020-02-26 12:18:56.484 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2020-02-26 12:18:56.603 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:18:56.603 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-02-26 12:18:56.603 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae_cmsweb.cern.ch for credential name
+DEBUG 2020-02-26 12:18:57.421 UTC: 	 Executing : 
+ command : myproxy-info -l 489b9f568bf05948a8c377a83fcf27dff27a04cc -s myproxy.cern.ch
+ output : username: 489b9f568bf05948a8c377a83fcf27dff27a04cc
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 675:55:45  (28.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:18:57.422 UTC: 	 Myproxy is valid: 2433345
+DEBUG 2020-02-26 12:18:57.423 UTC: 	 Command use: status
+DEBUG 2020-02-26 12:18:57.423 UTC: 	 Options use: ['-d', 'ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200', '--long']
+DEBUG 2020-02-26 12:18:57.509 UTC: 	 CRABClient version: 3.3.2001
+DEBUG 2020-02-26 12:18:57.509 UTC: 	 Instance is prod
+DEBUG 2020-02-26 12:18:57.509 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-02-26 12:18:57.509 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2020-02-26 12:18:57.718 UTC: 	 Got information from server oracle database: {u'result': [u'200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2020-02-26 12:02:06.705950', u'None', u'2020-02-26 12:03:04.501052', u'None', u'CMSSW_10_6_1_patch2', u'slc7_amd64_gcc820', u'/SingleE_FlatPt-2to100/PhaseIIMTDTDRAutumn18DR-PU200_103X_upgrade2023_realistic_v2-v1/FEVT', u'F', u'0', u'[]', u'[]', u'Automatic', u"{'splitOnRun': False, 'minutes_per_job': 200, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'8dd71dee1f30aa1882224c05fa7e8b0003423317bbfdb6aa49b85b217591c615.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'jheikkil', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae', u'cms', u'None', u'None', u'SingleE_FlatPt-2to100_PU200_v47-00000000000000000000000000000000', u'F', u'T2_CH_CERN', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u"['L1NtuplePhaseII_MTD.root']", u'[]', u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'http://vocms0195.cern.ch/mon/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200', u'None', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv623.fnal.gov:9620', u'crab3@vocms0195.cern.ch', u'F', u'[]', u'T', u'/store/user/jheikkil/TRG3/', u'F', u'None', u'F', u'None', u'SingleE_FlatPt-2to100', u'None', u'80fa0d826e5fc4d835f5049991f89c24fdd0faf8618a21063a1cde3ef7f0a0b9.tar.gz', u'48536169', u'filetransfers', u'F', u'2001:1458:d00:16::4f5', u'-1.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2020-02-26 12:18:57.719 UTC: 	 CRAB project directory:		/afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:18:57.719 UTC: 	 Task name:			200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:18:57.719 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0195.cern.ch - crab-prod-tw01
+INFO 2020-02-26 12:18:57.719 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2020-02-26 12:18:57.719 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200226_120206%3Ajheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:18:57.719 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jheikkil&var-task=200226_120206%3Ajheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:18:57.719 UTC: 	 In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+DEBUG 2020-02-26 12:18:57.719 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 48536169)
+DEBUG 2020-02-26 12:18:57.719 UTC: 	 Webdir is located at http://vocms0195.cern.ch/mon/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-26 12:18:57.913 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-26 12:18:57.913 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200/status_cache
+DEBUG 2020-02-26 12:18:57.992 UTC: 	 Got information from status cache file: {'0-4': {'Retries': 0, 'WallDurations': [9.0, 280.0], 'StartTimes': [1582718793.0], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536171.0'], 'TotalUserCpuTimeHistory': [144], 'EndTimes': [1582719073.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [2784], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 64 event: 15818 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 64 event: 15818 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [5]}, '0-5': {'Retries': 0, 'WallDurations': [8.0, 394.0], 'StartTimes': [1582718794.0], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536172.0'], 'TotalUserCpuTimeHistory': [163], 'EndTimes': [1582719188.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [1009808], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 90 event: 22309 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 90 event: 22309 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [6]}, '0-1': {'Retries': 0, 'WallDurations': [9.0, 318.0], 'StartTimes': [1582718938.0], 'SubmitTimes': [1582718597.0], 'JobIds': ['48536175.0'], 'EndTimes': [1582719256.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'cooloff', 'ResidentSetSize': [1434264], 'TotalUserCpuTimeHistory': [135], 'SiteHistory': ['Unknown', 'T2_IT_Pisa'], 'TotalSysCpuTimeHistory': [7]}, '0-2': {'Retries': 0, 'WallDurations': [8.0, 306.0], 'StartTimes': [1582718794.0], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536173.0'], 'TotalUserCpuTimeHistory': [151], 'EndTimes': [1582719100.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [22208], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 262 event: 65265 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 262 event: 65265 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [6]}, '0-3': {'Retries': 0, 'WallDurations': [8.0, 295.0], 'StartTimes': [1582718798.0], 'SubmitTimes': [1582718597.0], 'JobIds': ['48536174.0'], 'TotalUserCpuTimeHistory': [168], 'EndTimes': [1582719093.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [2776], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 92 event: 22818 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 92 event: 22818 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [6]}}
+INFO 2020-02-26 12:18:57.992 UTC: 	 Status on the scheduler:	SUBMITTED
+INFO 2020-02-26 12:18:57.992 UTC: 	 
+The job splitting of this task is 'Automatic', please refer to this FAQ for a description of the jobs status summary:
+https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ#What_is_the_Automatic_splitting
+INFO 2020-02-26 12:18:57.992 UTC: 	 Probe stage log:		https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200/AutomaticSplitting_Log0.txt
+INFO 2020-02-26 12:18:57.992 UTC: 	 
+Probe jobs status:              no output    		 80.0% (4/5)
+INFO 2020-02-26 12:18:57.993 UTC: 	 				toRetry      		 20.0% (1/5)
+INFO 2020-02-26 12:18:57.993 UTC: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2020-02-26 12:18:57.993 UTC: 	 
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+4 jobs failed with exit code 8006
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+INFO 2020-02-26 12:18:57.993 UTC: 	 
+Extended Job Status Table:
+
+ Job State        Most Recent Site        Runtime   Mem (MB)      CPU %    Retries   Restarts      Waste       Exit Code
+ 0-1 toRetry      T2_IT_Pisa              0:05:18       1400         45          0          0    0:00:09         Unknown
+ 0-2 no output    T1_IT_CNAF              0:05:06         21         51          0          0    0:00:08            8006
+ 0-3 no output    T1_IT_CNAF              0:04:55          2         59          0          0    0:00:08            8006
+ 0-4 no output    T1_IT_CNAF              0:04:40          2         53          0          0    0:00:09            8006
+ 0-5 no output    T1_IT_CNAF              0:06:34        986         43          0          0    0:00:08            8006
+DEBUG 2020-02-26 12:18:57.993 UTC: 	 
+ Job Cluster Id
+ 0-4 ['48536171.0']
+ 0-5 ['48536172.0']
+ 0-1 ['48536175.0']
+ 0-2 ['48536173.0']
+ 0-3 ['48536174.0']
+INFO 2020-02-26 12:18:58.162 UTC: 	 Log file is /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200/crab.log
+DEBUG 2020-02-26 12:22:38.635 UTC: 	 Running on: Linux lxplus702.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-26 12:22:38.822 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-26 12:22:38.822 UTC: 	 Executing command: 'status'
+DEBUG 2020-02-26 12:22:38.822 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+DEBUG 2020-02-26 12:22:38.863 UTC: 	 Checking credentials
+DEBUG 2020-02-26 12:22:38.863 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 12:22:38.863 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 12:22:40.102 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 592782
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:22:41.451 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 592781
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:22:41.451 UTC: 	 Proxy lifetime 592782 secs is different from voms extension lifetime 592781 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 12:22:41.451 UTC: 	 Proxy valid for 164:39:41 hours
+DEBUG 2020-02-26 12:22:41.674 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:22:41.674 UTC: 	 Checking credentials
+DEBUG 2020-02-26 12:22:41.674 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 12:22:41.674 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 12:22:43.418 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 592779
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:22:45.268 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 592777
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:22:45.268 UTC: 	 Proxy lifetime 592779 secs is different from voms extension lifetime 592777 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 12:22:45.269 UTC: 	 Proxy valid for 164:39:37 hours
+DEBUG 2020-02-26 12:22:45.405 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2020-02-26 12:22:45.655 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:22:45.655 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-02-26 12:22:45.655 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae_cmsweb.cern.ch for credential name
+DEBUG 2020-02-26 12:22:47.013 UTC: 	 Executing : 
+ command : myproxy-info -l 489b9f568bf05948a8c377a83fcf27dff27a04cc -s myproxy.cern.ch
+ output : username: 489b9f568bf05948a8c377a83fcf27dff27a04cc
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 675:51:56  (28.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:22:47.014 UTC: 	 Myproxy is valid: 2433116
+DEBUG 2020-02-26 12:22:47.015 UTC: 	 Command use: status
+DEBUG 2020-02-26 12:22:47.015 UTC: 	 Options use: ['-d', 'ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200', '--long']
+DEBUG 2020-02-26 12:22:47.130 UTC: 	 CRABClient version: 3.3.2001
+DEBUG 2020-02-26 12:22:47.130 UTC: 	 Instance is prod
+DEBUG 2020-02-26 12:22:47.130 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-02-26 12:22:47.130 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2020-02-26 12:22:47.305 UTC: 	 Got information from server oracle database: {u'result': [u'200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2020-02-26 12:02:06.705950', u'None', u'2020-02-26 12:03:04.501052', u'None', u'CMSSW_10_6_1_patch2', u'slc7_amd64_gcc820', u'/SingleE_FlatPt-2to100/PhaseIIMTDTDRAutumn18DR-PU200_103X_upgrade2023_realistic_v2-v1/FEVT', u'F', u'0', u'[]', u'[]', u'Automatic', u"{'splitOnRun': False, 'minutes_per_job': 200, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'8dd71dee1f30aa1882224c05fa7e8b0003423317bbfdb6aa49b85b217591c615.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'jheikkil', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae', u'cms', u'None', u'None', u'SingleE_FlatPt-2to100_PU200_v47-00000000000000000000000000000000', u'F', u'T2_CH_CERN', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u"['L1NtuplePhaseII_MTD.root']", u'[]', u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'http://vocms0195.cern.ch/mon/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200', u'None', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv623.fnal.gov:9620', u'crab3@vocms0195.cern.ch', u'F', u'[]', u'T', u'/store/user/jheikkil/TRG3/', u'F', u'None', u'F', u'None', u'SingleE_FlatPt-2to100', u'None', u'80fa0d826e5fc4d835f5049991f89c24fdd0faf8618a21063a1cde3ef7f0a0b9.tar.gz', u'48536169', u'filetransfers', u'F', u'2001:1458:d00:16::4f5', u'-1.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2020-02-26 12:22:47.305 UTC: 	 CRAB project directory:		/afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:22:47.305 UTC: 	 Task name:			200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:22:47.305 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0195.cern.ch - crab-prod-tw01
+INFO 2020-02-26 12:22:47.305 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2020-02-26 12:22:47.306 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200226_120206%3Ajheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:22:47.306 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jheikkil&var-task=200226_120206%3Ajheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:22:47.306 UTC: 	 In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+DEBUG 2020-02-26 12:22:47.306 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 48536169)
+DEBUG 2020-02-26 12:22:47.306 UTC: 	 Webdir is located at http://vocms0195.cern.ch/mon/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-26 12:22:47.446 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-26 12:22:47.446 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200/status_cache
+DEBUG 2020-02-26 12:22:47.533 UTC: 	 Got information from status cache file: {'0-4': {'Retries': 0, 'WallDurations': [9.0, 280.0], 'StartTimes': [1582718793.0], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536171.0'], 'EndTimes': [1582719073.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [2784], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 64 event: 15818 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 64 event: 15818 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'TotalUserCpuTimeHistory': [144], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [5]}, '0-5': {'Retries': 0, 'WallDurations': [8.0, 394.0], 'StartTimes': [1582718794.0], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536172.0'], 'EndTimes': [1582719188.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [1009808], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 90 event: 22309 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 90 event: 22309 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'TotalUserCpuTimeHistory': [163], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [6]}, '0-1': {'Retries': 0, 'WallDurations': [9.0, 318.0], 'StartTimes': [1582718938.0], 'SubmitTimes': [1582718597.0], 'JobIds': ['48536175.0'], 'TotalUserCpuTimeHistory': [135], 'EndTimes': [1582719256.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [1434264], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 103 event: 25518 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 103 event: 25518 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'SiteHistory': ['Unknown', 'T2_IT_Pisa'], 'TotalSysCpuTimeHistory': [7]}, '0-2': {'Retries': 0, 'WallDurations': [8.0, 306.0], 'StartTimes': [1582718794.0], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536173.0'], 'EndTimes': [1582719100.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [22208], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 262 event: 65265 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 262 event: 65265 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'TotalUserCpuTimeHistory': [151], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [6]}, '0-3': {'Retries': 0, 'WallDurations': [8.0, 295.0], 'StartTimes': [1582718798.0], 'SubmitTimes': [1582718597.0], 'JobIds': ['48536174.0'], 'EndTimes': [1582719093.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [2776], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 92 event: 22818 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 92 event: 22818 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'TotalUserCpuTimeHistory': [168], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [6]}}
+INFO 2020-02-26 12:22:47.533 UTC: 	 Status on the scheduler:	SUBMITTED
+INFO 2020-02-26 12:22:47.533 UTC: 	 
+The job splitting of this task is 'Automatic', please refer to this FAQ for a description of the jobs status summary:
+https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ#What_is_the_Automatic_splitting
+INFO 2020-02-26 12:22:47.534 UTC: 	 Probe stage log:		https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200/AutomaticSplitting_Log0.txt
+INFO 2020-02-26 12:22:47.534 UTC: 	 
+Probe jobs status:              no output    		100.0% (5/5)
+INFO 2020-02-26 12:22:47.534 UTC: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2020-02-26 12:22:47.534 UTC: 	 
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+5 jobs failed with exit code 8006
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+INFO 2020-02-26 12:22:47.534 UTC: 	 
+Extended Job Status Table:
+
+ Job State        Most Recent Site        Runtime   Mem (MB)      CPU %    Retries   Restarts      Waste       Exit Code
+ 0-1 no output    T2_IT_Pisa              0:05:18       1400         45          0          0    0:00:09            8006
+ 0-2 no output    T1_IT_CNAF              0:05:06         21         51          0          0    0:00:08            8006
+ 0-3 no output    T1_IT_CNAF              0:04:55          2         59          0          0    0:00:08            8006
+ 0-4 no output    T1_IT_CNAF              0:04:40          2         53          0          0    0:00:09            8006
+ 0-5 no output    T1_IT_CNAF              0:06:34        986         43          0          0    0:00:08            8006
+DEBUG 2020-02-26 12:22:47.534 UTC: 	 
+ Job Cluster Id
+ 0-4 ['48536171.0']
+ 0-5 ['48536172.0']
+ 0-1 ['48536175.0']
+ 0-2 ['48536173.0']
+ 0-3 ['48536174.0']
+INFO 2020-02-26 12:22:47.617 UTC: 	 Log file is /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200/crab.log
+DEBUG 2020-02-26 12:28:43.277 UTC: 	 Running on: Linux lxplus702.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-26 12:28:43.625 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-26 12:28:43.626 UTC: 	 Executing command: 'status'
+DEBUG 2020-02-26 12:28:43.626 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+DEBUG 2020-02-26 12:28:43.679 UTC: 	 Checking credentials
+DEBUG 2020-02-26 12:28:43.679 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 12:28:43.679 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 12:28:45.681 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 592417
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:28:47.536 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 592415
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:28:47.536 UTC: 	 Proxy lifetime 592417 secs is different from voms extension lifetime 592415 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 12:28:47.537 UTC: 	 Proxy valid for 164:33:35 hours
+DEBUG 2020-02-26 12:28:47.738 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:28:47.738 UTC: 	 Checking credentials
+DEBUG 2020-02-26 12:28:47.738 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 12:28:47.738 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 12:28:49.225 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 592413
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:28:51.328 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 592411
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:28:51.328 UTC: 	 Proxy lifetime 592413 secs is different from voms extension lifetime 592411 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 12:28:51.328 UTC: 	 Proxy valid for 164:33:31 hours
+DEBUG 2020-02-26 12:28:51.572 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2020-02-26 12:28:51.814 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:28:51.815 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-02-26 12:28:51.815 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae_cmsweb.cern.ch for credential name
+DEBUG 2020-02-26 12:28:52.950 UTC: 	 Executing : 
+ command : myproxy-info -l 489b9f568bf05948a8c377a83fcf27dff27a04cc -s myproxy.cern.ch
+ output : username: 489b9f568bf05948a8c377a83fcf27dff27a04cc
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 675:45:50  (28.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 12:28:52.951 UTC: 	 Myproxy is valid: 2432750
+DEBUG 2020-02-26 12:28:52.952 UTC: 	 Command use: status
+DEBUG 2020-02-26 12:28:52.952 UTC: 	 Options use: ['-d', 'ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200', '--long']
+DEBUG 2020-02-26 12:28:53.115 UTC: 	 CRABClient version: 3.3.2001
+DEBUG 2020-02-26 12:28:53.115 UTC: 	 Instance is prod
+DEBUG 2020-02-26 12:28:53.115 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-02-26 12:28:53.115 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2020-02-26 12:28:53.361 UTC: 	 Got information from server oracle database: {u'result': [u'200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2020-02-26 12:02:06.705950', u'None', u'2020-02-26 12:03:04.501052', u'None', u'CMSSW_10_6_1_patch2', u'slc7_amd64_gcc820', u'/SingleE_FlatPt-2to100/PhaseIIMTDTDRAutumn18DR-PU200_103X_upgrade2023_realistic_v2-v1/FEVT', u'F', u'0', u'[]', u'[]', u'Automatic', u"{'splitOnRun': False, 'minutes_per_job': 200, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'8dd71dee1f30aa1882224c05fa7e8b0003423317bbfdb6aa49b85b217591c615.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'jheikkil', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae', u'cms', u'None', u'None', u'SingleE_FlatPt-2to100_PU200_v47-00000000000000000000000000000000', u'F', u'T2_CH_CERN', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u"['L1NtuplePhaseII_MTD.root']", u'[]', u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'http://vocms0195.cern.ch/mon/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200', u'None', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv623.fnal.gov:9620', u'crab3@vocms0195.cern.ch', u'F', u'[]', u'T', u'/store/user/jheikkil/TRG3/', u'F', u'None', u'F', u'None', u'SingleE_FlatPt-2to100', u'None', u'80fa0d826e5fc4d835f5049991f89c24fdd0faf8618a21063a1cde3ef7f0a0b9.tar.gz', u'48536169', u'filetransfers', u'F', u'2001:1458:d00:16::4f5', u'-1.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2020-02-26 12:28:53.364 UTC: 	 CRAB project directory:		/afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:28:53.364 UTC: 	 Task name:			200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:28:53.364 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0195.cern.ch - crab-prod-tw01
+INFO 2020-02-26 12:28:53.364 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2020-02-26 12:28:53.364 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200226_120206%3Ajheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:28:53.364 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jheikkil&var-task=200226_120206%3Ajheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 12:28:53.364 UTC: 	 In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+DEBUG 2020-02-26 12:28:53.364 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 48536169)
+DEBUG 2020-02-26 12:28:53.364 UTC: 	 Webdir is located at http://vocms0195.cern.ch/mon/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-26 12:28:53.523 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-26 12:28:53.523 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200/status_cache
+DEBUG 2020-02-26 12:28:53.648 UTC: 	 Got information from status cache file: {'0-4': {'Retries': 0, 'WallDurations': [9.0, 280.0], 'StartTimes': [1582718793.0], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536171.0'], 'TotalUserCpuTimeHistory': [144], 'EndTimes': [1582719073.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [2784], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 64 event: 15818 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 64 event: 15818 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [5]}, '0-5': {'Retries': 0, 'WallDurations': [8.0, 394.0], 'StartTimes': [1582718794.0], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536172.0'], 'TotalUserCpuTimeHistory': [163], 'EndTimes': [1582719188.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [1009808], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 90 event: 22309 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 90 event: 22309 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [6]}, '0-1': {'Retries': 0, 'WallDurations': [9.0, 318.0], 'StartTimes': [1582718938.0], 'SubmitTimes': [1582718597.0], 'JobIds': ['48536175.0'], 'EndTimes': [1582719256.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [1434264], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 103 event: 25518 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 103 event: 25518 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'TotalUserCpuTimeHistory': [135], 'SiteHistory': ['Unknown', 'T2_IT_Pisa'], 'TotalSysCpuTimeHistory': [7]}, '0-2': {'Retries': 0, 'WallDurations': [8.0, 306.0], 'StartTimes': [1582718794.0], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536173.0'], 'TotalUserCpuTimeHistory': [151], 'EndTimes': [1582719100.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [22208], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 262 event: 65265 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 262 event: 65265 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [6]}, '0-3': {'Retries': 0, 'WallDurations': [8.0, 295.0], 'StartTimes': [1582718798.0], 'SubmitTimes': [1582718597.0], 'JobIds': ['48536174.0'], 'TotalUserCpuTimeHistory': [168], 'EndTimes': [1582719093.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [2776], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 92 event: 22818 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 92 event: 22818 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [6]}}
+INFO 2020-02-26 12:28:53.648 UTC: 	 Status on the scheduler:	FAILED
+INFO 2020-02-26 12:28:53.649 UTC: 	 
+The job splitting of this task is 'Automatic', please refer to this FAQ for a description of the jobs status summary:
+https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ#What_is_the_Automatic_splitting
+INFO 2020-02-26 12:28:53.649 UTC: 	 Probe stage log:		https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200/AutomaticSplitting_Log0.txt
+INFO 2020-02-26 12:28:53.649 UTC: 	 
+Probe jobs status:              no output    		100.0% (5/5)
+INFO 2020-02-26 12:28:53.649 UTC: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2020-02-26 12:28:53.649 UTC: 	 
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+5 jobs failed with exit code 8006
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+INFO 2020-02-26 12:28:53.650 UTC: 	 
+Extended Job Status Table:
+
+ Job State        Most Recent Site        Runtime   Mem (MB)      CPU %    Retries   Restarts      Waste       Exit Code
+ 0-1 no output    T2_IT_Pisa              0:05:18       1400         45          0          0    0:00:09            8006
+ 0-2 no output    T1_IT_CNAF              0:05:06         21         51          0          0    0:00:08            8006
+ 0-3 no output    T1_IT_CNAF              0:04:55          2         59          0          0    0:00:08            8006
+ 0-4 no output    T1_IT_CNAF              0:04:40          2         53          0          0    0:00:09            8006
+ 0-5 no output    T1_IT_CNAF              0:06:34        986         43          0          0    0:00:08            8006
+DEBUG 2020-02-26 12:28:53.650 UTC: 	 
+ Job Cluster Id
+ 0-4 ['48536171.0']
+ 0-5 ['48536172.0']
+ 0-1 ['48536175.0']
+ 0-2 ['48536173.0']
+ 0-3 ['48536174.0']
+INFO 2020-02-26 12:28:53.927 UTC: 	 Log file is /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200/crab.log
+DEBUG 2020-02-26 13:03:21.977 UTC: 	 Running on: Linux lxplus702.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-26 13:03:22.002 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-26 13:03:22.002 UTC: 	 Executing command: 'status'
+DEBUG 2020-02-26 13:03:22.002 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+DEBUG 2020-02-26 13:03:22.037 UTC: 	 Checking credentials
+DEBUG 2020-02-26 13:03:22.037 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 13:03:22.037 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 13:03:22.955 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 590340
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 13:03:23.867 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 590339
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 13:03:23.867 UTC: 	 Proxy lifetime 590340 secs is different from voms extension lifetime 590339 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 13:03:23.867 UTC: 	 Proxy valid for 163:58:59 hours
+DEBUG 2020-02-26 13:03:24.008 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 13:03:24.008 UTC: 	 Checking credentials
+DEBUG 2020-02-26 13:03:24.008 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 13:03:24.008 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 13:03:24.817 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 590338
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 13:03:25.635 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 590337
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 13:03:25.635 UTC: 	 Proxy lifetime 590338 secs is different from voms extension lifetime 590337 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 13:03:25.635 UTC: 	 Proxy valid for 163:58:57 hours
+DEBUG 2020-02-26 13:03:25.718 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2020-02-26 13:03:25.832 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 13:03:25.833 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-02-26 13:03:25.833 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae_cmsweb.cern.ch for credential name
+DEBUG 2020-02-26 13:03:26.238 UTC: 	 Executing : 
+ command : myproxy-info -l 489b9f568bf05948a8c377a83fcf27dff27a04cc -s myproxy.cern.ch
+ output : username: 489b9f568bf05948a8c377a83fcf27dff27a04cc
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 675:11:16  (28.1 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 13:03:26.239 UTC: 	 Myproxy is valid: 2430676
+DEBUG 2020-02-26 13:03:26.240 UTC: 	 Command use: status
+DEBUG 2020-02-26 13:03:26.240 UTC: 	 Options use: ['-d', 'ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200', '--verboseErrors', '--long']
+DEBUG 2020-02-26 13:03:26.362 UTC: 	 CRABClient version: 3.3.2001
+DEBUG 2020-02-26 13:03:26.362 UTC: 	 Instance is prod
+DEBUG 2020-02-26 13:03:26.362 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-02-26 13:03:26.362 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2020-02-26 13:03:26.519 UTC: 	 Got information from server oracle database: {u'result': [u'200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2020-02-26 12:02:06.705950', u'None', u'2020-02-26 12:03:04.501052', u'None', u'CMSSW_10_6_1_patch2', u'slc7_amd64_gcc820', u'/SingleE_FlatPt-2to100/PhaseIIMTDTDRAutumn18DR-PU200_103X_upgrade2023_realistic_v2-v1/FEVT', u'F', u'0', u'[]', u'[]', u'Automatic', u"{'splitOnRun': False, 'minutes_per_job': 200, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'8dd71dee1f30aa1882224c05fa7e8b0003423317bbfdb6aa49b85b217591c615.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'jheikkil', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae', u'cms', u'None', u'None', u'SingleE_FlatPt-2to100_PU200_v47-00000000000000000000000000000000', u'F', u'T2_CH_CERN', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u"['L1NtuplePhaseII_MTD.root']", u'[]', u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'http://vocms0195.cern.ch/mon/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200', u'None', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv623.fnal.gov:9620', u'crab3@vocms0195.cern.ch', u'F', u'[]', u'T', u'/store/user/jheikkil/TRG3/', u'F', u'None', u'F', u'None', u'SingleE_FlatPt-2to100', u'None', u'80fa0d826e5fc4d835f5049991f89c24fdd0faf8618a21063a1cde3ef7f0a0b9.tar.gz', u'48536169', u'filetransfers', u'F', u'2001:1458:d00:16::4f5', u'-1.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2020-02-26 13:03:26.520 UTC: 	 CRAB project directory:		/afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 13:03:26.520 UTC: 	 Task name:			200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 13:03:26.520 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0195.cern.ch - crab-prod-tw01
+INFO 2020-02-26 13:03:26.520 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2020-02-26 13:03:26.520 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200226_120206%3Ajheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 13:03:26.520 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jheikkil&var-task=200226_120206%3Ajheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 13:03:26.521 UTC: 	 In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+DEBUG 2020-02-26 13:03:26.521 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 48536169)
+DEBUG 2020-02-26 13:03:26.521 UTC: 	 Webdir is located at http://vocms0195.cern.ch/mon/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-26 13:03:26.630 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-26 13:03:26.630 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200/status_cache
+DEBUG 2020-02-26 13:03:26.794 UTC: 	 Got information from status cache file: {'0-4': {'Retries': 0, 'WallDurations': [9.0, 280.0], 'StartTimes': [1582718793.0], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536171.0'], 'EndTimes': [1582719073.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [2784], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 64 event: 15818 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 64 event: 15818 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'TotalUserCpuTimeHistory': [144], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [5]}, '0-5': {'Retries': 0, 'WallDurations': [8.0, 394.0], 'StartTimes': [1582718794.0], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536172.0'], 'EndTimes': [1582719188.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [1009808], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 90 event: 22309 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 90 event: 22309 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'TotalUserCpuTimeHistory': [163], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [6]}, '0-1': {'Retries': 0, 'WallDurations': [9.0, 318.0], 'StartTimes': [1582718938.0], 'SubmitTimes': [1582718597.0], 'JobIds': ['48536175.0'], 'TotalUserCpuTimeHistory': [135], 'EndTimes': [1582719256.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [1434264], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 103 event: 25518 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 103 event: 25518 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'SiteHistory': ['Unknown', 'T2_IT_Pisa'], 'TotalSysCpuTimeHistory': [7]}, '0-2': {'Retries': 0, 'WallDurations': [8.0, 306.0], 'StartTimes': [1582718794.0], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536173.0'], 'EndTimes': [1582719100.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [22208], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 262 event: 65265 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 262 event: 65265 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'TotalUserCpuTimeHistory': [151], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [6]}, '0-3': {'Retries': 0, 'WallDurations': [8.0, 295.0], 'StartTimes': [1582718798.0], 'SubmitTimes': [1582718597.0], 'JobIds': ['48536174.0'], 'EndTimes': [1582719093.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [2776], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 92 event: 22818 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 92 event: 22818 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'TotalUserCpuTimeHistory': [168], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [6]}}
+INFO 2020-02-26 13:03:26.794 UTC: 	 Status on the scheduler:	FAILED
+INFO 2020-02-26 13:03:26.794 UTC: 	 
+The job splitting of this task is 'Automatic', please refer to this FAQ for a description of the jobs status summary:
+https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ#What_is_the_Automatic_splitting
+INFO 2020-02-26 13:03:26.794 UTC: 	 Probe stage log:		https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200/AutomaticSplitting_Log0.txt
+INFO 2020-02-26 13:03:26.794 UTC: 	 
+Probe jobs status:              no output    		100.0% (5/5)
+INFO 2020-02-26 13:03:26.794 UTC: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2020-02-26 13:03:26.795 UTC: 	 
+Error Summary:
+
+5 jobs failed with exit code 8006:
+	(Showing only the 3 most frequent errors messages for this exit code)
+
+	1 jobs failed with following error message: (for example, job 0-3)
+
+		CmsRunFailure
+		CMSSW error message follows.
+		Fatal Exception
+		An exception of category 'ProductNotFound' occurred while
+		   [0] Processing  Event run: 1 lumi: 92 event: 22818 stream: 0
+		   [1] Running path 'L1simulation_step'
+		   [2] Calling method for module Phase1L1TJetProducer/'Phase1L1TJetProducer'
+		Exception Message:
+		Principal::getByToken: Found zero products matching all criteria
+		Looking for a container with elements of type: reco::Candidate
+		Looking for module label: l1pfCandidates
+		Looking for productInstanceName: Puppi
+		   Additional Info:
+		      [a] If you wish to continue processing events after a ProductNotFound exception,
+		add "SkipEvent = cms.untracked.vstring('ProductNotFound')" to the "options" PSet in the configuration.
+
+	1 jobs failed with following error message: (for example, job 0-2)
+
+		CmsRunFailure
+		CMSSW error message follows.
+		Fatal Exception
+		An exception of category 'ProductNotFound' occurred while
+		   [0] Processing  Event run: 1 lumi: 262 event: 65265 stream: 0
+		   [1] Running path 'L1simulation_step'
+		   [2] Calling method for module Phase1L1TJetProducer/'Phase1L1TJetProducer'
+		Exception Message:
+		Principal::getByToken: Found zero products matching all criteria
+		Looking for a container with elements of type: reco::Candidate
+		Looking for module label: l1pfCandidates
+		Looking for productInstanceName: Puppi
+		   Additional Info:
+		      [a] If you wish to continue processing events after a ProductNotFound exception,
+		add "SkipEvent = cms.untracked.vstring('ProductNotFound')" to the "options" PSet in the configuration.
+
+	1 jobs failed with following error message: (for example, job 0-1)
+
+		CmsRunFailure
+		CMSSW error message follows.
+		Fatal Exception
+		An exception of category 'ProductNotFound' occurred while
+		   [0] Processing  Event run: 1 lumi: 103 event: 25518 stream: 0
+		   [1] Running path 'L1simulation_step'
+		   [2] Calling method for module Phase1L1TJetProducer/'Phase1L1TJetProducer'
+		Exception Message:
+		Principal::getByToken: Found zero products matching all criteria
+		Looking for a container with elements of type: reco::Candidate
+		Looking for module label: l1pfCandidates
+		Looking for productInstanceName: Puppi
+		   Additional Info:
+		      [a] If you wish to continue processing events after a ProductNotFound exception,
+		add "SkipEvent = cms.untracked.vstring('ProductNotFound')" to the "options" PSet in the configuration.
+
+	For the error messages of the other 2 jobs, please have a look at the dashboard task monitoring web page.
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+INFO 2020-02-26 13:03:26.795 UTC: 	 
+Extended Job Status Table:
+
+ Job State        Most Recent Site        Runtime   Mem (MB)      CPU %    Retries   Restarts      Waste       Exit Code
+ 0-1 no output    T2_IT_Pisa              0:05:18       1400         45          0          0    0:00:09            8006
+ 0-2 no output    T1_IT_CNAF              0:05:06         21         51          0          0    0:00:08            8006
+ 0-3 no output    T1_IT_CNAF              0:04:55          2         59          0          0    0:00:08            8006
+ 0-4 no output    T1_IT_CNAF              0:04:40          2         53          0          0    0:00:09            8006
+ 0-5 no output    T1_IT_CNAF              0:06:34        986         43          0          0    0:00:08            8006
+DEBUG 2020-02-26 13:03:26.795 UTC: 	 
+ Job Cluster Id
+ 0-4 ['48536171.0']
+ 0-5 ['48536172.0']
+ 0-1 ['48536175.0']
+ 0-2 ['48536173.0']
+ 0-3 ['48536174.0']
+INFO 2020-02-26 13:03:26.934 UTC: 	 Log file is /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200/crab.log
+DEBUG 2020-02-26 15:51:57.701 UTC: 	 Running on: Linux lxplus702.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-26 15:51:57.735 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-26 15:51:57.735 UTC: 	 Executing command: 'status'
+DEBUG 2020-02-26 15:51:57.735 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+DEBUG 2020-02-26 15:51:57.776 UTC: 	 Checking credentials
+DEBUG 2020-02-26 15:51:57.776 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 15:51:57.776 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 15:51:59.019 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 580224
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 15:52:00.162 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 580222
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 15:52:00.162 UTC: 	 Proxy lifetime 580224 secs is different from voms extension lifetime 580222 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 15:52:00.162 UTC: 	 Proxy valid for 161:10:22 hours
+DEBUG 2020-02-26 15:52:00.304 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 15:52:00.304 UTC: 	 Checking credentials
+DEBUG 2020-02-26 15:52:00.304 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 15:52:00.304 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 15:52:01.325 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 580221
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 15:52:02.371 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 580220
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 15:52:02.371 UTC: 	 Proxy lifetime 580221 secs is different from voms extension lifetime 580220 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 15:52:02.371 UTC: 	 Proxy valid for 161:10:20 hours
+DEBUG 2020-02-26 15:52:02.458 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2020-02-26 15:52:02.570 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 15:52:02.570 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-02-26 15:52:02.570 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae_cmsweb.cern.ch for credential name
+DEBUG 2020-02-26 15:52:02.986 UTC: 	 Executing : 
+ command : myproxy-info -l 489b9f568bf05948a8c377a83fcf27dff27a04cc -s myproxy.cern.ch
+ output : username: 489b9f568bf05948a8c377a83fcf27dff27a04cc
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 672:22:40  (28.0 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 15:52:02.988 UTC: 	 Myproxy is valid: 2420560
+DEBUG 2020-02-26 15:52:02.988 UTC: 	 Command use: status
+DEBUG 2020-02-26 15:52:02.989 UTC: 	 Options use: ['-d', 'ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200/']
+DEBUG 2020-02-26 15:52:03.135 UTC: 	 CRABClient version: 3.3.2001
+DEBUG 2020-02-26 15:52:03.135 UTC: 	 Instance is prod
+DEBUG 2020-02-26 15:52:03.135 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-02-26 15:52:03.135 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2020-02-26 15:52:03.223 UTC: 	 Got information from server oracle database: {u'result': [u'200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2020-02-26 12:02:06.705950', u'None', u'2020-02-26 12:03:04.501052', u'None', u'CMSSW_10_6_1_patch2', u'slc7_amd64_gcc820', u'/SingleE_FlatPt-2to100/PhaseIIMTDTDRAutumn18DR-PU200_103X_upgrade2023_realistic_v2-v1/FEVT', u'F', u'0', u'[]', u'[]', u'Automatic', u"{'splitOnRun': False, 'minutes_per_job': 200, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'8dd71dee1f30aa1882224c05fa7e8b0003423317bbfdb6aa49b85b217591c615.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'jheikkil', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae', u'cms', u'None', u'None', u'SingleE_FlatPt-2to100_PU200_v47-00000000000000000000000000000000', u'F', u'T2_CH_CERN', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u"['L1NtuplePhaseII_MTD.root']", u'[]', u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'http://vocms0195.cern.ch/mon/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200', u'None', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv623.fnal.gov:9620', u'crab3@vocms0195.cern.ch', u'F', u'[]', u'T', u'/store/user/jheikkil/TRG3/', u'F', u'None', u'F', u'None', u'SingleE_FlatPt-2to100', u'None', u'80fa0d826e5fc4d835f5049991f89c24fdd0faf8618a21063a1cde3ef7f0a0b9.tar.gz', u'48536169', u'filetransfers', u'F', u'2001:1458:d00:16::4f5', u'-1.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2020-02-26 15:52:03.223 UTC: 	 CRAB project directory:		/afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 15:52:03.224 UTC: 	 Task name:			200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 15:52:03.224 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0195.cern.ch - crab-prod-tw01
+INFO 2020-02-26 15:52:03.224 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2020-02-26 15:52:03.224 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200226_120206%3Ajheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 15:52:03.224 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jheikkil&var-task=200226_120206%3Ajheikkil_crab_SingleE_FlatPt-2to100_PU200
+INFO 2020-02-26 15:52:03.224 UTC: 	 In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+DEBUG 2020-02-26 15:52:03.224 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 48536169)
+DEBUG 2020-02-26 15:52:03.224 UTC: 	 Webdir is located at http://vocms0195.cern.ch/mon/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-26 15:52:03.441 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-26 15:52:03.441 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200/status_cache
+DEBUG 2020-02-26 15:52:03.495 UTC: 	 Got information from status cache file: {'0-4': {'Retries': 0, 'WallDurations': [9.0, 280.0], 'StartTimes': [1582718793.0], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536171.0'], 'EndTimes': [1582719073.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [2784], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 64 event: 15818 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 64 event: 15818 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'TotalUserCpuTimeHistory': [144], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [5]}, '0-5': {'Retries': 0, 'WallDurations': [8.0, 394.0], 'StartTimes': [1582718794.0], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536172.0'], 'EndTimes': [1582719188.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [1009808], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 90 event: 22309 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 90 event: 22309 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'TotalUserCpuTimeHistory': [163], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [6]}, '0-1': {'Retries': 0, 'WallDurations': [9.0, 318.0], 'StartTimes': [1582718938.0], 'SubmitTimes': [1582718597.0], 'JobIds': ['48536175.0'], 'TotalUserCpuTimeHistory': [135], 'EndTimes': [1582719256.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [1434264], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 103 event: 25518 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 103 event: 25518 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'SiteHistory': ['Unknown', 'T2_IT_Pisa'], 'TotalSysCpuTimeHistory': [7]}, '0-2': {'Retries': 0, 'WallDurations': [8.0, 306.0], 'StartTimes': [1582718794.0], 'SubmitTimes': [1582718596.0], 'JobIds': ['48536173.0'], 'EndTimes': [1582719100.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [22208], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 262 event: 65265 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 262 event: 65265 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'TotalUserCpuTimeHistory': [151], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [6]}, '0-3': {'Retries': 0, 'WallDurations': [8.0, 295.0], 'StartTimes': [1582718798.0], 'SubmitTimes': [1582718597.0], 'JobIds': ['48536174.0'], 'EndTimes': [1582719093.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [2776], 'Error': [8006, 'CmsRunFailure\nCMSSW error message follows.\nFatal Exception\nAn exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 92 event: 22818 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.\n', {'type': 'Fatal Exception', 'details': 'An exception of category \'ProductNotFound\' occurred while\n   [0] Processing  Event run: 1 lumi: 92 event: 22818 stream: 0\n   [1] Running path \'L1simulation_step\'\n   [2] Calling method for module Phase1L1TJetProducer/\'Phase1L1TJetProducer\'\nException Message:\nPrincipal::getByToken: Found zero products matching all criteria\nLooking for a container with elements of type: reco::Candidate\nLooking for module label: l1pfCandidates\nLooking for productInstanceName: Puppi\n\n   Additional Info:\n      [a] If you wish to continue processing events after a ProductNotFound exception,\nadd "SkipEvent = cms.untracked.vstring(\'ProductNotFound\')" to the "options" PSet in the configuration.', 'exitCode': 8006}], 'TotalUserCpuTimeHistory': [168], 'SiteHistory': ['Unknown', 'T1_IT_CNAF'], 'TotalSysCpuTimeHistory': [6]}}
+INFO 2020-02-26 15:52:03.495 UTC: 	 Status on the scheduler:	FAILED
+INFO 2020-02-26 15:52:03.495 UTC: 	 
+The job splitting of this task is 'Automatic', please refer to this FAQ for a description of the jobs status summary:
+https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ#What_is_the_Automatic_splitting
+INFO 2020-02-26 15:52:03.496 UTC: 	 Probe stage log:		https://cmsweb.cern.ch/scheddmon/0195/cms1343/200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200/AutomaticSplitting_Log0.txt
+INFO 2020-02-26 15:52:03.496 UTC: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2020-02-26 15:52:03.523 UTC: 	 Log file is /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200/crab.log
+DEBUG 2020-02-26 16:12:41.657 UTC: 	 Running on: Linux lxplus702.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-26 16:12:41.727 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-26 16:12:41.727 UTC: 	 Executing command: 'purge'
+DEBUG 2020-02-26 16:12:41.727 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+DEBUG 2020-02-26 16:12:41.749 UTC: 	 Checking credentials
+DEBUG 2020-02-26 16:12:41.750 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 16:12:41.750 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 16:12:43.913 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 578979
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 16:12:46.159 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 578976
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 16:12:46.160 UTC: 	 Proxy lifetime 578979 secs is different from voms extension lifetime 578976 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 16:12:46.160 UTC: 	 Proxy valid for 160:49:36 hours
+DEBUG 2020-02-26 16:12:46.515 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 16:12:46.515 UTC: 	 Checking credentials
+DEBUG 2020-02-26 16:12:46.515 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 16:12:46.515 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 16:12:48.671 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 578974
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 16:12:49.910 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 578973
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 16:12:49.910 UTC: 	 Proxy lifetime 578974 secs is different from voms extension lifetime 578973 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 16:12:49.910 UTC: 	 Proxy valid for 160:49:33 hours
+DEBUG 2020-02-26 16:12:50.017 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2020-02-26 16:12:50.133 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 16:12:50.134 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-02-26 16:12:50.134 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae_cmsweb.cern.ch for credential name
+DEBUG 2020-02-26 16:12:50.755 UTC: 	 Executing : 
+ command : myproxy-info -l 489b9f568bf05948a8c377a83fcf27dff27a04cc -s myproxy.cern.ch
+ output : username: 489b9f568bf05948a8c377a83fcf27dff27a04cc
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 672:01:52  (28.0 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 16:12:50.756 UTC: 	 Myproxy is valid: 2419312
+DEBUG 2020-02-26 16:12:50.757 UTC: 	 Command use: purge
+DEBUG 2020-02-26 16:12:50.757 UTC: 	 Options use: ['-d', 'ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200/']
+DEBUG 2020-02-26 16:12:50.915 UTC: 	 CRABClient version: 3.3.2001
+DEBUG 2020-02-26 16:12:50.915 UTC: 	 Instance is prod
+DEBUG 2020-02-26 16:12:50.915 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-02-26 16:12:50.915 UTC: 	 Command url /crabserver/prod/workflow
+INFO 2020-02-26 16:12:50.915 UTC: 	 Getting the tarball hash key
+INFO 2020-02-26 16:12:51.142 UTC: 	 Checking task status
+INFO 2020-02-26 16:12:51.142 UTC: 	 Task status: SUBMITTED
+ERROR 2020-02-26 16:12:51.142 UTC: 	 Error: Only tasks with these status can be purged: ['SUBMITFAILED', 'KILLED', 'FINISHED', 'FAILED', 'KILLFAILED', 'COMPLETED']
+ERROR 2020-02-26 16:12:51.142 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 147, in __call__
+    self.cmd()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/purge.py", line 40, in __call__
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: Only tasks with these status can be purged: ['SUBMITFAILED', 'KILLED', 'FINISHED', 'FAILED', 'KILLFAILED', 'COMPLETED']
+DEBUG 2020-02-26 16:13:51.368 UTC: 	 Running on: Linux lxplus702.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-26 16:13:51.398 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-26 16:13:51.398 UTC: 	 Executing command: 'kill'
+DEBUG 2020-02-26 16:13:51.398 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+DEBUG 2020-02-26 16:13:51.411 UTC: 	 Checking credentials
+DEBUG 2020-02-26 16:13:51.411 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 16:13:51.411 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 16:13:52.649 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 578910
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 16:13:53.461 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 578909
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 16:13:53.461 UTC: 	 Proxy lifetime 578910 secs is different from voms extension lifetime 578909 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 16:13:53.461 UTC: 	 Proxy valid for 160:48:29 hours
+DEBUG 2020-02-26 16:13:53.576 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 16:13:53.576 UTC: 	 Checking credentials
+DEBUG 2020-02-26 16:13:53.576 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 16:13:53.576 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 16:13:54.808 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 578908
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 16:13:56.063 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 578907
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 16:13:56.063 UTC: 	 Proxy lifetime 578908 secs is different from voms extension lifetime 578907 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 16:13:56.063 UTC: 	 Proxy valid for 160:48:27 hours
+DEBUG 2020-02-26 16:13:56.214 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2020-02-26 16:13:56.342 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 16:13:56.342 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-02-26 16:13:56.342 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae_cmsweb.cern.ch for credential name
+DEBUG 2020-02-26 16:13:56.751 UTC: 	 Executing : 
+ command : myproxy-info -l 489b9f568bf05948a8c377a83fcf27dff27a04cc -s myproxy.cern.ch
+ output : username: 489b9f568bf05948a8c377a83fcf27dff27a04cc
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 672:00:46  (28.0 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 16:13:56.752 UTC: 	 Myproxy is valid: 2419246
+DEBUG 2020-02-26 16:13:56.752 UTC: 	 Command use: kill
+DEBUG 2020-02-26 16:13:56.752 UTC: 	 Options use: ['-d', 'ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200/']
+DEBUG 2020-02-26 16:13:56.826 UTC: 	 CRABClient version: 3.3.2001
+DEBUG 2020-02-26 16:13:56.826 UTC: 	 Instance is prod
+DEBUG 2020-02-26 16:13:56.826 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-02-26 16:13:56.826 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2020-02-26 16:13:56.827 UTC: 	 Killing task 200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-26 16:13:56.945 UTC: 	 Result: {u'result': [{u'result': u'ok'}], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_user_role', u'tm_user_group', u'tm_task_failure', u'tm_split_algo', u'tm_split_args', u'panda_resubmitted_jobs', u'tm_save_logs', u'tm_username', u'tm_user_dn', u'tm_arguments', u'tm_input_dataset', u'tm_dbs_url', u'tm_task_warnings', u'tm_publication', u'tm_user_webdir', u'tm_asourl', u'tm_asodb', u'tm_output_dataset', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'clusterid', u'tm_start_time', u'tw_name']}}
+INFO 2020-02-26 16:13:56.945 UTC: 	 Kill request successfully sent
+INFO 2020-02-26 16:13:56.947 UTC: 	 Log file is /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200/crab.log

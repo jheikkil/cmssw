@@ -1,0 +1,541 @@
+DEBUG 2020-02-24 16:26:42.210 UTC: 	 Running on: Linux lxplus797.cern.ch 3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-24 16:26:42.232 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-24 16:26:42.232 UTC: 	 Executing command: 'status'
+DEBUG 2020-02-24 16:26:42.233 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+DEBUG 2020-02-25 10:13:20.712 UTC: 	 Running on: Linux lxplus722.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-25 10:13:20.735 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-25 10:13:20.736 UTC: 	 Executing command: 'status'
+DEBUG 2020-02-25 10:13:20.778 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+ERROR 2020-02-25 10:13:20.807 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples/v47/SingleE_FlatPt-2to100_PU200
+ERROR 2020-02-25 10:13:20.807 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples/v47/SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-25 10:13:26.134 UTC: 	 Running on: Linux lxplus722.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-25 10:13:26.152 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-25 10:13:26.152 UTC: 	 Executing command: 'status'
+DEBUG 2020-02-25 10:13:26.152 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+ERROR 2020-02-25 10:13:26.154 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples/v47/SingleE_FlatPt-2to100_PU200
+ERROR 2020-02-25 10:13:26.154 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples/v47/SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-25 10:17:20.066 UTC: 	 Running on: Linux lxplus722.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-25 10:17:20.090 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-25 10:17:20.091 UTC: 	 Executing command: 'tasks'
+DEBUG 2020-02-25 10:17:20.091 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+DEBUG 2020-02-25 10:17:20.100 UTC: 	 Checking credentials
+DEBUG 2020-02-25 10:17:20.102 UTC: 	 Proxy file /tmp/x509up_u49345 not found
+DEBUG 2020-02-25 10:17:20.102 UTC: 	 Creating new proxy for 24:00 hours with VO group '' and VO role 'NULL'.
+DEBUG 2020-02-25 10:17:25.756 UTC: 	 Executing : 
+ command : voms-proxy-init -voms cms:/cms -valid 24:00 -rfc
+ output : None
+ error: None
+ retcode : 0
+DEBUG 2020-02-25 10:17:26.570 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 86397
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-25 10:17:27.276 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 86396
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-25 10:17:27.276 UTC: 	 Proxy lifetime 86397 secs is different from voms extension lifetime 86396 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-25 10:17:28.092 UTC: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u49345 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-25 10:17:28.093 UTC: 	 Proxy created.
+DEBUG 2020-02-25 10:17:28.206 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-25 10:17:28.206 UTC: 	 Checking credentials
+DEBUG 2020-02-25 10:17:28.206 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-25 10:17:28.207 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-25 10:17:29.323 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 86394
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-25 10:17:30.139 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 86393
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-25 10:17:30.139 UTC: 	 Proxy lifetime 86394 secs is different from voms extension lifetime 86393 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-25 10:17:30.139 UTC: 	 Proxy valid for 23:59:53 hours
+DEBUG 2020-02-25 10:17:30.294 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2020-02-25 10:17:30.408 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-25 10:17:30.408 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-02-25 10:17:30.408 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae_cmsweb.cern.ch for credential name
+DEBUG 2020-02-25 10:17:30.922 UTC: 	 Executing : 
+ command : myproxy-info -l 489b9f568bf05948a8c377a83fcf27dff27a04cc -s myproxy.cern.ch
+ output : username: 489b9f568bf05948a8c377a83fcf27dff27a04cc
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 701:57:12  (29.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-25 10:17:30.923 UTC: 	 Myproxy is valid: 2527032
+DEBUG 2020-02-25 10:17:30.923 UTC: 	 Command use: tasks
+DEBUG 2020-02-25 10:17:30.923 UTC: 	 Options use: []
+DEBUG 2020-02-25 10:17:31.065 UTC: 	 CRABClient version: 3.3.2001
+DEBUG 2020-02-25 10:17:31.065 UTC: 	 Instance is prod
+DEBUG 2020-02-25 10:17:31.065 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-02-25 10:17:31.065 UTC: 	 Command url /crabserver/prod/workflow
+INFO 2020-02-25 10:17:31.576 UTC: 	 
+List of tasks from 2020-01-26 until 2020-02-25
+INFO 2020-02-25 10:17:31.576 UTC: 	 Beware that STATUS here does not include information from grid jobs
+INFO 2020-02-25 10:17:31.576 UTC: 	 ================================================================================
+INFO 2020-02-25 10:17:31.576 UTC: 	 NAME								STATUS
+INFO 2020-02-25 10:17:31.576 UTC: 	 ================================================================================
+INFO 2020-02-25 10:17:31.576 UTC: 	 200224_161858:jheikkil_crab_SinglePhoton_FlatPt-8to150_PU200
+								SUBMITTED
+INFO 2020-02-25 10:17:31.576 UTC: 	 --------------------------------------------------------------------------------
+INFO 2020-02-25 10:17:31.576 UTC: 	 200224_161731:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+								SUBMITTED
+INFO 2020-02-25 10:17:31.577 UTC: 	 --------------------------------------------------------------------------------
+INFO 2020-02-25 10:17:31.577 UTC: 	 
+
+INFO 2020-02-25 10:17:31.581 UTC: 	 Log file is /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/crab.log
+DEBUG 2020-02-25 10:22:53.836 UTC: 	 Running on: Linux lxplus722.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-25 10:22:53.873 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-25 10:22:53.873 UTC: 	 Executing command: 'status'
+DEBUG 2020-02-25 10:22:53.874 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+ERROR 2020-02-25 10:22:53.875 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples/v47/SingleE_FlatPt-2to100_PU200
+ERROR 2020-02-25 10:22:53.875 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples/v47/SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-25 10:22:58.014 UTC: 	 Running on: Linux lxplus722.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-25 10:22:58.033 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-25 10:22:58.034 UTC: 	 Executing command: 'status'
+DEBUG 2020-02-25 10:22:58.034 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+ERROR 2020-02-25 10:22:58.035 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples/v47/SingleE_FlatPt-2to100_PU200
+ERROR 2020-02-25 10:22:58.035 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples/v47/SingleE_FlatPt-2to100_PU200
+DEBUG 2020-02-25 10:23:01.919 UTC: 	 Running on: Linux lxplus722.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-25 10:23:01.940 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-25 10:23:01.941 UTC: 	 Executing command: 'tasks'
+DEBUG 2020-02-25 10:23:01.941 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+DEBUG 2020-02-25 10:23:01.952 UTC: 	 Checking credentials
+DEBUG 2020-02-25 10:23:01.952 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-25 10:23:01.953 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-25 10:23:02.858 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 86061
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-25 10:23:03.671 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 86060
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-25 10:23:03.671 UTC: 	 Proxy lifetime 86061 secs is different from voms extension lifetime 86060 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-25 10:23:03.671 UTC: 	 Proxy valid for 23:54:20 hours
+DEBUG 2020-02-25 10:23:03.783 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-25 10:23:03.783 UTC: 	 Checking credentials
+DEBUG 2020-02-25 10:23:03.783 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-25 10:23:03.783 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-25 10:23:04.697 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 86059
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-25 10:23:05.507 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 86058
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-25 10:23:05.507 UTC: 	 Proxy lifetime 86059 secs is different from voms extension lifetime 86058 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-25 10:23:05.507 UTC: 	 Proxy valid for 23:54:18 hours
+DEBUG 2020-02-25 10:23:05.611 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2020-02-25 10:23:05.728 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-25 10:23:05.728 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-02-25 10:23:05.728 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae_cmsweb.cern.ch for credential name
+DEBUG 2020-02-25 10:23:05.933 UTC: 	 Executing : 
+ command : myproxy-info -l 489b9f568bf05948a8c377a83fcf27dff27a04cc -s myproxy.cern.ch
+ output : username: 489b9f568bf05948a8c377a83fcf27dff27a04cc
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 701:51:37  (29.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-25 10:23:05.934 UTC: 	 Myproxy is valid: 2526697
+DEBUG 2020-02-25 10:23:05.934 UTC: 	 Command use: tasks
+DEBUG 2020-02-25 10:23:05.934 UTC: 	 Options use: []
+DEBUG 2020-02-25 10:23:06.006 UTC: 	 CRABClient version: 3.3.2001
+DEBUG 2020-02-25 10:23:06.006 UTC: 	 Instance is prod
+DEBUG 2020-02-25 10:23:06.006 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-02-25 10:23:06.006 UTC: 	 Command url /crabserver/prod/workflow
+INFO 2020-02-25 10:23:06.597 UTC: 	 
+List of tasks from 2020-01-26 until 2020-02-25
+INFO 2020-02-25 10:23:06.597 UTC: 	 Beware that STATUS here does not include information from grid jobs
+INFO 2020-02-25 10:23:06.597 UTC: 	 ================================================================================
+INFO 2020-02-25 10:23:06.597 UTC: 	 NAME								STATUS
+INFO 2020-02-25 10:23:06.597 UTC: 	 ================================================================================
+INFO 2020-02-25 10:23:06.597 UTC: 	 200224_161858:jheikkil_crab_SinglePhoton_FlatPt-8to150_PU200
+								SUBMITTED
+INFO 2020-02-25 10:23:06.598 UTC: 	 --------------------------------------------------------------------------------
+INFO 2020-02-25 10:23:06.598 UTC: 	 200224_161731:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+								SUBMITTED
+INFO 2020-02-25 10:23:06.598 UTC: 	 --------------------------------------------------------------------------------
+INFO 2020-02-25 10:23:06.598 UTC: 	 
+
+INFO 2020-02-25 10:23:06.599 UTC: 	 Log file is /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/crab.log
+DEBUG 2020-02-25 10:23:12.515 UTC: 	 Running on: Linux lxplus722.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-25 10:23:12.531 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-25 10:23:12.531 UTC: 	 Executing command: 'status'
+DEBUG 2020-02-25 10:23:12.531 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+ERROR 2020-02-25 10:23:12.532 UTC: 	 Error: 200224_161858:jheikkil_crab_SinglePhoton_FlatPt-8to150_PU200 is not a valid CRAB project directory.
+ERROR 2020-02-25 10:23:12.533 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 595, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: 200224_161858:jheikkil_crab_SinglePhoton_FlatPt-8to150_PU200 is not a valid CRAB project directory.
+DEBUG 2020-02-25 10:34:54.822 UTC: 	 Running on: Linux lxplus722.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-25 10:34:54.868 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-25 10:34:54.869 UTC: 	 Executing command: 'resubmit'
+DEBUG 2020-02-25 10:34:54.869 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+ERROR 2020-02-25 10:34:54.870 UTC: 	 Error: -d is not a valid CRAB project directory.
+ERROR 2020-02-25 10:34:54.870 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/resubmit.py", line 28, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 595, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: -d is not a valid CRAB project directory.
+DEBUG 2020-02-26 11:58:30.644 UTC: 	 Running on: Linux lxplus702.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-26 11:58:30.669 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-26 11:58:30.670 UTC: 	 Executing command: 'submit'
+DEBUG 2020-02-26 11:58:30.670 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+DEBUG 2020-02-26 11:58:30.685 UTC: 	 Checking credentials
+DEBUG 2020-02-26 11:58:30.686 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 11:58:30.686 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 11:58:31.501 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 594231
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 11:58:32.318 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 594230
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 11:58:32.318 UTC: 	 Proxy lifetime 594231 secs is different from voms extension lifetime 594230 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 11:58:32.318 UTC: 	 Proxy valid for 165:03:50 hours
+INFO 2020-02-26 11:58:32.318 UTC: 	 Will use CRAB configuration file ntuples3/v47/SingleE_FlatPt-2to100_PU200/conf/crab.py
+DEBUG 2020-02-26 11:58:32.318 UTC: 	 Loading CRAB configuration file.
+DEBUG 2020-02-26 11:58:32.360 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2020-02-26 11:58:32.361 UTC: 	 Working area '/afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200' already exists 
+Please change the requestName in the config file
+ERROR 2020-02-26 11:58:32.361 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 324, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/ClientUtilities.py", line 418, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/ntuples3/v47/SingleE_FlatPt-2to100_PU200/crab_SingleE_FlatPt-2to100_PU200' already exists 
+Please change the requestName in the config file
+DEBUG 2020-02-26 15:23:39.663 UTC: 	 Running on: Linux lxplus702.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-26 15:23:39.701 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-26 15:23:39.702 UTC: 	 Executing command: 'tasks'
+DEBUG 2020-02-26 15:23:39.702 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+DEBUG 2020-02-26 15:23:39.727 UTC: 	 Checking credentials
+DEBUG 2020-02-26 15:23:39.727 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 15:23:39.727 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 15:23:40.760 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 581922
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 15:23:41.678 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 581921
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 15:23:41.679 UTC: 	 Proxy lifetime 581922 secs is different from voms extension lifetime 581921 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 15:23:41.679 UTC: 	 Proxy valid for 161:38:41 hours
+DEBUG 2020-02-26 15:23:41.815 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 15:23:41.815 UTC: 	 Checking credentials
+DEBUG 2020-02-26 15:23:41.815 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 15:23:41.815 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 15:23:42.737 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 581920
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 15:23:43.765 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 581919
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 15:23:43.765 UTC: 	 Proxy lifetime 581920 secs is different from voms extension lifetime 581919 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 15:23:43.765 UTC: 	 Proxy valid for 161:38:39 hours
+DEBUG 2020-02-26 15:23:43.885 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2020-02-26 15:23:43.999 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 15:23:43.999 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-02-26 15:23:43.999 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae_cmsweb.cern.ch for credential name
+DEBUG 2020-02-26 15:23:44.711 UTC: 	 Executing : 
+ command : myproxy-info -l 489b9f568bf05948a8c377a83fcf27dff27a04cc -s myproxy.cern.ch
+ output : username: 489b9f568bf05948a8c377a83fcf27dff27a04cc
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 672:50:58  (28.0 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 15:23:44.712 UTC: 	 Myproxy is valid: 2422258
+DEBUG 2020-02-26 15:23:44.712 UTC: 	 Command use: tasks
+DEBUG 2020-02-26 15:23:44.712 UTC: 	 Options use: []
+DEBUG 2020-02-26 15:23:44.809 UTC: 	 CRABClient version: 3.3.2001
+DEBUG 2020-02-26 15:23:44.809 UTC: 	 Instance is prod
+DEBUG 2020-02-26 15:23:44.809 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-02-26 15:23:44.809 UTC: 	 Command url /crabserver/prod/workflow
+INFO 2020-02-26 15:23:45.491 UTC: 	 
+List of tasks from 2020-01-27 until 2020-02-26
+INFO 2020-02-26 15:23:45.492 UTC: 	 Beware that STATUS here does not include information from grid jobs
+INFO 2020-02-26 15:23:45.492 UTC: 	 ================================================================================
+INFO 2020-02-26 15:23:45.492 UTC: 	 NAME								STATUS
+INFO 2020-02-26 15:23:45.492 UTC: 	 ================================================================================
+INFO 2020-02-26 15:23:45.492 UTC: 	 200226_134632:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+								SUBMITTED
+INFO 2020-02-26 15:23:45.492 UTC: 	 --------------------------------------------------------------------------------
+INFO 2020-02-26 15:23:45.492 UTC: 	 200226_130927:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+								SUBMITTED
+INFO 2020-02-26 15:23:45.492 UTC: 	 --------------------------------------------------------------------------------
+INFO 2020-02-26 15:23:45.492 UTC: 	 200226_124034:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+								SUBMITTED
+INFO 2020-02-26 15:23:45.492 UTC: 	 --------------------------------------------------------------------------------
+INFO 2020-02-26 15:23:45.492 UTC: 	 200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+								SUBMITTED
+INFO 2020-02-26 15:23:45.492 UTC: 	 --------------------------------------------------------------------------------
+INFO 2020-02-26 15:23:45.493 UTC: 	 200225_161654:jheikkil_crab_SinglePhoton_FlatPt-8to150_PU200
+								SUBMITTED
+INFO 2020-02-26 15:23:45.493 UTC: 	 --------------------------------------------------------------------------------
+INFO 2020-02-26 15:23:45.493 UTC: 	 200224_161858:jheikkil_crab_SinglePhoton_FlatPt-8to150_PU200
+								KILLED
+INFO 2020-02-26 15:23:45.493 UTC: 	 --------------------------------------------------------------------------------
+INFO 2020-02-26 15:23:45.493 UTC: 	 200224_161731:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+								SUBMITTED
+INFO 2020-02-26 15:23:45.493 UTC: 	 --------------------------------------------------------------------------------
+INFO 2020-02-26 15:23:45.493 UTC: 	 
+
+INFO 2020-02-26 15:23:45.518 UTC: 	 Log file is /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/crab.log
+DEBUG 2020-02-26 16:33:45.664 UTC: 	 Running on: Linux lxplus702.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-02-26 16:33:45.722 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-02-26 16:33:45.723 UTC: 	 Executing command: 'tasks'
+DEBUG 2020-02-26 16:33:45.723 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jheikkil/.crab3
+DEBUG 2020-02-26 16:33:45.734 UTC: 	 Checking credentials
+DEBUG 2020-02-26 16:33:45.734 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 16:33:45.734 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 16:33:47.274 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 577715
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 16:33:48.804 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 577714
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 16:33:48.805 UTC: 	 Proxy lifetime 577715 secs is different from voms extension lifetime 577714 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 16:33:48.805 UTC: 	 Proxy valid for 160:28:34 hours
+DEBUG 2020-02-26 16:33:48.937 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 16:33:48.937 UTC: 	 Checking credentials
+DEBUG 2020-02-26 16:33:48.937 UTC: 	 Found proxy file /tmp/x509up_u49345
+DEBUG 2020-02-26 16:33:48.937 UTC: 	 Getting proxy life time left
+DEBUG 2020-02-26 16:33:50.938 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -timeleft
+ output : 577712
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 16:33:52.375 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u49345 -actimeleft
+ output : 577710
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 16:33:52.375 UTC: 	 Proxy lifetime 577712 secs is different from voms extension lifetime 577710 secs for proxy: /tmp/x509up_u49345
+DEBUG 2020-02-26 16:33:52.375 UTC: 	 Proxy valid for 160:28:30 hours
+DEBUG 2020-02-26 16:33:52.515 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2020-02-26 16:33:52.733 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 16:33:52.733 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-02-26 16:33:52.733 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae_cmsweb.cern.ch for credential name
+DEBUG 2020-02-26 16:33:53.784 UTC: 	 Executing : 
+ command : myproxy-info -l 489b9f568bf05948a8c377a83fcf27dff27a04cc -s myproxy.cern.ch
+ output : username: 489b9f568bf05948a8c377a83fcf27dff27a04cc
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jheikkil/CN=748564/CN=Jaana Heikkilae
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 671:40:49  (28.0 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-02-26 16:33:53.785 UTC: 	 Myproxy is valid: 2418049
+DEBUG 2020-02-26 16:33:53.785 UTC: 	 Command use: tasks
+DEBUG 2020-02-26 16:33:53.785 UTC: 	 Options use: []
+DEBUG 2020-02-26 16:33:53.919 UTC: 	 CRABClient version: 3.3.2001
+DEBUG 2020-02-26 16:33:53.919 UTC: 	 Instance is prod
+DEBUG 2020-02-26 16:33:53.919 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-02-26 16:33:53.919 UTC: 	 Command url /crabserver/prod/workflow
+INFO 2020-02-26 16:33:54.522 UTC: 	 
+List of tasks from 2020-01-27 until 2020-02-26
+INFO 2020-02-26 16:33:54.523 UTC: 	 Beware that STATUS here does not include information from grid jobs
+INFO 2020-02-26 16:33:54.523 UTC: 	 ================================================================================
+INFO 2020-02-26 16:33:54.523 UTC: 	 NAME								STATUS
+INFO 2020-02-26 16:33:54.523 UTC: 	 ================================================================================
+INFO 2020-02-26 16:33:54.523 UTC: 	 200226_134632:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+								SUBMITTED
+INFO 2020-02-26 16:33:54.523 UTC: 	 --------------------------------------------------------------------------------
+INFO 2020-02-26 16:33:54.523 UTC: 	 200226_130927:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+								KILLED
+INFO 2020-02-26 16:33:54.523 UTC: 	 --------------------------------------------------------------------------------
+INFO 2020-02-26 16:33:54.523 UTC: 	 200226_124034:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+								KILLED
+INFO 2020-02-26 16:33:54.523 UTC: 	 --------------------------------------------------------------------------------
+INFO 2020-02-26 16:33:54.523 UTC: 	 200226_120206:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+								KILLED
+INFO 2020-02-26 16:33:54.523 UTC: 	 --------------------------------------------------------------------------------
+INFO 2020-02-26 16:33:54.523 UTC: 	 200225_161654:jheikkil_crab_SinglePhoton_FlatPt-8to150_PU200
+								KILLED
+INFO 2020-02-26 16:33:54.523 UTC: 	 --------------------------------------------------------------------------------
+INFO 2020-02-26 16:33:54.523 UTC: 	 200224_161858:jheikkil_crab_SinglePhoton_FlatPt-8to150_PU200
+								KILLED
+INFO 2020-02-26 16:33:54.523 UTC: 	 --------------------------------------------------------------------------------
+INFO 2020-02-26 16:33:54.523 UTC: 	 200224_161731:jheikkil_crab_SingleE_FlatPt-2to100_PU200
+								KILLED
+INFO 2020-02-26 16:33:54.523 UTC: 	 --------------------------------------------------------------------------------
+INFO 2020-02-26 16:33:54.524 UTC: 	 
+
+INFO 2020-02-26 16:33:54.535 UTC: 	 Log file is /afs/cern.ch/work/j/jheikkil/phase2_trigger2/CMSSW_10_6_1_patch2/src/submission/crab.log
