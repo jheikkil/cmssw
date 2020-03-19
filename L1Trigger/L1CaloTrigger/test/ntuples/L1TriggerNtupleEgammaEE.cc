@@ -15,6 +15,7 @@ class L1TriggerNtupleEgammaEE : public HGCalTriggerNtupleBase
   private:
     void clear() final;
     // HGCalTriggerTools triggerTools_;
+    std::string branch_name_prefix_;
 
     edm::EDGetToken egamma_ee_token_;
 
@@ -42,13 +43,14 @@ L1TriggerNtupleEgammaEE::
 initialize(TTree& tree, const edm::ParameterSet& conf, edm::ConsumesCollector&& collector)
 {
   egamma_ee_token_ = collector.consumes<l1t::EGammaBxCollection>(conf.getParameter<edm::InputTag>("EgammaEE"));
+  branch_name_prefix_ = conf.getUntrackedParameter<std::string>("BranchNamePrefix", "egammaEE");
 
-  tree.Branch("egammaEE_n",     &egammaEE_n_, "egammaEE_n/I");
-  tree.Branch("egammaEE_pt",     &egammaEE_pt_);
-  tree.Branch("egammaEE_energy", &egammaEE_energy_);
-  tree.Branch("egammaEE_eta",    &egammaEE_eta_);
-  tree.Branch("egammaEE_phi",    &egammaEE_phi_);
-  tree.Branch("egammaEE_hwQual", &egammaEE_hwQual_);
+  tree.Branch((branch_name_prefix_+"_n").c_str(),     &egammaEE_n_, (branch_name_prefix_+"_n/I").c_str());
+  tree.Branch((branch_name_prefix_+"_pt").c_str(),     &egammaEE_pt_);
+  tree.Branch((branch_name_prefix_+"_energy").c_str(), &egammaEE_energy_);
+  tree.Branch((branch_name_prefix_+"_eta").c_str(),    &egammaEE_eta_);
+  tree.Branch((branch_name_prefix_+"_phi").c_str(),    &egammaEE_phi_);
+  tree.Branch((branch_name_prefix_+"_hwQual").c_str(), &egammaEE_hwQual_);
 
 }
 
