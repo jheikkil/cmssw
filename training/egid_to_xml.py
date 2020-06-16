@@ -6,14 +6,14 @@ import xgboost as xg
 import pickle
 import pandas as pd
 import ROOT as r
-from root_numpy import tree2array, testdata, list_branches, fill_hist
+#from root_numpy import tree2array, testdata, list_branches, fill_hist
 from os import system, path
 import os
 import sys
 from optparse import OptionParser
 
 # Extract input variables to BDT from egid_training.py: if BDT config not defined there then will fail
-from egid_training import egid_vars
+from egid_training_CJP import egid_vars
 
 # Configure options
 def get_options():
@@ -21,7 +21,7 @@ def get_options():
   parser.add_option('--clusteringAlgo', dest='clusteringAlgo', default='Histomaxvardr', help="Clustering algorithm with which to optimise BDT" )
   parser.add_option('--signalType', dest='signalType', default='electron_200PU', help="Input signal type" )
   parser.add_option('--backgroundType', dest='backgroundType', default='neutrino_200PU', help="Input background type" )
-  parser.add_option('--bdtConfig', dest='bdtConfig', default='baseline', help="BDT config (accepted values: baseline/full)" )
+  parser.add_option('--bdtConfig', dest='bdtConfig', default='fullEG', help="BDT config (accepted values: baseline/full)" )
   return parser.parse_args()
 
 (opt,args) = get_options()
@@ -32,7 +32,7 @@ def egid_to_xml():
   print "~~~~~~~~~~~~~~~~~~~~~~~~ egid TO XML ~~~~~~~~~~~~~~~~~~~~~~~~"
 
   #Define BDT name
-  bdt_name = "%s_vs_%s_%s"%(opt.signalType,opt.backgroundType,opt.bdtConfig)
+  bdt_name = opt.bdtConfig
   # Check if model exists
   if not os.path.exists("./models/egid_%s_%s_loweta.model"%(bdt_name,opt.clusteringAlgo)):
     print " --> [ERROR] No model exists for this BDT: ./models/egid_%s_%s_loweta.model. Train first! Leaving..."%(bdt_name,opt.clusteringAlgo)
