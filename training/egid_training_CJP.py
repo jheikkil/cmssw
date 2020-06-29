@@ -28,14 +28,16 @@ def get_options():
   parser.add_option('--clusteringAlgo', dest='clusteringAlgo', default='Histomaxvardr', help="Clustering algorithm with which to optimise BDT" )
   parser.add_option('--signalType', dest='signalType', default='electron_200PU', help="Input signal type" )
   parser.add_option('--backgroundType', dest='backgroundType', default='neutrino_200PU', help="Input background type" )
-  parser.add_option('--bdtConfig', dest='bdtConfig', default='fullEG', help="BDT config (accepted values: baseline/full)" )
+  parser.add_option('--bdtConfig', dest='bdtConfig', default='full', help="BDT config (accepted values: baseline/full/extended)" )
   parser.add_option('--reweighting', dest='reweighting', default=1, type='int', help="Boolean to perform re-weighting of clusters to equalise signal and background [yes=1 (default), no=0]" )
   parser.add_option('--trainParams',dest='trainParams', default=None, help='Comma-separated list of colon-separated pairs corresponding to (hyper)parameters for the training')
+  parser.add_option('--ptBin', dest='ptBin', default='default', help="Used pT bin (accepted values: default, low)" )
   return parser.parse_args()
 
 # HARDCODED: input variables to BDT for different configs. Specify config in options. To try new BDT with different inputs variables, then add another key to dict
 egid_vars = {"baseline":['coreshowerlength','firstlayer','maxlayer','srrmean'],
-             'fullEG':['coreshowerlength','showerlength','firstlayer','maxlayer','szz','srrmean','srrtot','seetot','spptot']}
+             'full':['coreshowerlength','showerlength','firstlayer','maxlayer','szz','srrmean','srrtot','seetot','spptot'],
+             'extended':['coreshowerlength','showerlength','firstlayer','maxlayer','szz','srrmean','srrtot','seetot','spptot', 'seemax', 'sppmax', 'srrmax', 'meanz', 'emaxe', 'layer10', 'layer50', 'layer90', 'ntc67', 'ntc90', 'hoe']}
 
 # Define eta regions for different trainings
 eta_regions = {"low":[1.5,2.7],"high":[2.7,3.0]}
@@ -62,8 +64,13 @@ def train_egid():
 
   # Add input files to map
   procFileMap = {}
-  procFileMap[ "electron" ] = "/eos/user/j/jheikkil/www/triggerStudies/histos_ele_flat2to100_PU200_eg_v23_BDT_lowpt.root"
-  procFileMap[ "neutrino" ] = "/eos/user/j/jheikkil/www/triggerStudies/histos_nugun_10_PU200_ng_bkg_v3_BDT_lowpt.root"
+  if "default" in opt.ptBin:
+      procFileMap[ "electron" ] = "/eos/user/j/jheikkil/www/triggerStudies/histos_ele_flat2to100_PU200_eg_MC_v31_BDT.root"
+      procFileMap[ "neutrino" ] = "/eos/user/j/jheikkil/www/triggerStudies/histos_nugun_10_PU200_ng_bkg_v3_BDT.root"
+      print "Using default pt bin"
+  elif "low" in opt.ptBin:
+      procFileMap[ "electron" ] = "/eos/user/j/jheikkil/www/triggerStudies/histos_ele_flat2to100_PU200_eg_MC_v31_BDT_lowpt.root"
+      procFileMap[ "neutrino" ] = "/eos/user/j/jheikkil/www/triggerStudies/histos_nugun_10_PU200_ng_bkg_v3_BDT_lowpt.root"
   procs = procFileMap.keys()
 
   # Check if models and frames directories exist
@@ -186,7 +193,7 @@ def train_egid():
     trainParams = {}
     trainParams['objective'] = 'binary:logistic'
     trainParams['nthread'] = 1
-    trainParams['random_state'] = 42
+    trainParams['random_state'] = 2360
     paramExt = ''
     if opt.trainParams:
       paramExt = '__'
@@ -203,13 +210,21 @@ def train_egid():
     print " --> Done."
 
     # Save the model
-    egid.save_model( './models/egid_%s_%s_%seta.model'%(bdt_name,opt.clusteringAlgo,reg) )
-    print " --> Model saved: ./models/egid_%s_%s_%seta.model"%(bdt_name,opt.clusteringAlgo,reg)
+    egid.save_model( './models/egid_%s_%s_%seta_%s.model'%(bdt_name,opt.clusteringAlgo,reg,opt.ptBin) )
+    print " --> Model saved: ./models/egid_%s_%s_%seta_%s.model"%(bdt_name,opt.clusteringAlgo,reg,opt.ptBin)
+ 
+    xg.plot_importance( egid )
+    plt.gcf().subplots_adjust( left = 0.3 )
+    plt.xlabel( 'Number of splittings', fontsize = 22 )
+    plt.ylabel( 'Feature', fontsize = 22 )
+    plt.savefig( '../plotting/plots/feature_importance_egid_%s_%s_%s_%s.pdf'%(bdt_name,opt.clusteringAlgo,reg,opt.ptBin ))
+    plt.savefig( '../plotting/plots/feature_importance_egid_%s_%s_%s_%s.png'%(bdt_name,opt.clusteringAlgo,reg,opt.ptBin ))
+    plt.clf()
 
     # Save in raw format
     if not os.path.isdir("./models/raw"): os.system("mkdir models/raw")
-    egid.dump_model("./models/raw/egid_%s_%s_%seta.raw.txt"%(bdt_name,opt.clusteringAlgo,reg))
-    print " --> Model saved (RAW): ./models/raw/egid_%s_%s_%seta.raw.txt"%(bdt_name,opt.clusteringAlgo,reg)
+    egid.dump_model("./models/raw/egid_%s_%s_%seta_%s.raw.txt"%(bdt_name,opt.clusteringAlgo,reg,opt.ptBin))
+    print " --> Model saved (RAW): ./models/raw/egid_%s_%s_%seta_%s.raw.txt"%(bdt_name,opt.clusteringAlgo,reg,opt.ptBin)
 
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # CHECKING PERFORMANCE OF MODEL: using trainig and validation sets

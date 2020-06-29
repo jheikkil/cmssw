@@ -32,10 +32,6 @@ treeMap = {
   "neutrino":"bkg_test"
 }
 
-inputFiles = {
-  "electron" : "/eos/user/j/jheikkil/www/triggerStudies/histos_ele_flat2to100_PU200_eg_v23_BDT_lowpt.root",
-  "neutrino" : "/eos/user/j/jheikkil/www/triggerStudies/histos_nugun_10_PU200_ng_bkg_v3_BDT_lowpt.root" }
-
 
 # Configure options
 from optparse import OptionParser
@@ -43,11 +39,29 @@ def get_options():
   parser = OptionParser()
   parser.add_option('--clusteringAlgo', dest='clusteringAlgo', default='Histomaxvardr', help="Clustering algorithm with which BDT was trained" )
   parser.add_option('--sampleType', dest='sampleType', default='electron', help="Input sample type" )
-  parser.add_option('--bdts', dest='bdts', default='fullEG', help="Comma separated list of BDTs to evaluate. Format is <discrimnator>:<config>,... e.g. electron_200PU_vs_neutrino_200PU:baseline,electron_200PU_vs_neutrino_200PU:full" )
+  parser.add_option('--bdts', dest='bdts', default='full', help="Comma separated list of BDTs to evaluate. Format is <discrimnator>:<config>,... e.g. electron_200PU_vs_neutrino_200PU:baseline,electron_200PU_vs_neutrino_200PU:full" )
   parser.add_option('--dataset', dest='dataset', default='test', help="Ntuple to evaluate on [test,train,all]" )
+  parser.add_option('--ptBin', dest='ptBin', default='default', help="Used pT bin (accepted values: default, low)" )
+  
   return parser.parse_args()
 
 (opt,args) = get_options()
+
+
+#inputFiles = {
+#  "electron" : "/eos/user/j/jheikkil/www/triggerStudies/histos_ele_flat2to100_PU200_eg_MC_v31_BDT.root",
+#  "neutrino" : "/eos/user/j/jheikkil/www/triggerStudies/histos_nugun_10_PU200_ng_bkg_v3_BDT.root" }
+
+# Add input files to map
+inputFiles = {}
+if "default" in opt.ptBin:
+  inputFiles[ "electron" ] = "/eos/user/j/jheikkil/www/triggerStudies/histos_ele_flat2to100_PU200_eg_MC_v31_BDT.root"
+  inputFiles[ "neutrino" ] = "/eos/user/j/jheikkil/www/triggerStudies/histos_nugun_10_PU200_ng_bkg_v3_BDT.root"
+  print "Using default pt bin"
+elif "low" in opt.ptBin:
+  inputFiles[ "electron" ] = "/eos/user/j/jheikkil/www/triggerStudies/histos_ele_flat2to100_PU200_eg_MC_v31_BDT_lowpt.root"
+  inputFiles[ "neutrino" ] = "/eos/user/j/jheikkil/www/triggerStudies/histos_nugun_10_PU200_ng_bkg_v3_BDT_lowpt.root"
+
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # FUNCTIONS TO INITIATE AND EVALUATE BDTs
@@ -96,13 +110,13 @@ def evaluate_egid():
       print "~~~~~~~~~~~~~~~~~~~~~ egid EVALUATE (END) ~~~~~~~~~~~~~~~~~~~~~"
       sys.exit(1)
     for reg in ['low','high']:
-      if not os.path.exists("./xml/egid_%s_%s_%seta.xml"%(bdt_name,opt.clusteringAlgo,reg)):
+      if not os.path.exists("./xml/egid_%s_%s_%seta_%s.xml"%(bdt_name,opt.clusteringAlgo,reg,opt.ptBin)):
         print " --> [ERROR] no xml file for BDT: %s. Leaving..."%bdt_name
         print "~~~~~~~~~~~~~~~~~~~~~ egid EVALUATE (END) ~~~~~~~~~~~~~~~~~~~~~"
         sys.exit(1)
       else:
         # passed checks: add xml to dict
-        model_xmls[ "%s_%seta"%(bdt_name,reg) ] = "./xml/egid_%s_%s_%seta.xml"%(bdt_name,opt.clusteringAlgo,reg)
+        model_xmls[ "%s_%seta_%s"%(bdt_name,reg,opt.ptBin) ] = "./xml/egid_%s_%s_%seta_%s.xml"%(bdt_name,opt.clusteringAlgo,reg,opt.ptBin)
 
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # CONFIGURE INPUT NTUPLE
@@ -127,10 +141,10 @@ def evaluate_egid():
   if not os.path.isdir("./results/%s"%opt.sampleType):
     print " --> Making ./results/%s directory to store ntuples with evaluated bdts"%opt.sampleType
     os.system("mkdir results/%s"%opt.sampleType)
-  f_out_name = "./results/%s/%s_%s_%s_eval.root"%(opt.sampleType,opt.sampleType,opt.clusteringAlgo,opt.dataset)
+  f_out_name = "./results/%s/%s_%s_%s_eval_%s.root"%(opt.sampleType,opt.sampleType,opt.clusteringAlgo,opt.dataset,opt.ptBin)
 
   # Variables to store in output ntuple #removed clusters_n, replace with nclu
-  out_var_names = ['pt','eta','phi','nclu','showerlength','coreshowerlength','firstlayer','maxlayer','seetot','seemax','spptot','sppmax','szz','srrtot','srrmax','srrmean','emaxe']
+  out_var_names = ['pt','eta','phi','nclu','coreshowerlength','showerlength','firstlayer','maxlayer','szz','srrmean','srrtot','seetot','spptot', 'seemax', 'sppmax', 'srrmax', 'meanz', 'emaxe', 'layer10', 'layer50', 'layer90', 'ntc67', 'ntc90', 'hoe']
   # Add bdt score from TPG: i.e. one that was calculated in ntuple production
   out_var_names.append( "bdt_tpg" )
   # Add new bdt scores
@@ -162,7 +176,7 @@ def evaluate_egid():
   for b in bdt_list:
     # Loop over eta regions
     for reg in ['low','high']:
-      bdts["%s_%seta"%(b,reg)], bdt_input_variables["%s_%seta"%(b,reg)] = initialise_egid_BDT( model_xmls["%s_%seta"%(b,reg)], egid_vars[b] )
+      bdts["%s_%seta"%(b,reg)], bdt_input_variables["%s_%seta"%(b,reg)] = initialise_egid_BDT( model_xmls["%s_%seta_%s"%(b,reg,opt.ptBin)], egid_vars[b] )
       print " --> Initialised BDT (%s) in %s eta region"%(b,reg)
 
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

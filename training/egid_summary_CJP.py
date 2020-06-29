@@ -8,6 +8,9 @@ import ROOT
 import numpy as np
 import pandas as pd
 import xgboost as xg
+
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib import colors as mcolors
 import pickle
@@ -42,6 +45,7 @@ def get_options():
   parser.add_option('--inputMap', dest='inputMap', default='electron,neutrino,Histomaxvardr,test', help='Comma separated list of input info. Format is <signalType>,<backgroundType>,<clustering Algo.>,<dataset [test,train,all]>')
   parser.add_option('--bdts', dest='bdts', default='full:blue', help="Comma separated list of BDTs to evaluate. Format is <discrimnator>:<config>:<plot colour>... e.g. electron_200PU_vs_neutrino_200PU:baseline:blue,electron_200PU_vs_neutrino_200PU:full:red" )
   parser.add_option('--outputROC', dest='outputROC', default=1, type='int', help="Display output ROC curves for egids [1=yes,0=no]" )
+  parser.add_option('--ptBin', dest='ptBin', default='default', help="Used pT bin (accepted values: default, low)" )
   return parser.parse_args()
 
 (opt,args) = get_options()
@@ -52,7 +56,7 @@ def leave():
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # FUNCTION TO EXTACT PATH TO FILES
-def get_path( _i, _proc ): return "%s/training/results/%s/%s_%s_%s_eval.root"%(os.environ['HGCAL_L1T_BASE'],_i[_proc],_i[_proc],_i['cl3d_algo'],_i['dataset'])
+def get_path( _i, _proc ): return "%s/training/results/%s/%s_%s_%s_eval_%s.root"%(os.environ['HGCAL_L1T_BASE'],_i[_proc],_i[_proc],_i['cl3d_algo'],_i['dataset'],_i['ptBin'])
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -73,6 +77,7 @@ def summary_egid():
   info['background'] = _i[1]
   info['cl3d_algo'] = _i[2]
   info['dataset'] = _i[3]
+  info['ptBin'] = opt.ptBin
 
   # Extract bdts names from input list and save plotting colour in map
   bdt_list = []
@@ -263,10 +268,16 @@ def summary_egid():
       axes.set_xlim([0.5,1.1])
       axes.set_ylim([0.5,1.1])
       plt.legend(bbox_to_anchor=(0.05,0.1), loc='lower left')
-      plt.savefig( "%s/plotting/plots/ROC_%seta.png"%(os.environ['HGCAL_L1T_BASE'],reg) )
-      plt.savefig( "%s/plotting/plots/ROC_%seta.pdf"%(os.environ['HGCAL_L1T_BASE'],reg) )
+      plt.savefig( "%s/plotting/plots/ROC_%seta_%s.png"%(os.environ['HGCAL_L1T_BASE'],reg,opt.ptBin) )
+      plt.savefig( "%s/plotting/plots/ROC_%seta_%s.pdf"%(os.environ['HGCAL_L1T_BASE'],reg,opt.ptBin) )
+      axes.set_ylim([0.8,1.1])
+      plt.legend(bbox_to_anchor=(0.05,0.1), loc='lower left')
+      plt.savefig( "%s/plotting/plots/ROC_%seta_%s_zoom.png"%(os.environ['HGCAL_L1T_BASE'],reg,opt.ptBin) )
+      plt.savefig( "%s/plotting/plots/ROC_%seta_%s_zoom.pdf"%(os.environ['HGCAL_L1T_BASE'],reg,opt.ptBin) )
+
       plt_itr += 1
-      print " --> Saved plot: %s/plotting/plots/ROC_%seta.(png/pdf)"%(os.environ['HGCAL_L1T_BASE'],reg)
+      print " --> Saved plot: %s/plotting/plots/ROC_%seta_%s.(png/pdf)"%(os.environ['HGCAL_L1T_BASE'],reg,opt.ptBin)
+      
   leave()
 # END OF SUMMARY FUNCTION
 
