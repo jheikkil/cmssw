@@ -2,7 +2,7 @@ import ROOT as r
 
 #___________________________________________________________
 
-inputFileName = "/eos/user/j/jheikkil/www/triggerStudies/histos_pion_flat2to100_PU200_eg_v24.root"
+inputFileName = "/eos/user/j/jheikkil/www/triggerStudies/histos_pion_flat2to100_PU200_eg_MC_v32.root"##"/eos/user/j/jheikkil/www/triggerStudies/histos_ele_flat2to100_PU200_eg_MC_v31.root"
 #inputFileName = "/eos/user/j/jheikkil/www/triggerStudies/histos_ele_flat2to100_PU200_eg_v25.root"
 #inputFileName="/eos/user/j/jheikkil/www/triggerStudies/histos_nugun_10_PU200_ng_bkg_v3.root"
 outputTrain = inputFileName.replace(".root", "_BDT_lowpt.root")
@@ -14,8 +14,8 @@ outputFileTRAIN.cd()
 dirName = "Cluster3DHistos"
 
 if "PU200_eg" in inputFileName: 
-   signalTree = "h_cl3d_HMvDR_all_GENPt5to20"
-   bkgTree = "NAN"#"h_cl3d_HMvDR_all_GEN_noMatch"
+   signalTree = "h_cl3d_HMvDR_all_Pt5to20"
+   bkgTree = "NAN"#"h_cl3d_HMvDR_all_all_noMatch" #"h_cl3d_HMvDR_all_GEN_noMatch"
 elif "histos_nugun" in inputFileName:
    signalTree = "NAN"
    bkgTree = "h_cl3d_HMvDR_Pt5to20_noMatch"

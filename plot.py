@@ -6,19 +6,19 @@ from ROOT import TH1D, TH1F, TLegend, TDirectory
 from ROOT import gDirectory, TCanvas, gStyle, gROOT, gPad
 
 
-sigFile =  ROOT.TFile( '/eos/user/j/jheikkil/www/triggerStudies/histos_ele_flat2to100_PU200_eg_v25_BDT.root', 'read' )
-bkgFile	=  ROOT.TFile( '/eos/user/j/jheikkil/www/triggerStudies/histos_ele_flat2to100_PU200_eg_v25_BDT.root', 'read' )
+sigFile =  ROOT.TFile( '/eos/user/j/jheikkil/www/triggerStudies/histos_ele_flat2to100_PU200_eg_MC_v31_BDT.root', 'read' )
+#bkgFile	=  ROOT.TFile( '/eos/user/j/jheikkil/www/triggerStudies/histos_ele_flat2to100_PU200_eg_MC_v31_BDT.root', 'read' )
 
 
-#bkgFile = ROOT.TFile( '/eos/user/j/jheikkil/www/triggerStudies/histos_ele_flat2to100_PU200_eg_v23_BDT.root', 'read' )
-#bkgFile = ROOT.TFile( '/eos/user/j/jheikkil/www/triggerStudies/histos_nugun_10_PU200_ng_bkg_v3_BDT.root', 'read' )
+#sigFile = ROOT.TFile( '/eos/user/j/jheikkil/www/triggerStudies/histos_ele_flat2to100_PU200_eg_v23_BDT.root', 'read' )
+bkgFile = ROOT.TFile( '/eos/user/j/jheikkil/www/triggerStudies/histos_nugun_10_PU200_ng_bkg_v3_BDT.root', 'read' )
 
 treeSig = sigFile.Get("sig_train")
 treeBkg = bkgFile.Get("bkg_train")
 
 currentBDT = False
 
-version = 'eg_eg_02_GEN'
+version = 'eg_ng_03_MC'
 
 outputDir = '/eos/user/j/jheikkil/www/triggerStudies/'+version+'/'
 

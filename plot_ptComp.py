@@ -7,21 +7,27 @@ from ROOT import gDirectory, TCanvas, gStyle, gROOT, gPad
 
 
 sigFile = ROOT.TFile( '/eos/user/j/jheikkil/www/triggerStudies/histos_ele_flat2to100_PU200_eg_MC_v31_BDT.root', 'read' )
-sigFile2 =  ROOT.TFile( '/eos/user/j/jheikkil/www/triggerStudies/histos_pion_flat2to100_PU200_eg_MC_v32_BDT.root', 'read' )
-#bkgFile	=  ROOT.TFile( '/eos/user/j/jheikkil/www/triggerStudies/histos_pion_flat2to100_PU200_eg_v24_BDT.root', 'read' )
-
-
-#bkgFile = ROOT.TFile( '/eos/user/j/jheikkil/www/triggerStudies/histos_ele_flat2to100_PU200_eg_v23_BDT.root', 'read' )
+sigFile2 =  ROOT.TFile( '/eos/user/j/jheikkil/www/triggerStudies/histos_ele_flat2to100_PU200_eg_MC_v31_BDT_lowpt.root', 'read' )
 
 bkgFile = ROOT.TFile( '/eos/user/j/jheikkil/www/triggerStudies/histos_nugun_10_PU200_ng_bkg_v3_BDT.root', 'read' )
+bkgFile2 = ROOT.TFile( '/eos/user/j/jheikkil/www/triggerStudies/histos_nugun_10_PU200_ng_bkg_v3_BDT_lowpt.root', 'read' )
 
 treeSig = sigFile.Get("sig_train")
 treeSig2 = sigFile2.Get("sig_train")
+
 treeBkg = bkgFile.Get("bkg_train")
+treeBkg2 = bkgFile2.Get("bkg_train")
 
 currentBDT = False
 
-version = 'eg_pi_ng_03'
+cuts = [
+         ["low", "eta>1.5 && eta<=2.7"], ["high", "eta>2.7 && eta<=3.0"], ["inc", ""]	 
+       ]
+
+nameCut = cuts[0][0]
+etaCut = cuts[0][1]
+
+version = 'eg_ng_03_MC_comp_'+nameCut
 
 outputDir = '/eos/user/j/jheikkil/www/triggerStudies/'+version+'/'
 
@@ -43,13 +49,15 @@ output = ''
 c = TCanvas("c", "canvas", 800, 800)
 c.cd()
 
+#cut = "eta>1.5 and eta<=2.7"
+#cut = "eta>2.7 and eta<=3.0"
 
 for variable in variables:
-    if variable in current:
-        output = variable+"_current_inc.png"
-    else:
-        output = variable+"_new_inc.png"
 
+    if variable in current:
+        output = variable+"_current.png"
+    else:
+        output = variable+"_new.png"
 
     histoname = variable
    
@@ -57,47 +65,79 @@ for variable in variables:
         name = variable+">>"+histoname+"(100,-1,1)"
     else:
         name = variable+">>"+histoname
-    treeSig.Draw(name)
+
+    if len(etaCut)>0:
+        treeSig.Draw(name, etaCut)
+    else:
+        treeSig.Draw(name)
     signal = gROOT.FindObject(histoname)
     #c.GetListOfPrimitives().ls()
     signal.SetTitle(histoname)
     signal.SetName(histoname)
     signal.Scale(1.0/signal.Integral(), "width")
-    c.GetListOfPrimitives().ls()
+    #c.GetListOfPrimitives().ls()
 
     histoname2 = variable+"__"
     if variable in ['bdteg']:
         name2 = variable+">>"+histoname2+"(100,-1,1)"
     else:
 	name2 = variable+">>"+histoname2
-    treeSig2.Draw(name2)
+
+    if len(etaCut)>0:
+        treeSig2.Draw(name2, etaCut)
+    else:
+       	treeSig2.Draw(name2)
+
     signal2 = gROOT.FindObject(histoname2)
     #c.GetListOfPrimitives().ls()
     signal2.SetTitle(histoname2)
     signal2.SetName(histoname2)
     signal2.Scale(1.0/signal2.Integral(), "width")
-    c.GetListOfPrimitives().ls()
+  #  c.GetListOfPrimitives().ls()
 
     histonameBKG = variable+"_"
     if variable in ['bdteg']:
         name3 = variable+">>"+histonameBKG+"(100,-1,1)"
     else:
        	name3 = variable+">>"+histonameBKG
-    treeBkg.Draw(name3)
+
+    if len(etaCut)>0:
+        treeBkg.Draw(name3, etaCut)
+    else:
+       	treeBkg.Draw(name3)
     bkg = gROOT.FindObject(histonameBKG)
     #c.GetListOfPrimitives().ls()
     bkg.SetTitle(variable)
     bkg.SetName(histonameBKG)
     bkg.Scale(1.0/bkg.Integral(), "width")
-    c.GetListOfPrimitives().ls()
+   # c.GetListOfPrimitives().ls()
+
+    histonameBKG2 = variable+"___"
+    if variable in ['bdteg']:
+        name4 = variable+">>"+histonameBKG2+"(100,-1,1)"
+    else:
+        name4 = variable+">>"+histonameBKG2
+
+    if len(etaCut)>0:
+        treeBkg2.Draw(name4, etaCut)
+    else:
+	treeBkg2.Draw(name4)
+    bkg2 = gROOT.FindObject(histonameBKG2)
+    #c.GetListOfPrimitives().ls()
+    bkg2.SetTitle(variable)
+    bkg2.SetName(histonameBKG2)
+    bkg2.Scale(1.0/bkg2.Integral(), "width")
+    #c.GetListOfPrimitives().ls()
+    
 
     if variable in ['bdteg']:
         signal.GetXaxis().SetRangeUser(-1.0,1.0)
         signal2.GetXaxis().SetRangeUser(-1.0,1.0)
         bkg.GetXaxis().SetRangeUser(-1.0,1.0)
+        bkg2.GetXaxis().SetRangeUser(-1.0,1.0)
 
-    if variable in ['pt'] and 'lowpt' in outputDir:
-        signal.GetYaxis().SetRangeUser(0, 1.05*bkg.GetMaximum())
+    if variable in ['pt']:
+        signal.GetYaxis().SetRangeUser(0, 1.05*bkg2.GetMaximum())
         #signal2.GetXaxis().SetRangeUser(0, 30.0)
         #bkg.GetXaxis().SetRangeUser(0, 30.0)
 
@@ -113,18 +153,23 @@ for variable in variables:
     bkg.SetLineStyle(1)
     bkg.SetLineWidth(3)
 
+    bkg2.SetLineColor(8)
+    bkg2.SetLineStyle(1)
+    bkg2.SetLineWidth(3)
+
     x1 = 0.5
     x2 = x1 + 0.24
-    y2 = 0.90
-    y1 = 0.79
+    y2 = 0.82
+    y1 = 0.69
     legend = TLegend(x1,y1,x2,y2)
     legend.SetFillStyle(0)
     legend.SetBorderSize(0)
     legend.SetTextSize(0.041)
     legend.SetTextFont(42)
-    legend.AddEntry(signal, "eg",'L')
-    legend.AddEntry(signal2, "pi", 'L')
-    legend.AddEntry(bkg, "nugun",'L')
+    legend.AddEntry(signal, "sig, high pt",'L')
+    legend.AddEntry(bkg, "bkg, high pt",'L')
+    legend.AddEntry(signal2, "sig, low pt", 'L')
+    legend.AddEntry(bkg2, "bkg, low pt", 'L')
 
     #c.GetListOfPrimitives().ls()
     #name2 = variable+">>htemp2"
@@ -135,16 +180,24 @@ for variable in variables:
     #bkg.Scale(1.0/bkg.Integral(), "width")
     #c.GetListOfPrimitives().ls()
 
-    if signal.GetMaximum()>bkg.GetMaximum() and signal.GetMaximum()>signal2.GetMaximum():
+    if signal.GetMaximum()>bkg.GetMaximum() and signal.GetMaximum()>bkg2.GetMaximum() and signal.GetMaximum()>signal2.GetMaximum():
         signal.Draw("HIST")
         signal2.Draw("HIST SAME")
         bkg.Draw("HIST SAME") 
-    elif signal.GetMaximum()>bkg.GetMaximum() and signal2.GetMaximum()>signal.GetMaximum():
+        bkg2.Draw("HIST SAME")
+    elif signal.GetMaximum()>bkg.GetMaximum() and signal2.GetMaximum()>bkg2.GetMaximum() and signal2.GetMaximum()>signal.GetMaximum():
         signal2.Draw("HIST")
         signal.Draw("HIST SAME")
         bkg.Draw("HIST SAME")
-    else:
+        bkg2.Draw("HIST SAME")
+    elif bkg.GetMaximum()>bkg2.GetMaximum():
         bkg.Draw("HIST ")
+        bkg2.Draw("HIST SAME")
+        signal2.Draw("HIST SAME")
+        signal.Draw("HIST SAME")    
+    else:
+        bkg2.Draw("HIST ")
+        bkg.Draw("HIST SAME")
         signal2.Draw("HIST SAME")
         signal.Draw("HIST SAME")
     legend.Draw()
