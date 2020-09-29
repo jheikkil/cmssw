@@ -222,7 +222,7 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetTkMuon(const edm::Handle<l1t::TkMuon
   }
 }
 
-/*
+
 void L1Analysis::L1AnalysisPhaseIIStep1::SetL1PfPhase1L1TJet(const      edm::Handle< std::vector<reco::CaloJet> >  l1L1PFPhase1L1Jet,    unsigned maxL1Extra){
 
    double mHT30_px=0, mHT30_py=0, HT30=0;
@@ -265,7 +265,7 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetL1PfPhase1L1TJet(const      edm::Han
 
 
 }
-*/
+
 
 void L1Analysis::L1AnalysisPhaseIIStep1::SetL1METPF(const edm::Handle<std::vector<reco::PFMET> > l1MetPF) {
   reco::PFMET met = l1MetPF->at(0);

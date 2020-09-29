@@ -138,7 +138,7 @@ private:
 
   edm::EDGetTokenT<std::vector<reco::PFMET> > l1PFMet_;
 
-  //edm::EDGetTokenT<std::vector<reco::CaloJet> > l1pfPhase1L1TJetToken_; // why are these caloJets???
+  edm::EDGetTokenT<std::vector<reco::CaloJet> > l1pfPhase1L1TJetToken_; // why are these caloJets???
 
   edm::EDGetTokenT<float> z0PuppiToken_;
   //edm::EDGetTokenT<l1t::VertexCollection> l1vertextdrToken_;
@@ -165,7 +165,7 @@ L1PhaseIITreeStep1Producer::L1PhaseIITreeStep1Producer(const edm::ParameterSet& 
 
   l1PFMet_ = consumes<std::vector<reco::PFMET> >(iConfig.getParameter<edm::InputTag>("l1PFMet"));
 
-  //l1pfPhase1L1TJetToken_ = consumes<std::vector<reco::CaloJet> > (iConfig.getParameter<edm::InputTag>("l1pfPhase1L1TJetToken"));
+  l1pfPhase1L1TJetToken_ = consumes<std::vector<reco::CaloJet> > (iConfig.getParameter<edm::InputTag>("l1pfPhase1L1TJetToken"));
 
   z0PuppiToken_ = consumes<float>(iConfig.getParameter<edm::InputTag>("zoPuppi"));
   //l1vertextdrToken_ = consumes< l1t::VertexCollection> (iConfig.getParameter<edm::InputTag>("l1vertextdr"));
@@ -214,8 +214,8 @@ void L1PhaseIITreeStep1Producer::analyze(const edm::Event& iEvent, const edm::Ev
   edm::Handle<std::vector<reco::PFMET> > l1PFMet;
   iEvent.getByToken(l1PFMet_, l1PFMet);
 
-  //  edm::Handle<  std::vector<reco::CaloJet>  > l1pfPhase1L1TJet;
-  //  iEvent.getByToken(l1pfPhase1L1TJetToken_,  l1pfPhase1L1TJet);
+  edm::Handle<  std::vector<reco::CaloJet>  > l1pfPhase1L1TJet;
+  iEvent.getByToken(l1pfPhase1L1TJetToken_,  l1pfPhase1L1TJet);
 
   // now also fill vertices
 
@@ -292,11 +292,11 @@ void L1PhaseIITreeStep1Producer::analyze(const edm::Event& iEvent, const edm::Ev
     edm::LogWarning("MissingProduct") << "L1PhaseII  TkEM not found. Branch will not be filled" << std::endl;
   }
 
-  //  if (l1pfPhase1L1TJet.isValid()){
-  //          l1Extra->SetL1PfPhase1L1TJet(l1pfPhase1L1TJet, maxL1Extra_);
-  //  } else {
-  //         edm::LogWarning("MissingProduct") << "L1PhaseII l1pfPhase1L1TJets not found. Branch will not be filled" << std::endl;
-  // }
+  if (l1pfPhase1L1TJet.isValid()){
+      l1Extra->SetL1PfPhase1L1TJet(l1pfPhase1L1TJet, maxL1Extra_);
+  } else {
+      edm::LogWarning("MissingProduct") << "L1PhaseII l1pfPhase1L1TJets not found. Branch will not be filled" << std::endl;
+  }
 
   if (TkMuon.isValid()) {
     l1Extra->SetTkMuon(TkMuon, maxL1Extra_);
