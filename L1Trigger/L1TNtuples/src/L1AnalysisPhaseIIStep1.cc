@@ -293,7 +293,7 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetNNTaus(const edm::Handle<vector<l1t:
   }
 }
 
-void L1Analysis::L1AnalysisPhaseII::SetMuon(const edm::Handle<l1t::MuonBxCollection> muon, unsigned maxL1Extra) {
+void L1Analysis::L1AnalysisPhaseIIStep1::SetMuon(const edm::Handle<l1t::MuonBxCollection> muon, unsigned maxL1Extra) {
   for (int ibx = muon->getFirstBX(); ibx <= muon->getLastBX(); ++ibx) {
     for (l1t::MuonBxCollection::const_iterator it = muon->begin(ibx);
          it != muon->end(ibx) && l1extra_.nGlobalMuons < maxL1Extra;
@@ -323,7 +323,7 @@ void L1Analysis::L1AnalysisPhaseII::SetMuon(const edm::Handle<l1t::MuonBxCollect
 }
 
 
-void L1Analysis::L1AnalysisPhaseII::SetMuonKF(const edm::Handle<l1t::RegionalMuonCandBxCollection> standaloneMuon,
+void L1Analysis::L1AnalysisPhaseIIStep1::SetMuonKF(const edm::Handle<l1t::RegionalMuonCandBxCollection> standaloneMuon,
                                               unsigned maxL1Extra,
                                               unsigned int muonDetector) {
   for (int ibx = standaloneMuon->getFirstBX(); ibx <= standaloneMuon->getLastBX(); ++ibx) {

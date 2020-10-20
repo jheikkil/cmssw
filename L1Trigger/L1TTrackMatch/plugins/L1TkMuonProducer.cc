@@ -89,6 +89,13 @@ private:
                                const edm::Handle<RegionalMuonCandBxCollection>& muonH,
                                int detector) const;
 
+  void build_tkMuons_from_idxs_emtfTrks(TkMuonCollection& tkMuons,
+                               const std::vector<int>& matches,
+                               const edm::Handle<L1TTTrackCollectionType>& l1tksH,
+                               const edm::Handle<EMTFTrackCollection>& emtfTksH,
+                               int detector) const;
+
+
   // dump and convert tracks to the format needed for the MAnTra correlator
   std::vector<L1TkMuMantraDF::track_df> product_to_trkvec(const L1TTTrackCollectionType& l1tks) const;  // tracks
   // regional muon finder
@@ -348,8 +355,8 @@ void L1TkMuonProducer::produce(edm::StreamID, edm::Event& iEvent, const edm::Eve
     const auto& muons = product_to_muvec(*l1emtfTCH.product());
     const auto& match_idx = mantracorr_endc_->find_match(mantradf_tracks, muons);
     //for the TkMu that were built from a EMTFCollection - do not produce a valid muon ref
-    edm::Handle<RegionalMuonCandBxCollection> invalidMuonH;
-    build_tkMuons_from_idxs(oc_emtf_tkmuon, match_idx, l1tksH, invalidMuonH, endcap_MTF_region);
+    //edm::Handle<RegionalMuonCandBxCollection> invalidMuonH;
+    build_tkMuons_from_idxs_emtfTrks(oc_emtf_tkmuon, match_idx, l1tksH, l1emtfTCH, endcap_MTF_region);
   } else
     throw cms::Exception("TkMuAlgoConfig") << "endcap : trying to run an invalid algorithm version "
                                            << emtfMatchAlgoVersion_ << " (this should never happen)\n";
@@ -674,6 +681,39 @@ void L1TkMuonProducer::build_tkMuons_from_idxs(TkMuonCollection& tkMuons,
   }
   return;
 }
+
+void L1TkMuonProducer::build_tkMuons_from_idxs_emtfTrks(TkMuonCollection& tkMuons,
+                                               const std::vector<int>& matches,
+                                               const edm::Handle<L1TTTrackCollectionType>& l1tksH,
+                                               const edm::Handle<EMTFTrackCollection>& emtfTksH,
+                                               int detector) const {
+  for (uint imatch = 0; imatch < matches.size(); ++imatch) {
+    int match_trk_idx = matches[imatch];
+    if (match_trk_idx < 0)
+      continue;  // this muon was not matched to any candidate
+
+    // take properties of the track
+    const L1TTTrackType& matchTk = (*l1tksH.product())[match_trk_idx];
+    const auto& p3 = matchTk.momentum();
+    const auto& tkv3 = matchTk.POCA();
+    float p4e = sqrt(mu_mass * mu_mass + p3.mag2());
+    math::XYZTLorentzVector l1tkp4(p3.x(), p3.y(), p3.z(), p4e);
+
+    edm::Ptr<L1TTTrackType> l1tkPtr(l1tksH, match_trk_idx);
+
+    auto l1emtfTrk = emtfTksH.isValid() ? edm::Ref<EMTFTrackCollection>(emtfTksH, imatch)
+                                      : edm::Ref<EMTFTrackCollection>();
+
+    float trkisol = -999;
+    TkMuon l1tkmu(l1tkp4, l1emtfTrk, l1tkPtr, trkisol);
+    l1tkmu.setTrackCurvature(matchTk.rInv());
+    l1tkmu.setTrkzVtx((float)tkv3.z());
+    l1tkmu.setMuonDetector(detector);
+    tkMuons.push_back(l1tkmu);
+  }
+  return;
+}
+
 
 //define this as a plug-in
 DEFINE_FWK_MODULE(L1TkMuonProducer);
