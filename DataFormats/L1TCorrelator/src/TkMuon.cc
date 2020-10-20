@@ -7,6 +7,18 @@
 
 using namespace l1t;
 
+
+TkMuon::TkMuon(const LorentzVector& p4,
+               const edm::Ref<EMTFTrackCollection>& emtfTrk,
+               const edm::Ptr<L1TTTrackType>& trackPtr,
+               float tkisol)
+    : L1Candidate(p4), emtfTrk_(emtfTrk), trkPtr_(trackPtr), theIsolation(tkisol), TrkzVtx_(999), quality_(999) {
+  if (trkPtr_.isNonnull()) {
+    setTrkzVtx(trkPtr()->POCA().z());
+  }
+}
+
+
 TkMuon::TkMuon(const LorentzVector& p4,
                const edm::Ref<RegionalMuonCandBxCollection>& muRef,
                const edm::Ptr<L1TTTrackType>& trackPtr,

@@ -131,6 +131,7 @@ namespace L1Analysis {
       tkMuonChg.clear();
       tkMuonTrkIso.clear();
       tkMuonBx.clear();
+      tkMuonEMTFQual.clear();
       tkMuonQual.clear();
       tkMuonzVtx.clear();
       tkMuonMuRefPt.clear();
@@ -274,6 +275,7 @@ namespace L1Analysis {
     std::vector<double> tkMuonTrkIso;
     std::vector<int> tkMuonBx;
     std::vector<unsigned int> tkMuonQual;
+    std::vector<unsigned int> tkMuonEMTFQual;
     std::vector<double> tkMuonzVtx;
     std::vector<double> tkMuonMuRefPt;
     std::vector<double> tkMuonMuRefPhi;

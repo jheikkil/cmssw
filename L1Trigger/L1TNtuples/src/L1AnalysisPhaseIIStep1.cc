@@ -205,6 +205,7 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetTkMuon(const edm::Handle<l1t::TkMuon
       l1extra_.tkMuonDRMuTrack.push_back(it->dR());
       l1extra_.tkMuonNMatchedTracks.push_back(it->nTracksMatched());
       l1extra_.tkMuonQual.push_back(it->muRef()->hwQual());
+      l1extra_.tkMuonEMTFQual.push_back(999);
       l1extra_.tkMuonMuRefChg.push_back(pow(-1, it->muRef()->hwSign()));
     } else {
       l1extra_.tkMuonMuRefPt.push_back(-777);
@@ -212,7 +213,9 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetTkMuon(const edm::Handle<l1t::TkMuon
       l1extra_.tkMuonMuRefPhi.push_back(-777);
       l1extra_.tkMuonDRMuTrack.push_back(-777);
       l1extra_.tkMuonNMatchedTracks.push_back(0);
+      bool emtfQual = (it->emtfTrk()->Mode() == 11 || it->emtfTrk()->Mode() == 13 || it->emtfTrk()->Mode() == 14 || it->emtfTrk()->Mode() == 15);
       l1extra_.tkMuonQual.push_back(999);
+      l1extra_.tkMuonEMTFQual.push_back(emtfQual);
       l1extra_.tkMuonMuRefChg.push_back(0);
     }
     l1extra_.tkMuonRegion.push_back(it->muonDetector());
