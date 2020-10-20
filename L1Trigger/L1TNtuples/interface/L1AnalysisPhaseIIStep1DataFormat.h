@@ -93,6 +93,37 @@ namespace L1Analysis {
       tkPhotonPassesLooseTrackID.clear();
       tkPhotonPassesPhotonID.clear();
 
+      nGlobalMuons = 0;
+      globalMuonPt.clear();
+      globalMuonEta.clear();
+      globalMuonPhi.clear();
+      globalMuonEtaAtVtx.clear();
+      globalMuonPhiAtVtx.clear();
+      globalMuonIEt.clear();
+      globalMuonIEta.clear();
+      globalMuonIPhi.clear();
+      globalMuonIEtaAtVtx.clear();
+      globalMuonIPhiAtVtx.clear();
+      globalMuonIDEta.clear();
+      globalMuonIDPhi.clear();
+      globalMuonChg.clear();
+      globalMuonIso.clear();
+      globalMuonQual.clear();
+      globalMuonTfMuonIdx.clear();
+      globalMuonBx.clear();
+
+      nStandaloneMuons = 0;
+      standaloneMuonPt.clear();
+      standaloneMuonPt2.clear();
+      standaloneMuonEta.clear();
+      standaloneMuonPhi.clear();
+      standaloneMuonChg.clear();
+      standaloneMuonQual.clear();
+      standaloneMuonBx.clear();
+      standaloneMuonRegion.clear();
+      standaloneMuonDXY.clear();
+
+
       nTkMuons = 0;
       tkMuonPt.clear();
       tkMuonEta.clear();
@@ -203,6 +234,37 @@ namespace L1Analysis {
     std::vector<unsigned int> tkPhotonHGC;
     std::vector<unsigned int> tkPhotonPassesLooseTrackID;
     std::vector<unsigned int> tkPhotonPassesPhotonID;
+
+    unsigned short int nGlobalMuons;
+    std::vector<double> globalMuonPt;
+    std::vector<double> globalMuonEta;
+    std::vector<double> globalMuonPhi;
+    std::vector<double> globalMuonEtaAtVtx;
+    std::vector<double> globalMuonPhiAtVtx;
+    std::vector<short int> globalMuonIEt;
+    std::vector<short int> globalMuonIEta;
+    std::vector<short int> globalMuonIPhi;
+    std::vector<short int> globalMuonIEtaAtVtx;
+    std::vector<short int> globalMuonIPhiAtVtx;
+    std::vector<short int> globalMuonIDEta;
+    std::vector<short int> globalMuonIDPhi;
+    std::vector<short int> globalMuonChg;
+    std::vector<unsigned short int> globalMuonIso;
+    std::vector<unsigned short int> globalMuonQual;
+    std::vector<unsigned short int> globalMuonTfMuonIdx;
+    std::vector<short int> globalMuonBx;
+
+    unsigned short int nStandaloneMuons;
+    std::vector<double> standaloneMuonPt;
+    std::vector<double> standaloneMuonPt2;
+    std::vector<double> standaloneMuonEta;
+    std::vector<double> standaloneMuonPhi;
+    std::vector<short int> standaloneMuonChg;
+    std::vector<unsigned short int> standaloneMuonQual;
+    std::vector<double> standaloneMuonDXY;
+    std::vector<short int> standaloneMuonBx;
+    std::vector<unsigned int> standaloneMuonRegion;
+
 
     unsigned int nTkMuons;
     std::vector<double> tkMuonPt;
