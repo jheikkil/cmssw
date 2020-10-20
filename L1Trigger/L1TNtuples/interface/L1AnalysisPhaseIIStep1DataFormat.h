@@ -119,6 +119,7 @@ namespace L1Analysis {
       standaloneMuonPhi.clear();
       standaloneMuonChg.clear();
       standaloneMuonQual.clear();
+      standaloneMuonEMTFQual.clear();
       standaloneMuonBx.clear();
       standaloneMuonRegion.clear();
       standaloneMuonDXY.clear();
@@ -262,6 +263,7 @@ namespace L1Analysis {
     std::vector<double> standaloneMuonPhi;
     std::vector<short int> standaloneMuonChg;
     std::vector<unsigned short int> standaloneMuonQual;
+    std::vector<unsigned short int> standaloneMuonEMTFQual;
     std::vector<double> standaloneMuonDXY;
     std::vector<short int> standaloneMuonBx;
     std::vector<unsigned int> standaloneMuonRegion;

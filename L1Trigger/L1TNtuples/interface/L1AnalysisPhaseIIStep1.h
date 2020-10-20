@@ -100,6 +100,9 @@ namespace L1Analysis {
     void SetMuonKF(const edm::Handle<l1t::RegionalMuonCandBxCollection> muonKF,
                    unsigned maxL1Extra,
                    unsigned int muonDetector);
+    void SetMuonEMTF(const edm::Handle<l1t::EMTFTrackCollection> muonKF,
+                   unsigned maxL1Extra,
+                   unsigned int muonDetector);
     void SetTkMuon(const edm::Handle<l1t::TkMuonCollection> TkMuon, unsigned maxL1Extra);
 
     // Add new PFJet collections
