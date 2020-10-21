@@ -342,7 +342,7 @@ void L1PhaseIITreeStep1Producer::analyze(const edm::Event& iEvent, const edm::Ev
   if (muonsEndcap.isValid()) {
     l1Extra->SetMuonEMTF(muonsEndcap, maxL1Extra_, 3);
   } else {
-    edm::LogWarning("MissingProduct") << "L1Upgrade KBMTF Muons not found. Branch will not be filled" << std::endl;
+    edm::LogWarning("MissingProduct") << "L1Upgrade EMTF track Muons not found. Branch will not be filled" << std::endl;
   }
 
   if (TkMuon.isValid()) {

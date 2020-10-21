@@ -13,7 +13,7 @@ l1PhaseIITree = cms.EDAnalyzer("L1PhaseIITreeStep1Producer",
    muonToken = cms.untracked.InputTag("simGmtStage2Digis", "MENUTREE"),
    muonKalman = cms.InputTag("simKBmtfDigis","BMTF", "MENUTREE"),
    muonOverlap = cms.InputTag("simOmtfDigis","OMTF", "MENUTREE"),
-   muonEndcap = cms.InputTag("simEmtfDigis","EMTF", "MENUTREE"),
+   muonEndcap = cms.InputTag("simEmtfDigis","", "MENUTREE"),
    TkMuonToken = cms.InputTag("L1TkMuons","","MENUTREE"),
 
 

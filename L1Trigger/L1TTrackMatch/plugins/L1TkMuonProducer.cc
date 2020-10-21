@@ -692,7 +692,6 @@ void L1TkMuonProducer::build_tkMuons_from_idxs_emtfTrks(TkMuonCollection& tkMuon
     if (match_trk_idx < 0)
       continue;  // this muon was not matched to any candidate
 
-    cout<<"Was matched to candidate"<<endl;
     // take properties of the track
     const L1TTTrackType& matchTk = (*l1tksH.product())[match_trk_idx];
     const auto& p3 = matchTk.momentum();
@@ -707,11 +706,9 @@ void L1TkMuonProducer::build_tkMuons_from_idxs_emtfTrks(TkMuonCollection& tkMuon
     auto l1emtfTrk = emtfTksH.isValid() ? edm::Ref<EMTFTrackCollection>(emtfTksH, imatch)
                                         : edm::Ref<EMTFTrackCollection>();
  
-    cout<<"Is it valid reference to emtf track: "<<emtfTksH.isValid()<<endl;
 
     float trkisol = -999;
     TkMuon l1tkmu(l1tkp4, l1emtfTrk, l1tkPtr, trkisol);
-    cout<<"We created a l1 tkmuon"<<endl;
     l1tkmu.setTrackCurvature(matchTk.rInv());
     l1tkmu.setTrkzVtx((float)tkv3.z());
     l1tkmu.setMuonDetector(detector);
