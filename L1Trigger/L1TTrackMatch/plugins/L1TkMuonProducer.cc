@@ -484,15 +484,15 @@ void L1TkMuonProducer::runOnMTFCollection_v1(const edm::Handle<RegionalMuonCandB
         TkMuon l1tkmu(l1tkp4, l1muRef, l1tkPtr, trkisol);
 
         if (detector == barrel_MTF_region) {
-          if (std::abs(l1tkp4.eta()) > etaBO_)
+          if (std::abs(l1tkmu.eta()) > etaBO_)
             continue;
         } else if (detector == overlap_MTF_region) {
-          if (std::abs(l1tkp4.eta()) < etaBO_)
+          if (std::abs(l1tkmu.eta()) < etaBO_)
             continue;
-          if (std::abs(l1tkp4.eta()) > etaOE_)
+          if (std::abs(l1tkmu.eta()) > etaOE_)
             continue;
         } else if (detector == endcap_MTF_region) {
-          if (std::abs(l1tkp4.eta()) < etaOE_)
+          if (std::abs(l1tkmu.eta()) < etaOE_)
             continue;
         }
 
@@ -539,7 +539,7 @@ void L1TkMuonProducer::runOnMTFCollection_v2(const edm::Handle<EMTFTrackCollecti
     TkMuon l1tkmu(l1tkp4, l1muRef, l1tkPtr, trkisol);
 
     // avoid leaking of candidates to overlap region...
-    if (std::abs(l1tkp4.eta()) < etaOE_)
+    if (std::abs(l1tkmu.eta()) < etaOE_)
       continue;
 
     l1tkmu.setTrackCurvature(matchTk.rInv());
@@ -673,7 +673,7 @@ std::vector<L1TkMuMantraDF::muon_df> L1TkMuonProducer::product_to_muvec(const EM
     int emtfQual = (mu.Mode() == 11 || mu.Mode() == 13 || mu.Mode() == 14 || mu.Mode() == 15);
     if (applyQuality_ && !emtfQual)
       continue;
-
+    
     result[imu].pt = mu.Pt();
     result[imu].eta = mu.Eta();
     result[imu].theta = L1TkMuMantra::to_mpio2_pio2(L1TkMuMantra::eta_to_theta(mu.Eta()));
@@ -713,15 +713,15 @@ void L1TkMuonProducer::build_tkMuons_from_idxs(TkMuonCollection& tkMuons,
     // apply region cleaning (probably this is not the best way, but since this is going to
     // be a patch and temporary, it is OK)
     if (detector == barrel_MTF_region) {
-      if (std::abs(l1tkp4.eta()) > etaBO_)
+      if (std::abs(l1tkmu.eta()) > etaBO_)
         continue;
     } else if (detector == overlap_MTF_region) {
-      if (std::abs(l1tkp4.eta()) < etaBO_)
+      if (std::abs(l1tkmu.eta()) < etaBO_)
         continue;
-      if (std::abs(l1tkp4.eta()) > etaOE_)
+      if (std::abs(l1tkmu.eta()) > etaOE_)
         continue;
     } else if (detector == endcap_MTF_region) {
-      if (std::abs(l1tkp4.eta()) < etaOE_)
+      if (std::abs(l1tkmu.eta()) < etaOE_)
         continue;
     }
 
