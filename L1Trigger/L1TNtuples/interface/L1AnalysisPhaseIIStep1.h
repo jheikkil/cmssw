@@ -105,6 +105,12 @@ namespace L1Analysis {
                    unsigned int muonDetector);
     void SetTkMuon(const edm::Handle<l1t::TkMuonCollection> TkMuon, unsigned maxL1Extra);
 
+
+   //glb muons
+    void SetMuon(const edm::Handle<l1t::MuonBxCollection> muon, unsigned maxL1Extra);
+
+    void SetTkGlbMuon(const edm::Handle<l1t::TkGlbMuonCollection> TkGlbMuon, unsigned maxL1Extra);
+
     // Add new PFJet collections
     void SetL1METPF(const edm::Handle<std::vector<reco::PFMET>> l1MetPF);
 

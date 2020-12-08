@@ -15,6 +15,10 @@ l1PhaseIITree = cms.EDAnalyzer("L1PhaseIITreeStep1Producer",
    muonEndcap = cms.InputTag("simEmtfDigis","", "MENUTREE"),
    TkMuonToken = cms.InputTag("L1TkMuons","","MENUTREE"),
 
+   #Global muons
+   muonToken = cms.untracked.InputTag("simGmtStage2Digis", "", "MENUTREE"),
+   TkGlbMuonToken = cms.InputTag("L1TkGlbMuons","", "MENUTREE"),
+
 
  #  ak4L1PF = cms.InputTag("ak4PFL1PuppiCorrected"),
 
