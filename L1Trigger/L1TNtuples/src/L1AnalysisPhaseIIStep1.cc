@@ -205,7 +205,6 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetTkMuon(const edm::Handle<l1t::TkMuon
       l1extra_.tkMuonDRMuTrack.push_back(it->dR());
       l1extra_.tkMuonNMatchedTracks.push_back(it->nTracksMatched());
       l1extra_.tkMuonQual.push_back(it->muRef()->hwQual());
-      l1extra_.tkMuonEMTFQual.push_back(999);
       l1extra_.tkMuonMuRefChg.push_back(pow(-1, it->muRef()->hwSign()));
     } else {
       l1extra_.tkMuonMuRefPt.push_back(it->emtfTrk()->Pt());
@@ -213,9 +212,7 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetTkMuon(const edm::Handle<l1t::TkMuon
       l1extra_.tkMuonMuRefPhi.push_back(angle_units::operators::convertDegToRad(it->emtfTrk()->Phi_glob()));
       l1extra_.tkMuonDRMuTrack.push_back(-777);
       l1extra_.tkMuonNMatchedTracks.push_back(0);
-      bool emtfQual = (it->emtfTrk()->Mode() == 11 || it->emtfTrk()->Mode() == 13 || it->emtfTrk()->Mode() == 14 || it->emtfTrk()->Mode() == 15);
-      l1extra_.tkMuonQual.push_back(999);
-      l1extra_.tkMuonEMTFQual.push_back(emtfQual);
+      l1extra_.tkMuonQual.push_back(it->quality());
       l1extra_.tkMuonMuRefChg.push_back(0);
     }
     l1extra_.tkMuonRegion.push_back(it->muonDetector());
@@ -315,7 +312,6 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetMuonKF(const edm::Handle<l1t::Region
             576);
         l1extra_.standaloneMuonChg.push_back(pow(-1, it->hwSign()));
         l1extra_.standaloneMuonQual.push_back(it->hwQual());
-        l1extra_.standaloneMuonEMTFQual.push_back(999);
         l1extra_.standaloneMuonRegion.push_back(muonDetector);
         l1extra_.standaloneMuonBx.push_back(ibx);
         l1extra_.nStandaloneMuons++;
@@ -340,10 +336,9 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetMuonEMTF(const edm::Handle<l1t::EMTF
         l1extra_.standaloneMuonPhi.push_back(angle_units::operators::convertDegToRad(it->Phi_glob()));
         l1extra_.standaloneMuonChg.push_back(it->Charge()); 
         bool emtfQual = (it->Mode() == 11 || it->Mode() == 13 || it->Mode() == 14 || it->Mode() == 15);
-        l1extra_.standaloneMuonQual.push_back(999);
-        l1extra_.standaloneMuonEMTFQual.push_back(emtfQual);
+        l1extra_.standaloneMuonQual.push_back(emtfQual);
         l1extra_.standaloneMuonRegion.push_back(muonDetector);
-        l1extra_.standaloneMuonBx.push_back(999);
+        l1extra_.standaloneMuonBx.push_back(it->BX());
         l1extra_.nStandaloneMuons++;
     }
    }

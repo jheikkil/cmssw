@@ -734,7 +734,6 @@ void L1TkMuonProducer::build_tkMuons_from_idxs(TkMuonCollection& tkMuons,
 					       const edm::Handle<EMTFTrackCollection>& emtfTksH,                                               
                                                int detector) const {
 
->>>>>>> folguera/L1T_Phase2_EnableTkGlbMuons
   for (uint imatch = 0; imatch < matches.size(); ++imatch) {
     int match_trk_idx = matches[imatch];
     if (match_trk_idx < 0)
