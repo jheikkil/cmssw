@@ -89,12 +89,11 @@ private:
                                const edm::Handle<RegionalMuonCandBxCollection>& muonH,
                                int detector) const;
 
-  void build_tkMuons_from_idxs_emtfTrks(TkMuonCollection& tkMuons,
+  void build_tkMuons_from_idxs(TkMuonCollection& tkMuons,
                                const std::vector<int>& matches,
                                const edm::Handle<L1TTTrackCollectionType>& l1tksH,
-                               const edm::Handle<EMTFTrackCollection>& emtfTksH,
+			       const edm::Handle<EMTFTrackCollection>& emtfTksH,
                                int detector) const;
-
 
   // dump and convert tracks to the format needed for the MAnTra correlator
   std::vector<L1TkMuMantraDF::track_df> product_to_trkvec(const L1TTTrackCollectionType& l1tks) const;  // tracks
@@ -205,7 +204,7 @@ L1TkMuonProducer::L1TkMuonProducer(const edm::ParameterSet& iConfig)
 
   use5ParameterFit_ = iConfig.getParameter<bool>("use5ParameterFit");
   useTPMatchWindows_ = iConfig.getParameter<bool>("useTPMatchWindows");
-  applyQuality_ = iConfig.exists("applyQualityCuts") ? iConfig.getParameter<bool>("applyQualityCuts") : true;
+  applyQuality_ = iConfig.exists("applyQualityCuts") ? iConfig.getParameter<bool>("applyQualityCuts") : false;
 
   produces<TkMuonCollection>();
 
@@ -362,9 +361,8 @@ void L1TkMuonProducer::produce(edm::StreamID, edm::Event& iEvent, const edm::Eve
   else if (emtfMatchAlgoVersion_ == kMantra) {
     const auto& muons = product_to_muvec(*l1emtfTCH.product());
     const auto& match_idx = mantracorr_endc_->find_match(mantradf_tracks, muons);
-    //for the TkMu that were built from a EMTFCollection - do not produce a valid muon ref
-    //edm::Handle<RegionalMuonCandBxCollection> invalidMuonH;
-    build_tkMuons_from_idxs_emtfTrks(oc_emtf_tkmuon, match_idx, l1tksH, l1emtfTCH, endcap_MTF_region);
+    //for the TkMu that were built from a EMTFCollection - pass the emtf track as ref
+    build_tkMuons_from_idxs(oc_emtf_tkmuon, match_idx, l1tksH, l1emtfTCH, endcap_MTF_region);
   } else
     throw cms::Exception("TkMuAlgoConfig") << "endcap : trying to run an invalid algorithm version "
                                            << emtfMatchAlgoVersion_ << " (this should never happen)\n";
@@ -730,11 +728,13 @@ void L1TkMuonProducer::build_tkMuons_from_idxs(TkMuonCollection& tkMuons,
   return;
 }
 
-void L1TkMuonProducer::build_tkMuons_from_idxs_emtfTrks(TkMuonCollection& tkMuons,
+void L1TkMuonProducer::build_tkMuons_from_idxs(TkMuonCollection& tkMuons,
                                                const std::vector<int>& matches,
                                                const edm::Handle<L1TTTrackCollectionType>& l1tksH,
-                                               const edm::Handle<EMTFTrackCollection>& emtfTksH,
+					       const edm::Handle<EMTFTrackCollection>& emtfTksH,                                               
                                                int detector) const {
+
+>>>>>>> folguera/L1T_Phase2_EnableTkGlbMuons
   for (uint imatch = 0; imatch < matches.size(); ++imatch) {
     int match_trk_idx = matches[imatch];
     if (match_trk_idx < 0)
@@ -747,24 +747,27 @@ void L1TkMuonProducer::build_tkMuons_from_idxs_emtfTrks(TkMuonCollection& tkMuon
     float p4e = sqrt(mu_mass * mu_mass + p3.mag2());
     math::XYZTLorentzVector l1tkp4(p3.x(), p3.y(), p3.z(), p4e);
 
-
     edm::Ptr<L1TTTrackType> l1tkPtr(l1tksH, match_trk_idx);
 
-
     auto l1emtfTrk = emtfTksH.isValid() ? edm::Ref<EMTFTrackCollection>(emtfTksH, imatch)
-                                        : edm::Ref<EMTFTrackCollection>();
- 
+      : edm::Ref<EMTFTrackCollection>();
+    
+    int emtfQual = (l1emtfTrk->Mode() == 11 || l1emtfTrk->Mode() == 13 || l1emtfTrk->Mode() == 14 || l1emtfTrk->Mode() == 15) ? 1 : 0;
 
     float trkisol = -999;
     TkMuon l1tkmu(l1tkp4, l1emtfTrk, l1tkPtr, trkisol);
     l1tkmu.setTrackCurvature(matchTk.rInv());
     l1tkmu.setTrkzVtx((float)tkv3.z());
     l1tkmu.setMuonDetector(detector);
+    l1tkmu.setQuality(emtfQual);
+
+    if (std::abs(l1tkp4.eta()) < etaOE_)
+      continue;
+    
     tkMuons.push_back(l1tkmu);
   }
   return;
 }
-
 
 //define this as a plug-in
 DEFINE_FWK_MODULE(L1TkMuonProducer);

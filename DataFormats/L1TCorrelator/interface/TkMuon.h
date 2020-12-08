@@ -9,7 +9,6 @@
 #include "DataFormats/L1TMuon/interface/RegionalMuonCandFwd.h"
 #include "DataFormats/L1TMuon/interface/EMTFTrack.h"
 
-
 namespace l1t {
   class TkMuon : public L1Candidate {
   public:
@@ -23,12 +22,10 @@ namespace l1t {
            const edm::Ptr<L1TTTrackType>& trkPtr,
            float tkisol = -999.);
 
-    //Constructor for emtf tracks, no regional muon candidate
     TkMuon(const LorentzVector& p4,
            const edm::Ref<l1t::EMTFTrackCollection>& emtfTrk,
            const edm::Ptr<L1TTTrackType>& trkPtr,
            float tkisol = -999.);
-
 
     //One more constructor for Tracker+ Stubs algorithm not requiring the Muon candidate
     TkMuon(const LorentzVector& p4, const edm::Ptr<L1TTTrackType>& trkPtr, float tkisol = -999.);
@@ -39,6 +36,7 @@ namespace l1t {
     const edm::Ptr<L1TTTrackType>& trkPtr() const { return trkPtr_; }
 
     const edm::Ref<l1t::RegionalMuonCandBxCollection>& muRef() const { return muRef_; }
+    const edm::Ref<l1t::EMTFTrackCollection>& emtfTrk() const { return emtfTrk_; }
 
     const edm::Ref<l1t::EMTFTrackCollection>& emtfTrk() const { return emtfTrk_; }
  
