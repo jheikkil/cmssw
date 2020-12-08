@@ -92,7 +92,7 @@ private:
   void build_tkMuons_from_idxs(TkMuonCollection& tkMuons,
                                const std::vector<int>& matches,
                                const edm::Handle<L1TTTrackCollectionType>& l1tksH,
-			       const edm::Handle<EMTFTrackCollection>& emtfTksH,
+                               const edm::Handle<EMTFTrackCollection>& emtfTksH,
                                int detector) const;
 
   // dump and convert tracks to the format needed for the MAnTra correlator
@@ -731,9 +731,8 @@ void L1TkMuonProducer::build_tkMuons_from_idxs(TkMuonCollection& tkMuons,
 void L1TkMuonProducer::build_tkMuons_from_idxs(TkMuonCollection& tkMuons,
                                                const std::vector<int>& matches,
                                                const edm::Handle<L1TTTrackCollectionType>& l1tksH,
-					       const edm::Handle<EMTFTrackCollection>& emtfTksH,                                               
+                                               const edm::Handle<EMTFTrackCollection>& emtfTksH,
                                                int detector) const {
-
   for (uint imatch = 0; imatch < matches.size(); ++imatch) {
     int match_trk_idx = matches[imatch];
     if (match_trk_idx < 0)
@@ -748,21 +747,19 @@ void L1TkMuonProducer::build_tkMuons_from_idxs(TkMuonCollection& tkMuons,
 
     edm::Ptr<L1TTTrackType> l1tkPtr(l1tksH, match_trk_idx);
 
-    auto l1emtfTrk = emtfTksH.isValid() ? edm::Ref<EMTFTrackCollection>(emtfTksH, imatch)
-      : edm::Ref<EMTFTrackCollection>();
-    
-    int emtfQual = (l1emtfTrk->Mode() == 11 || l1emtfTrk->Mode() == 13 || l1emtfTrk->Mode() == 14 || l1emtfTrk->Mode() == 15) ? 1 : 0;
+    auto l1emtfTrk =
+        emtfTksH.isValid() ? edm::Ref<EMTFTrackCollection>(emtfTksH, imatch) : edm::Ref<EMTFTrackCollection>();
 
     float trkisol = -999;
     TkMuon l1tkmu(l1tkp4, l1emtfTrk, l1tkPtr, trkisol);
     l1tkmu.setTrackCurvature(matchTk.rInv());
     l1tkmu.setTrkzVtx((float)tkv3.z());
     l1tkmu.setMuonDetector(detector);
-    l1tkmu.setQuality(emtfQual);
+    l1tkmu.setQuality(l1emtfTrk->Mode());
 
-    if (std::abs(l1tkp4.eta()) < etaOE_)
+    if (std::abs(l1tkmu.eta()) < etaOE_)
       continue;
-    
+
     tkMuons.push_back(l1tkmu);
   }
   return;
