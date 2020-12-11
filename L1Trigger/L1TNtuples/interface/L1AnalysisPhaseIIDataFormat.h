@@ -207,7 +207,7 @@ namespace L1Analysis {
       tkGlbMuonQual.clear();
       tkGlbMuonzVtx.clear();
       tkGlbMuonMuRefPt.clear();
-      tkGlbMuonTrkRefPt.clear();
+      //tkGlbMuonTrkRefPt.clear();
       tkGlbMuonMuRefPhi.clear();
       tkGlbMuonMuRefEta.clear();
       tkGlbMuonDRMuTrack.clear();
@@ -553,13 +553,13 @@ namespace L1Analysis {
     std::vector<double> tkGlbMuonEta;
     std::vector<double> tkGlbMuonPhi;
     std::vector<int> tkGlbMuonChg;
-    std::vector<unsigned int> tkGlbMuonIso;
+    //std::vector<unsigned int> tkGlbMuonIso;
     std::vector<double> tkGlbMuonTrkIso;
     std::vector<int> tkGlbMuonBx;
     std::vector<unsigned int> tkGlbMuonQual;
     std::vector<double> tkGlbMuonzVtx;
     std::vector<double> tkGlbMuonMuRefPt;
-    std::vector<double> tkGlbMuonTrkRefPt;
+    //std::vector<double> tkGlbMuonTrkRefPt;
     std::vector<double> tkGlbMuonMuRefPhi;
     std::vector<double> tkGlbMuonMuRefEta;
     std::vector<double> tkGlbMuonDRMuTrack;
