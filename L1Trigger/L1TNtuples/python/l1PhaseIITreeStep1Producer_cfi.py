@@ -15,10 +15,10 @@ l1PhaseIITree = cms.EDAnalyzer("L1PhaseIITreeStep1Producer",
 
  #  ak4L1PF = cms.InputTag("ak4PFL1PuppiCorrected"),
 
-#   l1pfPhase1L1TJetToken  = cms.InputTag("Phase1L1TJetCalibrator" ,   "Phase1L1TJetFromPfCandidates"), # not there yet either
+   l1pfPhase1L1TJetToken  = cms.InputTag("Phase1L1TJetCalibrator" ,   "Phase1L1TJetFromPfCandidates"), # not there yet either
 
 
-   caloTauToken = cms.InputTag("L1CaloJetProducer","CaloTaus"),
+   caloTauToken = cms.InputTag("L1CaloJets","CaloTaus"),
 
    l1PFMet = cms.InputTag("l1PFMetPuppi"),
 
@@ -29,6 +29,11 @@ l1PhaseIITree = cms.EDAnalyzer("L1PhaseIITreeStep1Producer",
 
    L1NNTauToken = cms.InputTag("l1NNTauProducerPuppi","L1PFTausNN"),
    L1NNTauPFToken = cms.InputTag("l1NNTauProducer","L1PFTausNN"),
+
+   tkTrackerJetToken = cms.InputTag("L1TrackJets", "L1TrackJets"),
+   tkMetToken = cms.InputTag("L1TrackerEtMiss","L1TrackerEtMiss"),
+   tkMhtTokens = cms.VInputTag( cms.InputTag("L1TrackerHTMiss","L1TrackerHTMiss") ),
+
 
    maxL1Extra = cms.uint32(50)
 )

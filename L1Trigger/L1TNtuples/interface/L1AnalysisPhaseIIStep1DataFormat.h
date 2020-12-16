@@ -125,6 +125,27 @@ namespace L1Analysis {
       nnTauPassLoosePF.clear();
       nnTauPassTightPF.clear();
       nnTauPassTightNN.clear();
+   
+      // TkJets
+      nTrackerJets = 0;
+      trackerJetEt.clear();
+      trackerJetEta.clear();
+      trackerJetPhi.clear();
+      trackerJetBx.clear();
+      trackerJetzVtx.clear();
+
+      // TrackerMet
+      nTrackerMet = 0;
+      trackerMetSumEt.clear();
+      trackerMetEt.clear();
+      trackerMetPhi.clear();
+      trackerMetBx.clear();
+
+      //trackerMHT
+      nTrackerMHT = 0;
+      trackerHT.clear();
+      trackerMHT.clear();
+      trackerMHTPhi.clear();
     }
 
     double z0Puppi;
@@ -236,6 +257,24 @@ namespace L1Analysis {
     std::vector<unsigned int> nnTauPassLoosePF;
     std::vector<unsigned int> nnTauPassTightPF;
     std::vector<unsigned int> nnTauPassTightNN;
+
+    unsigned int nTrackerJets;
+    std::vector<double> trackerJetEt;
+    std::vector<double> trackerJetEta;
+    std::vector<double> trackerJetPhi;
+    std::vector<int> trackerJetBx;
+    std::vector<double> trackerJetzVtx;
+
+    unsigned int nTrackerMet;
+    std::vector<double> trackerMetSumEt;
+    std::vector<double> trackerMetEt;
+    std::vector<double> trackerMetPhi;
+    std::vector<double> trackerMetBx;
+
+    unsigned int nTrackerMHT;
+    std::vector<double> trackerHT;
+    std::vector<double> trackerMHT;
+    std::vector<double> trackerMHTPhi;
   };
 }  // namespace L1Analysis
 #endif

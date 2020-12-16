@@ -107,6 +107,11 @@ namespace L1Analysis {
     // Add nntaus
     void SetNNTaus(const edm::Handle<std::vector<l1t::PFTau>> l1nnTaus, unsigned maxL1Extra);
 
+    //tkjets, tkmet, tkht
+    void SetTkJet(const edm::Handle<l1t::TkJetCollection> tkTrackerJet, unsigned maxL1Extra);
+    void SetTkMET(const edm::Handle<l1t::TkEtMissCollection> trackerMets);
+    void SetTkMHT(const edm::Handle<l1t::TkHTMissCollection> trackerMHTs);
+
     L1AnalysisPhaseIIStep1DataFormat* getData() { return &l1extra_; }
 
     static int transverseCoord(double cxa,
