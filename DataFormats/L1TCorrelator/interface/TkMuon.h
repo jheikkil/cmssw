@@ -38,6 +38,7 @@ namespace l1t {
     const edm::Ref<l1t::RegionalMuonCandBxCollection>& muRef() const { return muRef_; }
     const edm::Ref<l1t::EMTFTrackCollection>& emtfTrk() const { return emtfTrk_; }
 
+ 
     float trkIsol() const { return theIsolation; }
     float trkzVtx() const { return TrkzVtx_; }
 

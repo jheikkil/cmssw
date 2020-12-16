@@ -33,3 +33,4 @@ TkMuon::TkMuon(const LorentzVector& p4, const edm::Ptr<L1TTTrackType>& trackPtr,
     setTrkzVtx(trkPtr()->POCA().z());
   }
 }
+
