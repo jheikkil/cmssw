@@ -156,6 +156,11 @@ private:
 
   edm::EDGetTokenT<l1t::PFTauCollection> L1NNTauToken_;
   edm::EDGetTokenT<l1t::PFTauCollection> L1NNTauPFToken_;
+
+  //adding tkjets, tkmet, tkht
+  edm::EDGetTokenT<l1t::TkJetCollection> tkTrackerJetToken_;
+  edm::EDGetTokenT<l1t::TkEtMissCollection> tkMetToken_;
+  std::vector<edm::EDGetTokenT<l1t::TkHTMissCollection>> tkMhtToken_;
 };
 
 L1PhaseIITreeStep1Producer::L1PhaseIITreeStep1Producer(const edm::ParameterSet& iConfig) {
@@ -194,6 +199,15 @@ L1PhaseIITreeStep1Producer::L1PhaseIITreeStep1Producer(const edm::ParameterSet& 
   L1NNTauToken_ = consumes<l1t::PFTauCollection>(iConfig.getParameter<edm::InputTag>("L1NNTauToken"));
   L1NNTauPFToken_ = consumes<l1t::PFTauCollection>(iConfig.getParameter<edm::InputTag>("L1NNTauPFToken"));
 
+
+  tkTrackerJetToken_ = consumes<l1t::TkJetCollection>(iConfig.getParameter<edm::InputTag>("tkTrackerJetToken"));
+  tkMetToken_ = consumes<l1t::TkEtMissCollection>(iConfig.getParameter<edm::InputTag>("tkMetToken"));
+  //tkMhtToken_ = consumes<l1t::TkHTMissCollection>(iConfig.getParameter<edm::InputTag>("tkMhtToken"));
+
+  const auto& mhttokens = iConfig.getParameter<std::vector<edm::InputTag>>("tkMhtTokens");
+  for (const auto& mhttoken : mhttokens) {
+    tkMhtToken_.push_back(consumes<l1t::TkHTMissCollection>(mhttoken));
+  }
   maxL1Extra_ = iConfig.getParameter<unsigned int>("maxL1Extra");
 
   l1Extra = new L1Analysis::L1AnalysisPhaseIIStep1();
@@ -266,6 +280,37 @@ void L1PhaseIITreeStep1Producer::analyze(const edm::Event& iEvent, const edm::Ev
 
   edm::Handle<std::vector<l1t::TkPrimaryVertex> > l1TkPrimaryVertex;
   iEvent.getByToken(l1TkPrimaryVertexToken_, l1TkPrimaryVertex);
+
+  //tkjet, tkmet, tkht
+  edm::Handle<l1t::TkJetCollection> tkTrackerJet;
+  edm::Handle<l1t::TkEtMissCollection> tkMets;
+  //edm::Handle<l1t::TkHTMissCollection> tkMhts;
+
+  iEvent.getByToken(tkTrackerJetToken_, tkTrackerJet);
+  iEvent.getByToken(tkMetToken_, tkMets);
+
+  if (tkTrackerJet.isValid()) {
+    l1Extra->SetTkJet(tkTrackerJet, maxL1Extra_);
+  } else {
+    edm::LogWarning("MissingProduct") << "L1PhaseII tkTrackerJets not found. Branch will not be filled" << std::endl;
+  }
+
+  if (tkMets.isValid()) {
+    l1Extra->SetTkMET(tkMets);
+  } else {
+    edm::LogWarning("MissingProduct") << "L1PhaseII TkMET not found. Branch will not be filled" << std::endl;
+  }
+
+  for (auto& tkmhttoken : tkMhtToken_) {
+    edm::Handle<l1t::TkHTMissCollection> tkMhts;
+    iEvent.getByToken(tkmhttoken, tkMhts);
+
+    if (tkMhts.isValid()) {
+      l1Extra->SetTkMHT(tkMhts);
+    } else {
+      edm::LogWarning("MissingProduct") << "L1PhaseII TkMHT not found. Branch will not be filled" << std::endl;
+    }
+  }
 
   //  float vertexTDRZ0=-999;
   //  if(l1vertextdr->size()>0) vertexTDRZ0=l1vertextdr->at(0).z0();

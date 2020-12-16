@@ -394,3 +394,40 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetTkGlbMuon(const edm::Handle<l1t::TkG
     l1extra_.nTkGlbMuons++;
   }
 }
+
+
+// TkJet
+void L1Analysis::L1AnalysisPhaseIIStep1::SetTkJet(const edm::Handle<l1t::TkJetCollection> trackerJet, unsigned maxL1Extra) {
+  for (l1t::TkJetCollection::const_iterator it = trackerJet->begin();
+       it != trackerJet->end() && l1extra_.nTrackerJets < maxL1Extra;
+       it++) {
+    l1extra_.trackerJetEt.push_back(it->et());
+    l1extra_.trackerJetEta.push_back(it->eta());
+    l1extra_.trackerJetPhi.push_back(it->phi());
+    l1extra_.trackerJetzVtx.push_back(it->jetVtx());
+    l1extra_.trackerJetBx.push_back(0);  //it->bx());
+    l1extra_.nTrackerJets++;
+  }
+}
+
+// trackerMet
+void L1Analysis::L1AnalysisPhaseIIStep1::SetTkMET(const edm::Handle<l1t::TkEtMissCollection> trackerMets) {
+  for (l1t::TkEtMissCollection::const_iterator it = trackerMets->begin(); it != trackerMets->end(); it++) {
+    l1extra_.trackerMetSumEt.push_back(it->etTotal());
+    l1extra_.trackerMetEt.push_back(it->etMiss());
+    l1extra_.trackerMetPhi.push_back(it->phi());
+    l1extra_.trackerMetBx.push_back(it->bx());
+    l1extra_.nTrackerMet++;
+  }
+}
+
+void L1Analysis::L1AnalysisPhaseIIStep1::SetTkMHT(const edm::Handle<l1t::TkHTMissCollection> trackerMHTs) {
+  // Hardcoding it like this, but this needs to be changed to a vector
+
+  for (l1t::TkHTMissCollection::const_iterator it = trackerMHTs->begin(); it != trackerMHTs->end(); it++) {
+    l1extra_.trackerHT.push_back(it->etTotal());
+    l1extra_.trackerMHT.push_back(it->EtMiss());
+    l1extra_.trackerMHTPhi.push_back(it->phi());
+    l1extra_.nTrackerMHT++;
+  }
+}
