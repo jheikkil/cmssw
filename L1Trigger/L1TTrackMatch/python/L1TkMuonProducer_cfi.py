@@ -18,6 +18,7 @@ L1TkMuons = cms.EDProducer("L1TkMuonProducer",
     ETAMAX = cms.double(5.),        # no cut
     ETABARRELOVERLAP = cms.double(0.83),                           
     ETAOVERLAPENDCAP = cms.double(1.24),                           
+    useRegionEtaMatching = cms.bool(True),
     ZMAX = cms.double( 25. ),       # in cm
     CHI2MAX = cms.double( 100. ),
     PTMINTRA = cms.double( 2. ),    # in GeV
@@ -27,7 +28,6 @@ L1TkMuons = cms.EDProducer("L1TkMuonProducer",
     correctGMTPropForTkZ = cms.bool(True),
     use5ParameterFit = cms.bool(False), #use 4-pars by defaults
     useTPMatchWindows = cms.bool(True),
-    applyQualityCuts = cms.bool(True),
     # emtfMatchAlgoVersion = cms.int32( 1 ),        # version of matching EMTF with Trackes (1 or 2)
     ###############################################
     ############################################### DynamicWindows algo
