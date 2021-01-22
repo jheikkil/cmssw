@@ -108,9 +108,17 @@ L1CaloJet = L1CaloJetProducer.clone (
 from L1Trigger.L1CaloTrigger.L1CaloJetHTTProducer_cfi import *
 L1CaloJetHTT = L1CaloJetHTTProducer.clone()
 
-_phase2_siml1emulator.add(L1TowerCalibration)
-_phase2_siml1emulator.add(L1CaloJet)
-_phase2_siml1emulator.add(L1CaloJetHTT)
+
+#tTower= cms.Task(L1TowerCalibration)
+#tCaloJet= cms.Task(L1CaloJet)
+#tCaloJetHTT = cms.Task(L1CaloJetHTT)
+#sequenceJets=cms.Sequence(tTower,tCaloJet,tCaloJetHTT)
+#_phase2_siml1emulator.add(sequenceJets)
+#l1CaloJetTask = cms.Task(L1TowerCalibration,L1CaloJet,L1CaloJetHTT)
+#_phase2_siml1emulator.add(l1CaloJetTask)
+#_phase2_siml1emulator.add(L1TowerCalibration)
+#_phase2_siml1emulator.add(L1CaloJet)
+#_phase2_siml1emulator.add(L1CaloJetHTT)
 
 # ########################################################################
 # Phase-2 L1T - TrackTrigger dependent modules
