@@ -2,33 +2,48 @@ import FWCore.ParameterSet.Config as cms
 
 l1PhaseIITree = cms.EDAnalyzer("L1PhaseIITreeStep1Producer",
 
-   egTokenBarrel = cms.InputTag("L1EGammaClusterEmuProducer",""),
-   tkEGTokenBarrel = cms.InputTag("L1TkElectronsEllipticMatchCrystal","EG"),
-   tkEMTokenBarrel = cms.InputTag("L1TkPhotonsCrystal","EG"),
+   egTokenBarrel = cms.InputTag("L1EGammaClusterEmuProducer","","MENUTREE"),
+   tkEGTokenBarrel = cms.InputTag("L1TkElectronsEllipticMatchCrystal","EG","MENUTREE"),
+   tkEMTokenBarrel = cms.InputTag("L1TkPhotonsCrystal","EG","MENUTREE"),
 
-   egTokenHGC = cms.InputTag("l1EGammaEEProducer","L1EGammaCollectionBXVWithCuts"),
-   tkEGTokenHGC = cms.InputTag("L1TkElectronsEllipticMatchHGC","EG"),
-   tkEMTokenHGC = cms.InputTag("L1TkPhotonsHGC","EG"),
+   egTokenHGC = cms.InputTag("l1EGammaEEProducer","L1EGammaCollectionBXVWithCuts","MENUTREE"),
+   tkEGTokenHGC = cms.InputTag("L1TkElectronsEllipticMatchHGC","EG","MENUTREE"),
+   tkEMTokenHGC = cms.InputTag("L1TkPhotonsHGC","EG","MENUTREE"),
 
-   TkMuonToken = cms.InputTag("L1TkMuons",""),
+   muonKalman = cms.InputTag("simKBmtfDigis","BMTF","MENUTREE"),
+   muonOverlap = cms.InputTag("simOmtfDigis","OMTF","MENUTREE"),
+   muonEndcap = cms.InputTag("simEmtfDigis","","MENUTREE"),
+   TkMuonToken = cms.InputTag("L1TkMuons","","MENUTREE"),
+
+   #Global muons
+   muonToken = cms.untracked.InputTag("simGmtStage2Digis", "","MENUTREE"),
+   TkGlbMuonToken = cms.InputTag("L1TkGlbMuons","","MENUTREE"),
+
+ #  ak4L1PF = cms.InputTag("ak4PFL1PuppiCorrected","MENUTREE"),
+
+   l1pfPhase1L1TJetToken  = cms.InputTag("Phase1L1TJetCalibrator" ,   "Phase1L1TJetFromPfCandidates","MENUTREE"), # not there yet either
 
 
- #  ak4L1PF = cms.InputTag("ak4PFL1PuppiCorrected"),
+   caloTauToken = cms.InputTag("L1CaloJetProducer","CaloTaus","MENUTREE"),
 
-#   l1pfPhase1L1TJetToken  = cms.InputTag("Phase1L1TJetCalibrator" ,   "Phase1L1TJetFromPfCandidates"), # not there yet either
+   l1PFMet = cms.InputTag("l1PFMetPuppi","", "MENUTREE"),
 
+   zoPuppi = cms.InputTag("l1pfProducerBarrel","z0","MENUTREE"),
+   l1vertextdr = cms.InputTag("VertexProducer","l1vertextdr","MENUTREE"),
+   l1vertices = cms.InputTag("VertexProducer","l1vertices","MENUTREE"),
+   l1TkPrimaryVertex= cms.InputTag("L1TkPrimaryVertex","","MENUTREE"),
 
-   caloTauToken = cms.InputTag("L1CaloJetProducer","CaloTaus"),
+   L1NNTauToken = cms.InputTag("l1NNTauProducerPuppi","L1PFTausNN","MENUTREE"),
+   L1NNTauPFToken = cms.InputTag("l1NNTauProducer","L1PFTausNN","MENUTREE"),
 
-   l1PFMet = cms.InputTag("l1PFMetPuppi"),
+   tkTrackerJetToken = cms.InputTag("L1TrackJets", "L1TrackJets","MENUTREE"),
+   tkTrackerJetDisplacedToken = cms.InputTag("L1TrackJetsExtended", "L1TrackJetsExtended","MENUTREE"),
 
-   zoPuppi = cms.InputTag("l1pfProducerBarrel","z0"),
-   l1vertextdr = cms.InputTag("VertexProducer","l1vertextdr"),
-   l1vertices = cms.InputTag("VertexProducer","l1vertices"),
-   l1TkPrimaryVertex= cms.InputTag("L1TkPrimaryVertex",""),
-
-   L1NNTauToken = cms.InputTag("l1NNTauProducerPuppi","L1PFTausNN"),
-   L1NNTauPFToken = cms.InputTag("l1NNTauProducer","L1PFTausNN"),
+   tkMetToken = cms.InputTag("L1TrackerEtMiss","L1TrackerEtMiss","MENUTREE"),
+   tkMetDisplacedToken = cms.InputTag("L1TrackerEtMissExtended","L1TrackerEtMissExtended","MENUTREE"),
+   
+   tkMhtTokens = cms.VInputTag( cms.InputTag("L1TrackerHTMiss","L1TrackerHTMiss", "MENUTREE")),
+   tkMhtDisplacedTokens = cms.VInputTag( cms.InputTag("L1TrackerHTMissExtended","L1TrackerHTMissExtended", "MENUTREE")),
 
    maxL1Extra = cms.uint32(50)
 )

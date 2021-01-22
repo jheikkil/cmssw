@@ -142,9 +142,14 @@ from L1Trigger.L1TTrackMatch.L1TrackFastJetProducer_cfi import *
 from L1Trigger.L1TTrackMatch.L1TrackerEtMissProducer_cfi import *
 from L1Trigger.L1TTrackMatch.L1TkHTMissProducer_cfi import *
 _phase2_siml1emulator.add(L1TrackJets)
+_phase2_siml1emulator.add(L1TrackJetsExtended)
 _phase2_siml1emulator.add(L1TrackFastJets)
+
 _phase2_siml1emulator.add(L1TrackerEtMiss)
 _phase2_siml1emulator.add(L1TrackerHTMiss)
+_phase2_siml1emulator.add(L1TrackerEtMissExtended)
+_phase2_siml1emulator.add(L1TrackerHTMissExtended)
+
 
 # PF Candidates
 # ########################################################################
