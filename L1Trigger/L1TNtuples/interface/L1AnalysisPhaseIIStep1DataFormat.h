@@ -93,6 +93,17 @@ namespace L1Analysis {
       tkPhotonPassesLooseTrackID.clear();
       tkPhotonPassesPhotonID.clear();
 
+      nStandaloneMuons = 0;
+      standaloneMuonPt.clear();
+      standaloneMuonPt2.clear();
+      standaloneMuonEta.clear();
+      standaloneMuonPhi.clear();
+      standaloneMuonChg.clear();
+      standaloneMuonQual.clear();
+      standaloneMuonBx.clear();
+      standaloneMuonRegion.clear();
+      standaloneMuonDXY.clear();
+
       nTkMuons = 0;
       tkMuonPt.clear();
       tkMuonEta.clear();
@@ -109,6 +120,44 @@ namespace L1Analysis {
       tkMuonNMatchedTracks.clear();
       tkMuonMuRefChg.clear();
       tkMuonRegion.clear();
+
+
+      //global
+      nGlobalMuons = 0;
+      globalMuonPt.clear();
+      globalMuonEta.clear();
+      globalMuonPhi.clear();
+      globalMuonEtaAtVtx.clear();
+      globalMuonPhiAtVtx.clear();
+      globalMuonIEt.clear();
+      globalMuonIEta.clear();
+      globalMuonIPhi.clear();
+      globalMuonIEtaAtVtx.clear();
+      globalMuonIPhiAtVtx.clear();
+      globalMuonIDEta.clear();
+      globalMuonIDPhi.clear();
+      globalMuonChg.clear();
+      globalMuonIso.clear();
+      globalMuonQual.clear();
+      globalMuonTfMuonIdx.clear();
+      globalMuonBx.clear();
+
+
+      nTkGlbMuons = 0;
+      tkGlbMuonPt.clear();
+      tkGlbMuonEta.clear();
+      tkGlbMuonPhi.clear();
+      tkGlbMuonChg.clear();
+      tkGlbMuonTrkIso.clear();
+      tkGlbMuonBx.clear();
+      tkGlbMuonQual.clear();
+      tkGlbMuonzVtx.clear();
+      tkGlbMuonMuRefPt.clear();
+      //tkGlbMuonTrkRefPt.clear();
+      tkGlbMuonMuRefPhi.clear();
+      tkGlbMuonMuRefEta.clear();
+      tkGlbMuonDRMuTrack.clear();
+      tkGlbMuonNMatchedTracks.clear();
 
       puppiMETEt = 0;
       puppiMETPhi = 0;
@@ -225,6 +274,17 @@ namespace L1Analysis {
     std::vector<unsigned int> tkPhotonPassesLooseTrackID;
     std::vector<unsigned int> tkPhotonPassesPhotonID;
 
+    unsigned short int nStandaloneMuons;
+    std::vector<double> standaloneMuonPt;
+    std::vector<double> standaloneMuonPt2;
+    std::vector<double> standaloneMuonEta;
+    std::vector<double> standaloneMuonPhi;
+    std::vector<short int> standaloneMuonChg;
+    std::vector<unsigned short int> standaloneMuonQual;
+    std::vector<double> standaloneMuonDXY;
+    std::vector<short int> standaloneMuonBx;
+    std::vector<unsigned int> standaloneMuonRegion;
+
     unsigned int nTkMuons;
     std::vector<double> tkMuonPt;
     std::vector<double> tkMuonEta;
@@ -241,6 +301,43 @@ namespace L1Analysis {
     std::vector<double> tkMuonNMatchedTracks;
     std::vector<int> tkMuonMuRefChg;
     std::vector<unsigned int> tkMuonRegion;
+
+    unsigned short int nGlobalMuons;
+    std::vector<double> globalMuonPt;
+    std::vector<double> globalMuonEta;
+    std::vector<double> globalMuonPhi;
+    std::vector<double> globalMuonEtaAtVtx;
+    std::vector<double> globalMuonPhiAtVtx;
+    std::vector<short int> globalMuonIEt;
+    std::vector<short int> globalMuonIEta;
+    std::vector<short int> globalMuonIPhi;
+    std::vector<short int> globalMuonIEtaAtVtx;
+    std::vector<short int> globalMuonIPhiAtVtx;
+    std::vector<short int> globalMuonIDEta;
+    std::vector<short int> globalMuonIDPhi;
+    std::vector<short int> globalMuonChg;
+    std::vector<unsigned short int> globalMuonIso;
+    std::vector<unsigned short int> globalMuonQual;
+    std::vector<unsigned short int> globalMuonTfMuonIdx;
+    std::vector<short int> globalMuonBx;
+
+    unsigned int nTkGlbMuons;
+    std::vector<double> tkGlbMuonPt;
+    std::vector<double> tkGlbMuonEta;
+    std::vector<double> tkGlbMuonPhi;
+    std::vector<int> tkGlbMuonChg;
+    //std::vector<unsigned int> tkGlbMuonIso;
+    std::vector<double> tkGlbMuonTrkIso;
+    std::vector<int> tkGlbMuonBx;
+    std::vector<unsigned int> tkGlbMuonQual;
+    std::vector<double> tkGlbMuonzVtx;
+    std::vector<double> tkGlbMuonMuRefPt;
+    //std::vector<double> tkGlbMuonTrkRefPt;
+    std::vector<double> tkGlbMuonMuRefPhi;
+    std::vector<double> tkGlbMuonMuRefEta;
+    std::vector<double> tkGlbMuonDRMuTrack;
+    std::vector<double> tkGlbMuonNMatchedTracks;
+
 
     double puppiMETEt;
     double puppiMETPhi;

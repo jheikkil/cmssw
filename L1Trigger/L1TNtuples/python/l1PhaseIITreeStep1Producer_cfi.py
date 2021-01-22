@@ -10,8 +10,14 @@ l1PhaseIITree = cms.EDAnalyzer("L1PhaseIITreeStep1Producer",
    tkEGTokenHGC = cms.InputTag("L1TkElectronsEllipticMatchHGC","EG"),
    tkEMTokenHGC = cms.InputTag("L1TkPhotonsHGC","EG"),
 
+   muonKalman = cms.InputTag("simKBmtfDigis","BMTF", "MENUTREE"),
+   muonOverlap = cms.InputTag("simOmtfDigis","OMTF", "MENUTREE"),
+   muonEndcap = cms.InputTag("simEmtfDigis","", "MENUTREE"),
    TkMuonToken = cms.InputTag("L1TkMuons",""),
 
+   #Global muons
+   muonToken = cms.untracked.InputTag("simGmtStage2Digis", ""),
+   TkGlbMuonToken = cms.InputTag("L1TkGlbMuons",""),
 
  #  ak4L1PF = cms.InputTag("ak4PFL1PuppiCorrected"),
 
