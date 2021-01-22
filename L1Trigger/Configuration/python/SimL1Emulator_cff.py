@@ -108,17 +108,9 @@ L1CaloJet = L1CaloJetProducer.clone (
 from L1Trigger.L1CaloTrigger.L1CaloJetHTTProducer_cfi import *
 L1CaloJetHTT = L1CaloJetHTTProducer.clone()
 
-
-#tTower= cms.Task(L1TowerCalibration)
-#tCaloJet= cms.Task(L1CaloJet)
-#tCaloJetHTT = cms.Task(L1CaloJetHTT)
-#sequenceJets=cms.Sequence(tTower,tCaloJet,tCaloJetHTT)
-#_phase2_siml1emulator.add(sequenceJets)
-#l1CaloJetTask = cms.Task(L1TowerCalibration,L1CaloJet,L1CaloJetHTT)
-#_phase2_siml1emulator.add(l1CaloJetTask)
-#_phase2_siml1emulator.add(L1TowerCalibration)
-#_phase2_siml1emulator.add(L1CaloJet)
-#_phase2_siml1emulator.add(L1CaloJetHTT)
+_phase2_siml1emulator.add(L1TowerCalibration)
+_phase2_siml1emulator.add(L1CaloJet)
+_phase2_siml1emulator.add(L1CaloJetHTT)
 
 # ########################################################################
 # Phase-2 L1T - TrackTrigger dependent modules
@@ -150,9 +142,14 @@ from L1Trigger.L1TTrackMatch.L1TrackFastJetProducer_cfi import *
 from L1Trigger.L1TTrackMatch.L1TrackerEtMissProducer_cfi import *
 from L1Trigger.L1TTrackMatch.L1TkHTMissProducer_cfi import *
 _phase2_siml1emulator.add(L1TrackJets)
+_phase2_siml1emulator.add(L1TrackJetsExtended)
 _phase2_siml1emulator.add(L1TrackFastJets)
+
 _phase2_siml1emulator.add(L1TrackerEtMiss)
 _phase2_siml1emulator.add(L1TrackerHTMiss)
+_phase2_siml1emulator.add(L1TrackerEtMissExtended)
+_phase2_siml1emulator.add(L1TrackerHTMissExtended)
+
 
 # PF Candidates
 # ########################################################################

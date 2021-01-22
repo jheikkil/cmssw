@@ -183,6 +183,14 @@ namespace L1Analysis {
       trackerJetBx.clear();
       trackerJetzVtx.clear();
 
+      nTrackerJetsDisplaced = 0;
+      trackerJetDisplacedEt.clear();
+      trackerJetDisplacedEta.clear();
+      trackerJetDisplacedPhi.clear();
+      trackerJetDisplacedBx.clear();
+      trackerJetDisplacedzVtx.clear();
+
+
       // TrackerMet
       nTrackerMet = 0;
       trackerMetSumEt.clear();
@@ -195,6 +203,21 @@ namespace L1Analysis {
       trackerHT.clear();
       trackerMHT.clear();
       trackerMHTPhi.clear();
+
+
+      // TrackerMetDisplaced
+      nTrackerMetDisplaced = 0;
+      trackerMetDisplacedSumEt.clear();
+      trackerMetDisplacedEt.clear();
+      trackerMetDisplacedPhi.clear();
+      trackerMetDisplacedBx.clear();
+
+      //trackerMHTDisplaced
+      nTrackerMHTDisplaced = 0;
+      trackerHTDisplaced.clear();
+      trackerMHTDisplaced.clear();
+      trackerMHTPhiDisplaced.clear();
+
     }
 
     double z0Puppi;
@@ -362,6 +385,14 @@ namespace L1Analysis {
     std::vector<int> trackerJetBx;
     std::vector<double> trackerJetzVtx;
 
+    unsigned int nTrackerJetsDisplaced;
+    std::vector<double> trackerJetDisplacedEt;
+    std::vector<double> trackerJetDisplacedEta;
+    std::vector<double> trackerJetDisplacedPhi;
+    std::vector<int> trackerJetDisplacedBx;
+    std::vector<double> trackerJetDisplacedzVtx;
+
+
     unsigned int nTrackerMet;
     std::vector<double> trackerMetSumEt;
     std::vector<double> trackerMetEt;
@@ -372,6 +403,19 @@ namespace L1Analysis {
     std::vector<double> trackerHT;
     std::vector<double> trackerMHT;
     std::vector<double> trackerMHTPhi;
+
+    unsigned int nTrackerMetDisplaced;
+    std::vector<double> trackerMetDisplacedSumEt;
+    std::vector<double> trackerMetDisplacedEt;
+    std::vector<double> trackerMetDisplacedPhi;
+    std::vector<double> trackerMetDisplacedBx;
+
+    unsigned int nTrackerMHTDisplaced;
+    std::vector<double> trackerHTDisplaced;
+    std::vector<double> trackerMHTDisplaced;
+    std::vector<double> trackerMHTPhiDisplaced;
+
+
   };
 }  // namespace L1Analysis
 #endif

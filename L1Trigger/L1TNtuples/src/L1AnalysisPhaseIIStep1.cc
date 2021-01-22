@@ -412,6 +412,20 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetTkJet(const edm::Handle<l1t::TkJetCo
   }
 }
 
+void L1Analysis::L1AnalysisPhaseIIStep1::SetTkJetDisplaced(const edm::Handle<l1t::TkJetCollection> trackerJet, unsigned maxL1Extra) {
+  for (l1t::TkJetCollection::const_iterator it = trackerJet->begin();
+       it != trackerJet->end() && l1extra_.nTrackerJets < maxL1Extra;
+       it++) {
+    l1extra_.trackerJetDisplacedEt.push_back(it->et());
+    l1extra_.trackerJetDisplacedEta.push_back(it->eta());
+    l1extra_.trackerJetDisplacedPhi.push_back(it->phi());
+    l1extra_.trackerJetDisplacedzVtx.push_back(it->jetVtx());
+    l1extra_.trackerJetDisplacedBx.push_back(0);  //it->bx());
+    l1extra_.nTrackerJetsDisplaced++;
+  }
+}
+
+
 // trackerMet
 void L1Analysis::L1AnalysisPhaseIIStep1::SetTkMET(const edm::Handle<l1t::TkEtMissCollection> trackerMets) {
   for (l1t::TkEtMissCollection::const_iterator it = trackerMets->begin(); it != trackerMets->end(); it++) {
@@ -433,3 +447,26 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetTkMHT(const edm::Handle<l1t::TkHTMis
     l1extra_.nTrackerMHT++;
   }
 }
+
+// trackerMetDisplaced
+void L1Analysis::L1AnalysisPhaseIIStep1::SetTkMETDisplaced(const edm::Handle<l1t::TkEtMissCollection> trackerMets) {
+  for (l1t::TkEtMissCollection::const_iterator it = trackerMets->begin(); it != trackerMets->end(); it++) {
+    l1extra_.trackerMetDisplacedSumEt.push_back(it->etTotal());
+    l1extra_.trackerMetDisplacedEt.push_back(it->etMiss());
+    l1extra_.trackerMetDisplacedPhi.push_back(it->phi());
+    l1extra_.trackerMetDisplacedBx.push_back(it->bx());
+    l1extra_.nTrackerMetDisplaced++;
+  }
+}
+
+void L1Analysis::L1AnalysisPhaseIIStep1::SetTkMHTDisplaced(const edm::Handle<l1t::TkHTMissCollection> trackerMHTs) {
+  // Hardcoding it like this, but this needs to be changed to a vector
+
+  for (l1t::TkHTMissCollection::const_iterator it = trackerMHTs->begin(); it != trackerMHTs->end(); it++) {
+    l1extra_.trackerHTDisplaced.push_back(it->etTotal());
+    l1extra_.trackerMHTDisplaced.push_back(it->EtMiss());
+    l1extra_.trackerMHTPhiDisplaced.push_back(it->phi());
+    l1extra_.nTrackerMHTDisplaced++;
+  }
+}
+
