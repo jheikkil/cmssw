@@ -162,6 +162,21 @@ namespace L1Analysis {
       puppiMETEt = 0;
       puppiMETPhi = 0;
 
+
+      nPuppiJets = 0;
+      puppiJetEt.clear();
+      puppiJetEta.clear();
+      puppiJetPhi.clear();
+      puppiJetBx.clear();
+      puppiJetzVtx.clear();
+      puppiJetEtUnCorr.clear();
+
+      puppiHT.clear();
+      puppiMHTEt.clear();
+      puppiMHTPhi.clear();
+      nPuppiMHT = 0;
+
+
       nNNTaus = 0;
       nnTauEt.clear();
       nnTauEta.clear();
@@ -364,6 +379,20 @@ namespace L1Analysis {
 
     double puppiMETEt;
     double puppiMETPhi;
+
+    unsigned int nPuppiJets;
+    std::vector<double> puppiJetEt;
+    std::vector<double> puppiJetEta;
+    std::vector<double> puppiJetPhi;
+    std::vector<int> puppiJetBx;
+    std::vector<double> puppiJetzVtx;
+    std::vector<double> puppiJetEtUnCorr;
+
+    std::vector<double> puppiHT;
+    std::vector<double> puppiMHTEt;
+    std::vector<double> puppiMHTPhi;
+    unsigned int nPuppiMHT;
+
 
     unsigned int nNNTaus;
     std::vector<double> nnTauEt;

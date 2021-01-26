@@ -145,6 +145,8 @@ private:
   edm::EDGetTokenT<std::vector<reco::PFMET> > l1PFMet_;
 
   edm::EDGetTokenT<std::vector<reco::CaloJet> > l1pfPhase1L1TJetToken_; // why are these caloJets???
+  edm::EDGetTokenT<std::vector<l1t::PFJet>> scPFL1Puppi_;
+  
 
   edm::EDGetTokenT<float> z0PuppiToken_;
   //edm::EDGetTokenT<l1t::VertexCollection> l1vertextdrToken_;
@@ -191,6 +193,7 @@ L1PhaseIITreeStep1Producer::L1PhaseIITreeStep1Producer(const edm::ParameterSet& 
 
   l1PFMet_ = consumes<std::vector<reco::PFMET> >(iConfig.getParameter<edm::InputTag>("l1PFMet"));
 
+  scPFL1Puppi_ = consumes<std::vector<l1t::PFJet>>(iConfig.getParameter<edm::InputTag>("scPFL1Puppi"));
   l1pfPhase1L1TJetToken_ = consumes<std::vector<reco::CaloJet> > (iConfig.getParameter<edm::InputTag>("l1pfPhase1L1TJetToken"));
 
   z0PuppiToken_ = consumes<float>(iConfig.getParameter<edm::InputTag>("zoPuppi"));
@@ -278,6 +281,9 @@ void L1PhaseIITreeStep1Producer::analyze(const edm::Event& iEvent, const edm::Ev
 
   edm::Handle<  std::vector<reco::CaloJet>  > l1pfPhase1L1TJet;
   iEvent.getByToken(l1pfPhase1L1TJetToken_,  l1pfPhase1L1TJet);
+
+  edm::Handle<std::vector<l1t::PFJet>> scPFL1Puppis;
+  iEvent.getByToken(scPFL1Puppi_, scPFL1Puppis);
 
   // now also fill vertices
 
@@ -421,6 +427,12 @@ void L1PhaseIITreeStep1Producer::analyze(const edm::Event& iEvent, const edm::Ev
             l1Extra->SetL1PfPhase1L1TJet(l1pfPhase1L1TJet, maxL1Extra_);
     } else {
            edm::LogWarning("MissingProduct") << "L1PhaseII l1pfPhase1L1TJets not found. Branch will not be filled" << std::endl;
+  }
+
+  if (scPFL1Puppis.isValid()) {
+    l1Extra->SetPFJet(scPFL1Puppis, maxL1Extra_);
+  } else {
+    edm::LogWarning("MissingProduct") << "L1PhaseII PFJets not found. Branch will not be filled" << std::endl;
   }
 
   if (muonsKalman.isValid()) {

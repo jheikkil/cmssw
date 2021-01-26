@@ -197,7 +197,7 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetMuonKF(const edm::Handle<l1t::Region
       if (it->hwPt() > 0) {
         //      std::cout<<"hwPt vs hwPt2?"<<it->hwPt()*0.5<<" "<<it->hwPt2()<<"   "<<it->hwSign()<<"   "<<muonDetector<<std::endl;
         l1extra_.standaloneMuonPt.push_back(it->hwPt() * 0.5);
-        l1extra_.standaloneMuonPt2.push_back(it->hwPt2());
+        l1extra_.standaloneMuonPt2.push_back(it->hwPtUnconstrained());
         l1extra_.standaloneMuonDXY.push_back(it->hwDXY());
         l1extra_.standaloneMuonEta.push_back(it->hwEta() * 0.010875);
         l1extra_.standaloneMuonPhi.push_back(
@@ -370,6 +370,44 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetL1PfPhase1L1TJet(const      edm::Han
 
 
 }
+
+
+void L1Analysis::L1AnalysisPhaseIIStep1::SetPFJet(const edm::Handle<l1t::PFJetCollection> PFJet, unsigned maxL1Extra) {
+  double mHT30_px = 0, mHT30_py = 0, HT30 = 0;
+  double mHT30_3p5_px = 0, mHT30_3p5_py = 0, HT30_3p5 = 0;
+
+  for (l1t::PFJetCollection::const_iterator it = PFJet->begin(); it != PFJet->end() && l1extra_.nPuppiJets < maxL1Extra;
+       it++) {
+    l1extra_.puppiJetEt.push_back(it->pt());
+    l1extra_.puppiJetEtUnCorr.push_back(it->rawPt());
+    l1extra_.puppiJetEta.push_back(it->eta());
+    l1extra_.puppiJetPhi.push_back(it->phi());
+    //    l1extra_.puppiJetzVtx.push_back(it->getJetVtx());
+    l1extra_.puppiJetBx.push_back(0);  //it->bx());
+    l1extra_.nPuppiJets++;
+
+    if (it->pt() > 30 && fabs(it->eta()) < 2.4) {
+      HT30 += it->pt();
+      mHT30_px += it->px();
+      mHT30_py += it->py();
+    }
+    if (it->pt() > 30 && fabs(it->eta()) < 3.5) {
+      HT30_3p5 += it->pt();
+      mHT30_3p5_px += it->px();
+      mHT30_3p5_py += it->py();
+    }
+  }
+  l1extra_.puppiMHTEt.push_back(sqrt(mHT30_px * mHT30_px + mHT30_py * mHT30_py));
+  l1extra_.puppiMHTPhi.push_back(atan(mHT30_py / mHT30_px));
+  l1extra_.puppiHT.push_back(HT30);
+
+  l1extra_.puppiMHTEt.push_back(sqrt(mHT30_3p5_px * mHT30_3p5_px + mHT30_3p5_py * mHT30_3p5_py));
+  l1extra_.puppiMHTPhi.push_back(atan(mHT30_3p5_py / mHT30_3p5_px));
+  l1extra_.puppiHT.push_back(HT30_3p5);
+
+  l1extra_.nPuppiMHT = 2;
+}
+
 
 void L1Analysis::L1AnalysisPhaseIIStep1::SetL1METPF(const edm::Handle<std::vector<reco::PFMET> > l1MetPF) {
   reco::PFMET met = l1MetPF->at(0);
