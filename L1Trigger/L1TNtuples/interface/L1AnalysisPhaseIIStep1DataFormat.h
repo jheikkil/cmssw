@@ -22,6 +22,7 @@ namespace L1Analysis {
       nL1TkPVs = 0;
 
       nCaloTaus = 0;
+      caloTauPt.clear();
       caloTauEt.clear();
       caloTauEta.clear();
       caloTauPhi.clear();
@@ -40,6 +41,7 @@ namespace L1Analysis {
       caloTauHwQual.clear();
 
       nPfPhase1L1Jets = 0;
+      pfPhase1L1JetPt.clear();
       pfPhase1L1JetEt.clear();
       pfPhase1L1JetEta.clear();
       pfPhase1L1JetPhi.clear();
@@ -50,6 +52,7 @@ namespace L1Analysis {
       nPfPhase1L1MHT = 0;
 
       nEG = 0;
+      EGPt.clear();
       EGEt.clear();
       EGEta.clear();
       EGPhi.clear();
@@ -62,6 +65,7 @@ namespace L1Analysis {
       EGPassesPhotonID.clear();
 
       nTkElectrons = 0;
+      tkElectronPt.clear();
       tkElectronEt.clear();
       tkElectronEta.clear();
       tkElectronPhi.clear();
@@ -78,6 +82,7 @@ namespace L1Analysis {
       tkElectronPassesPhotonID.clear();
 
       nTkPhotons = 0;
+      tkPhotonPt.clear();
       tkPhotonEt.clear();
       tkPhotonEta.clear();
       tkPhotonPhi.clear();
@@ -164,6 +169,7 @@ namespace L1Analysis {
 
 
       nPuppiJets = 0;
+      puppiJetPt.clear();
       puppiJetEt.clear();
       puppiJetEta.clear();
       puppiJetPhi.clear();
@@ -178,6 +184,7 @@ namespace L1Analysis {
 
 
       nNNTaus = 0;
+      nnTauPt.clear();
       nnTauEt.clear();
       nnTauEta.clear();
       nnTauPhi.clear();
@@ -192,6 +199,7 @@ namespace L1Analysis {
    
       // TkJets
       nTrackerJets = 0;
+      trackerJetPt.clear();
       trackerJetEt.clear();
       trackerJetEta.clear();
       trackerJetPhi.clear();
@@ -199,6 +207,7 @@ namespace L1Analysis {
       trackerJetzVtx.clear();
 
       nTrackerJetsDisplaced = 0;
+      trackerJetDisplacedPt.clear();
       trackerJetDisplacedEt.clear();
       trackerJetDisplacedEta.clear();
       trackerJetDisplacedPhi.clear();
@@ -241,6 +250,7 @@ namespace L1Analysis {
     std::vector<double> sumL1TkPV;
 
     unsigned short int nCaloTaus;
+    std::vector<double> caloTauPt;
     std::vector<double> caloTauEt;
     std::vector<double> caloTauEta;
     std::vector<double> caloTauPhi;
@@ -259,6 +269,7 @@ namespace L1Analysis {
     std::vector<short int> caloTauHwQual;
 
     unsigned short int nPfPhase1L1Jets;
+    std::vector<double> pfPhase1L1JetPt;
     std::vector<double> pfPhase1L1JetEt;
     std::vector<double> pfPhase1L1JetEta;
     std::vector<double> pfPhase1L1JetPhi;
@@ -269,6 +280,7 @@ namespace L1Analysis {
     unsigned int nPfPhase1L1MHT;
 
     unsigned int nEG;
+    std::vector<double> EGPt;
     std::vector<double> EGEt;
     std::vector<double> EGEta;
     std::vector<double> EGPhi;
@@ -281,6 +293,7 @@ namespace L1Analysis {
     std::vector<unsigned int> EGPassesPhotonID;
 
     unsigned int nTkElectrons;
+    std::vector<double> tkElectronPt;
     std::vector<double> tkElectronEt;
     std::vector<double> tkElectronEta;
     std::vector<double> tkElectronPhi;
@@ -297,6 +310,7 @@ namespace L1Analysis {
     std::vector<unsigned int> tkElectronPassesPhotonID;
 
     unsigned int nTkPhotons;
+    std::vector<double> tkPhotonPt;
     std::vector<double> tkPhotonEt;
     std::vector<double> tkPhotonEta;
     std::vector<double> tkPhotonPhi;
@@ -381,6 +395,7 @@ namespace L1Analysis {
     double puppiMETPhi;
 
     unsigned int nPuppiJets;
+    std::vector<double> puppiJetPt;
     std::vector<double> puppiJetEt;
     std::vector<double> puppiJetEta;
     std::vector<double> puppiJetPhi;
@@ -395,6 +410,7 @@ namespace L1Analysis {
 
 
     unsigned int nNNTaus;
+    std::vector<double> nnTauPt;
     std::vector<double> nnTauEt;
     std::vector<double> nnTauEta;
     std::vector<double> nnTauPhi;
@@ -408,6 +424,7 @@ namespace L1Analysis {
     std::vector<unsigned int> nnTauPassTightNN;
 
     unsigned int nTrackerJets;
+    std::vector<double> trackerJetPt;
     std::vector<double> trackerJetEt;
     std::vector<double> trackerJetEta;
     std::vector<double> trackerJetPhi;
@@ -415,6 +432,7 @@ namespace L1Analysis {
     std::vector<double> trackerJetzVtx;
 
     unsigned int nTrackerJetsDisplaced;
+    std::vector<double> trackerJetDisplacedPt;
     std::vector<double> trackerJetDisplacedEt;
     std::vector<double> trackerJetDisplacedEta;
     std::vector<double> trackerJetDisplacedPhi;

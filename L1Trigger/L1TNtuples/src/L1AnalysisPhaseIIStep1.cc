@@ -23,6 +23,7 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetCaloTau(const edm::Handle<l1t::TauBx
          it != calotau->end(ibx) && l1extra_.nCaloTaus < maxL1Extra;
          it++) {
       if (it->pt() > 0) {
+        l1extra_.caloTauPt.push_back(it->pt());
         l1extra_.caloTauEt.push_back(it->et());
         l1extra_.caloTauEta.push_back(it->eta());
         l1extra_.caloTauPhi.push_back(it->phi());
@@ -51,6 +52,7 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetEG(const edm::Handle<l1t::EGammaBxCo
                                                unsigned maxL1Extra) {
   for (l1t::EGammaBxCollection::const_iterator it = EG->begin(); it != EG->end() && l1extra_.nEG < maxL1Extra; it++) {
     if (it->et() > 5) {
+      l1extra_.EGPt.push_back(it->pt());
       l1extra_.EGEt.push_back(it->et());
       l1extra_.EGEta.push_back(it->eta());
       l1extra_.EGPhi.push_back(it->phi());
@@ -69,6 +71,7 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetEG(const edm::Handle<l1t::EGammaBxCo
   for (l1t::EGammaBxCollection::const_iterator it = EGHGC->begin(); it != EGHGC->end() && l1extra_.nEG < maxL1Extra;
        it++) {
     if (it->et() > 5) {
+      l1extra_.EGPt.push_back(it->pt());
       l1extra_.EGEt.push_back(it->et());
       l1extra_.EGEta.push_back(it->eta());
       l1extra_.EGPhi.push_back(it->phi());
@@ -92,6 +95,7 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetTkEG(const edm::Handle<l1t::TkElectr
        it != tkElectron->end() && l1extra_.nTkElectrons < maxL1Extra;
        it++) {
     if (it->et() > 5) {
+      l1extra_.tkElectronPt.push_back(it->pt());
       l1extra_.tkElectronEt.push_back(it->et());
       l1extra_.tkElectronEta.push_back(it->eta());
       l1extra_.tkElectronPhi.push_back(it->phi());
@@ -100,7 +104,7 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetTkEG(const edm::Handle<l1t::TkElectr
       l1extra_.tkElectronzVtx.push_back(it->trkzVtx());
       l1extra_.tkElectronTrkIso.push_back(it->trkIsol());
       l1extra_.tkElectronHwQual.push_back(it->EGRef()->hwQual());
-      l1extra_.tkElectronEGRefPt.push_back(it->EGRef()->et());
+      l1extra_.tkElectronEGRefPt.push_back(it->EGRef()->et()); //Rename  this?
       l1extra_.tkElectronEGRefEta.push_back(it->EGRef()->eta());
       l1extra_.tkElectronEGRefPhi.push_back(it->EGRef()->phi());
       l1extra_.tkElectronBx.push_back(0);  //it->bx());
@@ -117,6 +121,7 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetTkEG(const edm::Handle<l1t::TkElectr
        it != tkElectronHGC->end() && l1extra_.nTkElectrons < maxL1Extra;
        it++) {
     if (it->et() > 5) {
+      l1extra_.tkElectronPt.push_back(it->pt());
       l1extra_.tkElectronEt.push_back(it->et());
       l1extra_.tkElectronEta.push_back(it->eta());
       l1extra_.tkElectronPhi.push_back(it->phi());
@@ -125,7 +130,7 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetTkEG(const edm::Handle<l1t::TkElectr
       l1extra_.tkElectronzVtx.push_back(it->trkzVtx());
       l1extra_.tkElectronTrkIso.push_back(it->trkIsol());
       l1extra_.tkElectronHwQual.push_back(it->EGRef()->hwQual());
-      l1extra_.tkElectronEGRefPt.push_back(it->EGRef()->et());
+      l1extra_.tkElectronEGRefPt.push_back(it->EGRef()->et()); //Rename this?
       l1extra_.tkElectronEGRefEta.push_back(it->EGRef()->eta());
       l1extra_.tkElectronEGRefPhi.push_back(it->EGRef()->phi());
       l1extra_.tkElectronBx.push_back(0);  //it->bx());
@@ -145,6 +150,7 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetTkEM(const edm::Handle<l1t::TkEmColl
        it != tkPhoton->end() && l1extra_.nTkPhotons < maxL1Extra;
        it++) {
     if (it->et() > 5) {
+      l1extra_.tkPhotonPt.push_back(it->pt());
       l1extra_.tkPhotonEt.push_back(it->et());
       l1extra_.tkPhotonEta.push_back(it->eta());
       l1extra_.tkPhotonPhi.push_back(it->phi());
@@ -152,7 +158,7 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetTkEM(const edm::Handle<l1t::TkEmColl
       l1extra_.tkPhotonTrkIsoPV.push_back(it->trkIsolPV());
       l1extra_.tkPhotonBx.push_back(0);  //it->bx());
       l1extra_.tkPhotonHwQual.push_back(it->EGRef()->hwQual());
-      l1extra_.tkPhotonEGRefPt.push_back(it->EGRef()->et());
+      l1extra_.tkPhotonEGRefPt.push_back(it->EGRef()->et()); //REname this?
       l1extra_.tkPhotonEGRefEta.push_back(it->EGRef()->eta());
       l1extra_.tkPhotonEGRefPhi.push_back(it->EGRef()->phi());
       l1extra_.tkPhotonHGC.push_back(0);
@@ -167,6 +173,7 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetTkEM(const edm::Handle<l1t::TkEmColl
        it != tkPhotonHGC->end() && l1extra_.nTkPhotons < maxL1Extra;
        it++) {
     if (it->et() > 5) {
+      l1extra_.tkPhotonPt.push_back(it->pt()); 
       l1extra_.tkPhotonEt.push_back(it->et());
       l1extra_.tkPhotonEta.push_back(it->eta());
       l1extra_.tkPhotonPhi.push_back(it->phi());
@@ -174,7 +181,7 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetTkEM(const edm::Handle<l1t::TkEmColl
       l1extra_.tkPhotonTrkIsoPV.push_back(it->trkIsolPV());
       l1extra_.tkPhotonBx.push_back(0);  //it->bx());
       l1extra_.tkPhotonHwQual.push_back(it->EGRef()->hwQual());
-      l1extra_.tkPhotonEGRefPt.push_back(it->EGRef()->et());
+      l1extra_.tkPhotonEGRefPt.push_back(it->EGRef()->et()); //rename this?
       l1extra_.tkPhotonEGRefEta.push_back(it->EGRef()->eta());
       l1extra_.tkPhotonEGRefPhi.push_back(it->EGRef()->phi());
       l1extra_.tkPhotonHGC.push_back(1);
@@ -281,12 +288,12 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetMuon(const edm::Handle<l1t::MuonBxCo
          it != muon->end(ibx) && l1extra_.nGlobalMuons < maxL1Extra;
          it++) {
       if (it->pt() > 0) {
-        l1extra_.globalMuonPt.push_back(it->et());
+        l1extra_.globalMuonPt.push_back(it->pt()); //use pT
         l1extra_.globalMuonEta.push_back(it->eta());
         l1extra_.globalMuonPhi.push_back(it->phi());
         l1extra_.globalMuonEtaAtVtx.push_back(it->etaAtVtx());
         l1extra_.globalMuonPhiAtVtx.push_back(it->phiAtVtx());
-        l1extra_.globalMuonIEt.push_back(it->hwPt());
+        l1extra_.globalMuonIEt.push_back(it->hwPt()); //rename?
         l1extra_.globalMuonIEta.push_back(it->hwEta());
         l1extra_.globalMuonIPhi.push_back(it->hwPhi());
         l1extra_.globalMuonIEtaAtVtx.push_back(it->hwEtaAtVtx());
@@ -336,19 +343,20 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetL1PfPhase1L1TJet(const      edm::Han
 
     for (reco::CaloJetCollection::const_iterator it=l1L1PFPhase1L1Jet->begin(); it!=l1L1PFPhase1L1Jet->end() && l1extra_.nPfPhase1L1Jets<maxL1Extra; it++){
       if (it->pt() > 0){
-      l1extra_.pfPhase1L1JetEt .push_back(it->et());
+      l1extra_.pfPhase1L1JetPt.push_back(it->pt());
+      l1extra_.pfPhase1L1JetEt.push_back(it->et());
       l1extra_.pfPhase1L1JetEta.push_back(it->eta());
       l1extra_.pfPhase1L1JetPhi.push_back(it->phi());
 //      l1extra_.pfPhase1L1JetBx .push_back(0);
       l1extra_.nPfPhase1L1Jets++;
  
-    if(it->et()>30 && fabs(it->eta())<2.4) {
-                  HT30+=it->et();
+    if(it->pt()>30 && fabs(it->eta())<2.4) { //use pT
+                  HT30+=it->pt();
                   mHT30_px+=it->px();
                   mHT30_py+=it->py();
       }
-    if(it->et()>30 && fabs(it->eta())<3.5) {
-                  HT30_3p5+=it->et();
+    if(it->pt()>30 && fabs(it->eta())<3.5) {
+                  HT30_3p5+=it->pt();
                   mHT30_3p5_px+=it->px();
                   mHT30_3p5_py+=it->py();
       }
@@ -378,8 +386,9 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetPFJet(const edm::Handle<l1t::PFJetCo
 
   for (l1t::PFJetCollection::const_iterator it = PFJet->begin(); it != PFJet->end() && l1extra_.nPuppiJets < maxL1Extra;
        it++) {
-    l1extra_.puppiJetEt.push_back(it->pt());
-    l1extra_.puppiJetEtUnCorr.push_back(it->rawPt());
+    l1extra_.puppiJetPt.push_back(it->pt());
+    l1extra_.puppiJetEt.push_back(it->et());
+    l1extra_.puppiJetEtUnCorr.push_back(it->rawPt()); //rename?
     l1extra_.puppiJetEta.push_back(it->eta());
     l1extra_.puppiJetPhi.push_back(it->phi());
     //    l1extra_.puppiJetzVtx.push_back(it->getJetVtx());
@@ -420,7 +429,8 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetNNTaus(const edm::Handle<vector<l1t:
   for (unsigned int i = 0; i < l1nnTaus->size() && l1extra_.nNNTaus < maxL1Extra; i++) {
     if (l1nnTaus->at(i).pt() < 1)
       continue;
-    l1extra_.nnTauEt.push_back(l1nnTaus->at(i).pt());
+    l1extra_.nnTauPt.push_back(l1nnTaus->at(i).pt());
+    l1extra_.nnTauEt.push_back(l1nnTaus->at(i).et());
     l1extra_.nnTauEta.push_back(l1nnTaus->at(i).eta());
     l1extra_.nnTauPhi.push_back(l1nnTaus->at(i).phi());
     l1extra_.nnTauChg.push_back(l1nnTaus->at(i).charge());
@@ -440,6 +450,7 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetTkJet(const edm::Handle<l1t::TkJetCo
   for (l1t::TkJetCollection::const_iterator it = trackerJet->begin();
        it != trackerJet->end() && l1extra_.nTrackerJets < maxL1Extra;
        it++) {
+    l1extra_.trackerJetPt.push_back(it->pt());
     l1extra_.trackerJetEt.push_back(it->et());
     l1extra_.trackerJetEta.push_back(it->eta());
     l1extra_.trackerJetPhi.push_back(it->phi());
@@ -453,6 +464,7 @@ void L1Analysis::L1AnalysisPhaseIIStep1::SetTkJetDisplaced(const edm::Handle<l1t
   for (l1t::TkJetCollection::const_iterator it = trackerJet->begin();
        it != trackerJet->end() && l1extra_.nTrackerJets < maxL1Extra;
        it++) {
+    l1extra_.trackerJetDisplacedPt.push_back(it->pt());
     l1extra_.trackerJetDisplacedEt.push_back(it->et());
     l1extra_.trackerJetDisplacedEta.push_back(it->eta());
     l1extra_.trackerJetDisplacedPhi.push_back(it->phi());
