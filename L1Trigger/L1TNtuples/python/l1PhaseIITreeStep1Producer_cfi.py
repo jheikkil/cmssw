@@ -19,11 +19,11 @@ l1PhaseIITree = cms.EDAnalyzer("L1PhaseIITreeStep1Producer",
    muonToken = cms.untracked.InputTag("simGmtStage2Digis", "","MENUTREE"),
    TkGlbMuonToken = cms.InputTag("L1TkGlbMuons","","MENUTREE"),
 
-   scPFL1Puppi = cms.InputTag("scPFL1Puppi","MENUTREE"),
+   scPFL1Puppi = cms.InputTag("scPFL1Puppi", "","MENUTREE"),
 
    l1pfPhase1L1TJetToken  = cms.InputTag("Phase1L1TJetCalibrator" ,   "Phase1L1TJetFromPfCandidates","MENUTREE"), # not there yet either
 
-   caloTauToken = cms.InputTag("L1CaloJetProducer","CaloTaus","MENUTREE"),
+   caloTauToken = cms.InputTag("L1CaloJet","CaloTaus","MENUTREE"),
 
    l1PFMet = cms.InputTag("l1PFMetPuppi","", "MENUTREE"),
 
