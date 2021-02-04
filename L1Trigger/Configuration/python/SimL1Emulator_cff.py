@@ -170,9 +170,6 @@ from L1Trigger.Phase2L1ParticleFlow.l1pfJetMet_cff import *
 _phase2_siml1emulator.add(l1PFJetsTask)
 _phase2_siml1emulator.add(l1PFMetsTask)
 
-_phase2_siml1emulator.add(scPFL1Puppi)
-
-
 # NNTaus
 # ########################################################################
 from L1Trigger.Phase2L1ParticleFlow.L1NNTauProducer_cff import *
