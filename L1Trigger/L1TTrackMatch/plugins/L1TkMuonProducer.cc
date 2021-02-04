@@ -675,6 +675,7 @@ std::vector<L1TkMuMantraDF::muon_df> L1TkMuonProducer::product_to_muvec(const EM
     int emtfQual = (mu.Mode() == 11 || mu.Mode() == 13 || mu.Mode() == 14 || mu.Mode() == 15);
     if (applyQuality_ && !emtfQual)
       continue;
+
     result[imu].pt = mu.Pt();
     result[imu].eta = mu.Eta();
     result[imu].theta = L1TkMuMantra::to_mpio2_pio2(L1TkMuMantra::eta_to_theta(mu.Eta()));
