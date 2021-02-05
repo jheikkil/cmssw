@@ -40,16 +40,16 @@ namespace L1Analysis {
       caloTauIsMerged.clear();
       caloTauHwQual.clear();
 
-      nPfPhase1L1Jets = 0;
-      pfPhase1L1JetPt.clear();
-      pfPhase1L1JetEt.clear();
-      pfPhase1L1JetEta.clear();
-      pfPhase1L1JetPhi.clear();
+      nPhase1Jets = 0;
+      phase1JetPt.clear();
+      phase1JetEt.clear();
+      phase1JetEta.clear();
+      phase1JetPhi.clear();
 
-      pfPhase1L1HT.clear();
-      pfPhase1L1MHTEt.clear();
-      pfPhase1L1MHTPhi.clear();
-      nPfPhase1L1MHT = 0;
+      phase1HT.clear();
+      phase1MHTEt.clear();
+      phase1MHTPhi.clear();
+      nPhase1MHT = 0;
 
       nEG = 0;
       EGPt.clear();
@@ -168,19 +168,19 @@ namespace L1Analysis {
       puppiMETPhi = 0;
 
 
-      nPuppiJets = 0;
-      puppiJetPt.clear();
-      puppiJetEt.clear();
-      puppiJetEta.clear();
-      puppiJetPhi.clear();
-      puppiJetBx.clear();
-      puppiJetzVtx.clear();
-      puppiJetEtUnCorr.clear();
+      nSeededConeJets = 0;
+      seededConeJetPt.clear();
+      seededConeJetEt.clear();
+      seededConeJetEta.clear();
+      seededConeJetPhi.clear();
+      seededConeJetBx.clear();
+      seededConeJetzVtx.clear();
+      seededConeJetEtUnCorr.clear();
 
-      puppiHT.clear();
-      puppiMHTEt.clear();
-      puppiMHTPhi.clear();
-      nPuppiMHT = 0;
+      seededConeHT.clear();
+      seededConeMHTEt.clear();
+      seededConeMHTPhi.clear();
+      nSeededConeMHT = 0;
 
 
       nNNTaus = 0;
@@ -268,16 +268,16 @@ namespace L1Analysis {
     std::vector<short int> caloTauIsMerged;
     std::vector<short int> caloTauHwQual;
 
-    unsigned short int nPfPhase1L1Jets;
-    std::vector<double> pfPhase1L1JetPt;
-    std::vector<double> pfPhase1L1JetEt;
-    std::vector<double> pfPhase1L1JetEta;
-    std::vector<double> pfPhase1L1JetPhi;
+    unsigned short int nPhase1Jets;
+    std::vector<double> phase1JetPt;
+    std::vector<double> phase1JetEt;
+    std::vector<double> phase1JetEta;
+    std::vector<double> phase1JetPhi;
 
-    std::vector<double> pfPhase1L1HT;
-    std::vector<double> pfPhase1L1MHTEt;
-    std::vector<double> pfPhase1L1MHTPhi;
-    unsigned int nPfPhase1L1MHT;
+    std::vector<double> phase1HT;
+    std::vector<double> phase1MHTEt;
+    std::vector<double> phase1MHTPhi;
+    unsigned int nPhase1MHT;
 
     unsigned int nEG;
     std::vector<double> EGPt;
@@ -394,19 +394,19 @@ namespace L1Analysis {
     double puppiMETEt;
     double puppiMETPhi;
 
-    unsigned int nPuppiJets;
-    std::vector<double> puppiJetPt;
-    std::vector<double> puppiJetEt;
-    std::vector<double> puppiJetEta;
-    std::vector<double> puppiJetPhi;
-    std::vector<int> puppiJetBx;
-    std::vector<double> puppiJetzVtx;
-    std::vector<double> puppiJetEtUnCorr;
+    unsigned int nSeededConeJets;
+    std::vector<double> seededConeJetPt;
+    std::vector<double> seededConeJetEt;
+    std::vector<double> seededConeJetEta;
+    std::vector<double> seededConeJetPhi;
+    std::vector<int> seededConeJetBx;
+    std::vector<double> seededConeJetzVtx;
+    std::vector<double> seededConeJetEtUnCorr;
 
-    std::vector<double> puppiHT;
-    std::vector<double> puppiMHTEt;
-    std::vector<double> puppiMHTPhi;
-    unsigned int nPuppiMHT;
+    std::vector<double> seededConeHT;
+    std::vector<double> seededConeMHTEt;
+    std::vector<double> seededConeMHTPhi;
+    unsigned int nSeededConeMHT;
 
 
     unsigned int nNNTaus;
